@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=poppins" rel="stylesheet"> <!--Google ფონტები Nav-Bar-სთვის-->
     <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet"> <!--EXPLORE GEORGIA-სთვის-->
     <title>GeoTraveler</title>
@@ -15,11 +16,11 @@
         </div>
         <ul class="nav-links">
             <li><a href="index.html"> Main </a></li>
-            <li><a href="#"> Destination  </a></li>
+            <li><a href="#"> Destination </a></li>
             <li><a href="#"> Plan Your Trip </a></li>
             <li><a href="#"> About Georgia </a></li>
-            <li><a href="#"> Contact Us </a></li>
-            <li><a class ='login' href="#"> Login</a></li> <!--მინდა რომ კომპზე არ გამოჩნდეს ნავიგაციაში და მობილურზე ბურგერ მენიუში გამოჩნდეს-->
+            <li><a href="contactus.html"> Contact Us </a></li>
+            <li><label for="show" class="show-btn">Login</label></li>
         </ul>
         <div class="burger">
             <div class="line1"></div>
@@ -31,15 +32,67 @@
     <script src="js/burger.js"></script>
     <div class="containter">
         <div class="banner">
-                
         </div>
         <div class="title">
             <h1>EXPLORE GEORGIA</h1>
         </div>
-        <!--  <div class="button">
-            <a href="#" class="btn">LOG IN</a>
-            <a href="#" class="btn">REGISTER</a>
-        </div> -->
+        <div class='center'>
+            <input type="checkbox" id="show">
+            <!-- <label for="show" class="show-btn">Sign In</label> -->
+            <div class='SignUpContainer'>
+                <label for="show" class="close-btn fas fa-times">X</label>
+                <div class="SignUpText">
+                    Login Form
+                </div>
+                <form action='#'>
+                    <div class="data">
+                        <label>Email or Username</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="data">
+                        <label>Password</label>
+                        <input type="password" required>
+                    </div>
+                    <div class="forgot-pass"><a href="#">Forgot Password?</a></div>
+                    <div class="SignUpbtn">
+                        <div class="inner"></div>
+                        <button type="submit">LogIn</button>
+                    </div>
+                    <div class="signUp-link">Not a member? <label for="show2">SignUp Now</label></div>
+                </form>
+            </div>
+        </div>
+        <div class="center2">
+            <input type="checkbox" id="show2">
+            <!-- <label for="show2" class="show-btn2"></label> -->
+            <div class="SignUpContainer2">
+                <label for="show2" class="close-btn2">X</label>
+                <div class="SignUpText2">SignUp Form</div>
+                <form action="#">
+                    <div class="data2">
+                        <label>Email</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="data2">
+                        <label>Username</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="data2">
+                        <label>Password</label>
+                        <input type="password" required>
+                    </div>
+                    <div class="data2">
+                        <label>Repeat password</label>
+                        <input type="password" required>
+                    </div>
+                    <div class="SignUpbtn2">
+                        <div class="inner2"></div>
+                        <button type="submit">Register</button>
+                    </div>
+                    <div class="signIn-Link">Already a member? <label for="show2">SignIn Now</label></div>
+                </form>
+            </div>
+        </div>
     </div>
     <div class="select-container">
         <h1>Plan Your Trip</h1>
@@ -103,8 +156,7 @@
         <input type="submit" value="Upload" class="Select-Button">
     </div>
     <!-- select-ის სკრიპტი -->
-    <script src="js/select.js"></script> </div>
-
+    <script src="js/select.js"></script>
     <div class="text">
         <h3>IN THE SPOTLIGHT</h3>
         
@@ -141,6 +193,5 @@
             </div>
         </div>
     </div>
-
 </body>
 </html>
