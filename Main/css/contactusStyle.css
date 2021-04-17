@@ -264,6 +264,7 @@ nav{
         transform: translate(0%);
 
     }
+}
     /*Burger მენიუში ნელ-ნელა რომ ამოვიდეს ლინკები*/
 @keyframes navLinkFade{
     from{
@@ -284,4 +285,10 @@ nav{
 }
 .toggle .line3{
     transform: rotate(45deg) translate(-5px,-6px);
+}
+
+.SuccFeedbackMessage{
+    font-size: 20px;
+    color: green;
+    text-align: center;
 }

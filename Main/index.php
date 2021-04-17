@@ -4,14 +4,13 @@ session_start();
  
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: welcome.php");
+    header("location: contactus.php");
     exit;
 }
  
-// Include config file
+require_once '/var/www/html/GeoTraveler/Main/back-end/php/user.php';
 require_once '/var/www/html/GeoTraveler/Main/back-end/php/config.php';
- 
-// Define variables and initialize with empty values
+
 $username = $password = "";
 $username_err = $password_err = $login_err = "";
  
@@ -31,58 +30,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         $password = trim($_POST["password"]);
     }
-    
-    // Validate credentials
-    if(empty($username_err) && empty($password_err)){
-        // Prepare a select statement
-        $sql = "SELECT id, username, password FROM users WHERE username = ?";
-        
-        if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "s", $param_username);
-            
-            // Set parameters
-            $param_username = $username;
-            
-            // Attempt to execute the prepared statement
-            if(mysqli_stmt_execute($stmt)){
-                // Store result
-                mysqli_stmt_store_result($stmt);
-                
-                // Check if username exists, if yes then verify password
-                if(mysqli_stmt_num_rows($stmt) == 1){                    
-                    // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
-                    if(mysqli_stmt_fetch($stmt)){
-                        if(password_verify($password, $hashed_password)){
-                            // Password is correct, so start a new session
-                            session_start();
-                            
-                            // Store data in session variables
-                            $_SESSION["loggedin"] = true;
-                            $_SESSION["id"] = $id;
-                            $_SESSION["username"] = $username;                            
-                            
-                            // Redirect user to welcome page
-                            header("location: welcome.php");
-                        } else{
-                            // Password is not valid, display a generic error message
-                            $login_err = "Invalid username or password.";
-                        }
-                    }
-                } else{
-                    // Username doesn't exist, display a generic error message
-                    $login_err = "Invalid username or password.";
-                }
-            } else{
-                echo "Oops! Something went wrong. Please try again later.";
-            }
 
-            mysqli_stmt_close($stmt);
-        }
-    }
+    $new_password = md5($password.$username);
     
-    mysqli_close($link);
+    if(empty($username_err) && empty($password_err)){
+    $result = $user->getUser($username, $new_password);
+
+    if(!$result){
+       $login_err = "Username or Password is incorrect!";
+    }else{
+        $_SESSION["loggedin"] = true;
+        $_SESSION["id"] = $id;
+        $_SESSION["username"] = $username;
+
+        session_start();
+        header("location: contactus.php");
+    }
+}
 }
 ?>
 
@@ -104,11 +68,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <a href="index.html"><h3>GeoTraveler</h3></a>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html"> Main </a></li>
+            <li><a href="index.php"> Main </a></li>
             <li><a href="#"> Destination </a></li>
             <li><a href="#"> Plan Your Trip </a></li>
             <li><a href="#"> About Georgia </a></li>
-            <li><a href="contactus.html"> Contact Us </a></li>
+            <li><a href="contactus.php"> Contact Us </a></li>
             <li><label for="show" class="show-btn">Login</label></li>
         </ul>
         <div class="burger">
@@ -129,32 +93,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <input type="checkbox" id="show">
             <!-- <label for="show" class="show-btn">Sign In</label> -->
             <div class='SignUpContainer'>
-                <label for="show" class="close-btn fas fa-times">X</label>
+                <label id= "closeForm" for="show" class="close-btn fas fa-times">X</label>
                 <div class="SignUpText">
                     Login Form
                 </div>
-                <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <form action="<?php if(empty($username_err)&& empty($password_err)&& empty($login_err)){echo htmlspecialchars($_SERVER["PHP_SELF"]);}  ?>" method="POST">
                     <div class="data">
                         <label>Username</label>
                         <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                        <span ><?php echo $username_err; ?></span>
+                        <span id="usernameErr"><?php echo $username_err; ?></span>
                     </div>
                     <div class="data">
                         <label>Password</label>
                         <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                        <span ><?php echo $password_err; ?></span>
+                        <span id="passErr"><?php echo $password_err; ?></span>
                     </div>
                     <div class="forgot-pass"><a href="#">Forgot Password?</a></div>
-                    <?php 
-                     if(!empty($login_err)){
-                         echo '<div class="alert alert-danger">' . $login_err . '</div>';
-                         }        
-                     ?>
+
+                    <span style="color:red;" id="loginErr"><?php if(!empty($login_err)){echo $login_err;} ?></span>
 
                     <div class="SignUpbtn">
                         <div class="inner"></div>
                         <!-- <input type="submit" class="btn btn-primary" value="Login"> -->
-                        <button type="submit"  onclick="clickSubmitButton()" class="btn btn-primary" value="Login">LogIn</button>
+                        <button id="loginB" type="submit" class="btn btn-primary" value="Login">LogIn</button>
                     </div>
                     <div class="signUp-link">Not a member? <label for="show2">SignUp Now</label></div>
                 </form>
@@ -293,9 +254,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
 </body>
 
-<script>
-    function clickSubmitButton(){
-        if(document.getElementsByTagName('span')[0].innerHTML.length == 0){document.getElementsByClassName('SignUpContainer')[0].style.display = 'block'}
-    }
-</script>
+
+<script src="js/login.js"></script>
 </html>

@@ -1,3 +1,8 @@
+<?php
+require_once '/var/www/html/GeoTraveler/Main/back-end/php/config.php';
+?>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -65,25 +70,48 @@
                 </div>
             </div>
             <div class="contactForm">
-                <form>
+                <form method = "post">
                     <h2>
                         Send Message
                     </h2>
                     <div class="inputBox">
-                        <input type="text" name="" required="required">
+                        <input type="text" name="Cname" required="required">
                         <span>Full Name</span>
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="" required="required">
+                        <input type="text" name="Cmail" required="required">
                         <span>Email</span>
                     </div>
                     <div class="inputBox">
-                        <textarea required="required"></textarea>
+                        <textarea style="height: 75px;" name="Cmessage" required="required"></textarea>
                         <span>Type your Message...</span>
                     </div>
                     <div class="inputBox">
-                        <input type="submit" name="" value="Send">
+                        <input type="submit" name="submit" value="Send">
                     </div>
+
+                <?php
+
+                if(isset($_POST['submit'])){
+                    $name = $_POST['Cname'];
+                    $mail = $_POST['Cmail'];
+                    $message = $_POST['Cmessage'];
+
+                   $succ = $crud->SendFeedback($name,$mail,$message);
+                if($succ){
+                    echo "<h3 style=\"font-size: 20px; color: green;  text-align: center;\">Message was sent!</h3>";
+                }
+                else{
+                //    echo $succ;
+                }
+
+                }
+
+                         
+                ?>
+
+
+
                 </form>
             </div>
         </div>
