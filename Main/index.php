@@ -8,8 +8,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     exit;
 }
  
-require_once '/var/www/html/GeoTraveler/Main/back-end/php/user.php';
-require_once '/var/www/html/GeoTraveler/Main/back-end/php/config.php';
+require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\crud.php';
+require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\user.php';
 
 $username = $password = "";
 $username_err = $password_err = $login_err = "";

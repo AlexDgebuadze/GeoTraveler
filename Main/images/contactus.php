@@ -1,5 +1,5 @@
 <?php
-require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\config.php';
+require_once '/var/www/html/GeoTraveler/Main/back-end/php/config.php';
 ?>
 
 

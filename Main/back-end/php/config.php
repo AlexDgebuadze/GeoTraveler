@@ -9,7 +9,7 @@
 // if($link === false){
 //     die("ERROR: Could not connect. " . mysqli_connect_error());
 // }
-
+// $mypath = 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main';
 $host = 'localhost';
 $db = 'geotraveler';
 $user = 'alex';
@@ -25,8 +25,8 @@ try {
     throw new PDOException($e->getMessage());
 }
 
-require_once '/var/www/html/GeoTraveler/Main/back-end/php/crud.php';
-require_once '/var/www/html/GeoTraveler/Main/back-end/php/user.php';
+require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\crud.php';
+require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\user.php';
 $crud = new crud($pdo);
 $user = new user($pdo);
 

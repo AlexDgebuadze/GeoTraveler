@@ -1,6 +1,6 @@
 <?php 
 
-require_once 'config.php'; 
+require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\config.php'; 
 
     class user{
         private $db;
