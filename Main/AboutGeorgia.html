@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/AboutGeorgiaStyle.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=poppins" rel="stylesheet"> <!--Google ფონტები Nav-Bar-სთვის-->
+    <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet"> <!--EXPLORE GEORGIA-სთვის-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+</head>
+<body>
+    <NAV>
+        <div class="logo">
+            <a href="index.php"><h3>GeoTraveler</h3></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.php"> Main </a></li>
+            <li><a href="#"> Destination </a></li>
+            <li><a href="#"> Plan Your Trip </a></li>
+            <li><a href="#"> About Georgia </a></li>
+            <li><a href="contactus.php"> Contact Us </a></li>
+            <li><label for="show" class="show-btn">Login</label></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </NAV>
+    <!-- ბურგერ მენიუს სკრიპტი -->
+    <script src="js/burger.js"></script>
+    <div class="AboutContainer">
+        <div class="row">
+            <div class="col"><h1>GEORGIA</h1>
+            <p>
+                Georgia is one of the oldest wine regions in the world.<br>
+                It is considered that Georgia is the birthplace of Wine.
+            </p>
+        </div>
+            <div class="col cards">
+                <a href="#Nature"> <!--scrollto რომ გამოვიყენოთ id მივანიჭებთ იმ divs, რომელზეც გვინდა ჩამოსქროლოს და შემდეგ # -ის შემდეგ a tag -ში ჩავწერთ ამ id -ს. ამისთვის css-ში დავამატე scroll-behavior: smooth; ფუნქცია-->
+                <div class="card card1" >
+                    <h5>Nature</h5>  <!---->
+                    <!-- <p>Lorem, ipsum dolor sit amet</p> -->
+                </div> </a>
+                <a href="#Culture"><div class="card card2">
+                    <h5>Culture</h5> 
+                    <!-- <p>Lorem, ipsum dolor sit amet</p> -->
+                </div> </a>
+            </div>
+        </div>
+    </div>
+        <div class='center'>
+            <input type="checkbox" id="show">
+            <!-- <label for="show" class="show-btn">Sign In</label> -->
+            <div class='SignUpContainer'>
+                <label for="show" class="close-btn fas fa-times">X</label>
+                <div class="SignUpText">
+                    Login Form
+                </div>
+                <form action='#'>
+                    <div class="data">
+                        <label>Email or Username</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="data">
+                        <label>Password</label>
+                        <input type="password" required>
+                    </div>
+                    <div class="forgot-pass"><a href="#">Forgot Password?</a></div>
+                    <div class="SignUpbtn">
+                        <div class="inner"></div>
+                        <button type="submit">LogIn</button>
+                    </div>
+                    <div class="signUp-link">Not a member? <label for="show2">SignUp Now</label></div>
+                </form>
+            </div>
+        </div>
+        <div class="center2">
+            <input type="checkbox" id="show2">
+            <!-- <label for="show2" class="show-btn2"></label> -->
+            <div class="SignUpContainer2">
+                <label for="show2" class="close-btn2">X</label>
+                <div class="SignUpText2">SignUp Form</div>
+                <form action="#">
+                    <div class="data2">
+                        <label>Email</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="data2">
+                        <label>Username</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="data2">
+                        <label>Password</label>
+                        <input type="password" required>
+                    </div>
+                    <div class="data2">
+                        <label>Repeat password</label>
+                        <input type="password" required>
+                    </div>
+                    <div class="SignUpbtn2">
+                        <div class="inner2"></div>
+                        <button type="submit">Register</button>
+                    </div>
+                    <div class="signIn-Link">Already a member? <label for="show2">SignIn Now</label></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="Regions">
+        <div class="RegionsHeader">
+            <h1>Regions Of Georgia</h1>
+        </div>
+        <a href="">
+            <div class="map">
+            </div>
+        </a>
+    </div>
+    <div id = "Nature" class="NatureContainer">
+        <div class="NatureHeader">
+            <h1>NATURE</h1>
+        </div>
+    </div>
+    <div class="cardcontainer">
+        <main class="Naturegrid">
+            <article>
+                <img src="images/Svaneti.jpg" alt="">
+                <div class="NatureText">
+                    <h3>Mountains</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <button>READ MORE</button>
+                </div>
+            </article>
+            <article>
+                <img src="images/NaturalReserves.jpg" alt="">
+                <div class="NatureText">
+                    <h3>Natural Reserves</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <button>READ MORE</button>
+                </div>
+            </article>
+            <article>
+                <img src="images/animals.jpg" alt="">
+                <div class="NatureText">
+                    <h3>Animals</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <button>READ MORE</button>
+                </div>
+            </article>
+        </main>
+    </div>
+    <div class="slider">
+        <input type="radio" name="slider" checked="checked" id="1">
+        <div class="imgBox">
+            <label for="2"><img src="images/Tbilisi-night.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="2">
+        <div class="imgBox">
+            <label for="3"><img src="images/Tbilisi-view-1.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="3">
+        <div class="imgBox">
+            <label for="4"><img src="images/Old-Tbilisi-1.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="4">
+        <div class="imgBox">
+            <label for="5"><img src="images/Turtle-Lake.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="5">
+        <div class="imgBox">
+            <label for="6"><img src="images/mcxeta1.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="6">
+        <div class="imgBox">
+            <label for="7"><img src="images/mcxeta2.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="7">
+        <div class="imgBox">
+            <label for="8"><img src="images/Bridge-of-Peace.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="8">
+        <div class="imgBox">
+            <label for="9"><img src="images/gori1.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="9">
+        <div class="imgBox">
+            <label for="10"><img src="images/Mtkvari-river.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="10">
+        <div class="imgBox">
+            <label for="1"><img src="images/uflistsikhe.jpg"></label>
+        </div>
+    </div>
+    </div>
+    <div id = "Culture" class="CultureContainer">
+        <div class="CultureHeader">
+            <h1>CULTURE</h1>
+        </div>
+    </div>
+    <div class="cardcontainer">
+        <main class="Naturegrid">
+            <article>
+                <img src="images/Architecture.png" alt="">
+                <div class="NatureText">
+                    <h3>Architecture</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <button>READ MORE/button>
+                </div>
+            </article>
+            <article>
+                <img src="images/mxatvroba.jpg" alt="">
+                <div class="NatureText">
+                    <h3>Art</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <button>READ MORE</button>
+                </div>
+            </article>
+            <article>
+                <img src="images/dance.jpg" alt="">
+                <div class="NatureText">
+                    <h3>Wine</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                    <button>READ MORE</button>
+                </div>
+            </article>
+        </main>
+    </div>
+</body>

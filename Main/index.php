@@ -65,15 +65,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <NAV>
         <div class="logo">
-            <a href="index.html"><h3>GeoTraveler</h3></a>
+            <a href="index.php"><h3>GeoTraveler</h3></a>
         </div>
         <ul class="nav-links">
             <li><a href="index.php"> Main </a></li>
             <li><a href="#"> Destination </a></li>
             <li><a href="#"> Plan Your Trip </a></li>
-            <li><a href="#"> About Georgia </a></li>
+            <li><a href="AboutGeorgia.html"> About Georgia </a></li>
             <li><a href="contactus.php"> Contact Us </a></li>
-            <li><label for="show" class="show-btn">Login</label></li>
+            <li><label id="LoginF" for="show" class="show-btn">Login</label></li>
         </ul>
         <div class="burger">
             <div class="line1"></div>

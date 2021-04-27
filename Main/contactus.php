@@ -18,14 +18,14 @@ require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\con
 <body>
     <NAV>
         <div class="logo">
-            <a href="index.html"><h3>GeoTraveler</h3></a>
+            <a href="index.php"><h3>GeoTraveler</h3></a>
         </div>
         <ul class="nav-links">
-            <li><a href="index.html"> Main </a></li>
+            <li><a href="index.php"> Main </a></li>
             <li><a href="#"> Destination </a></li>
             <li><a href="#"> Plan Your Trip </a></li>
-            <li><a href="#"> About Georgia </a></li>
-            <li><a href="contactus.html"> Contact Us </a></li>
+            <li><a href="AboutGeorgia.html"> About Georgia </a></li>
+            <li><a href="contactus.php"> Contact Us </a></li>
             <!--<li><a class ='login' href="#"> Login</a></li> მინდა რომ კომპზე არ გამოჩნდეს ნავიგაციაში და მობილურზე ბურგერ მენიუში გამოჩნდეს-->
         </ul>
         <div class="burger">
