@@ -1,6 +1,6 @@
 <?php
 
-require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\config.php';
+require_once 'config.php';
 
 
 class crud{
@@ -47,6 +47,17 @@ class crud{
 
    }
 
+
+   public function getHotels(){
+      try{
+          $sql = "SELECT * FROM geotraveler.hotel";
+          $result = $this->db->query($sql);
+          return $result;
+      }catch(PDOException $e){
+          echo $e->getMessage();
+          return false;
+      }
+  }
 
 
 

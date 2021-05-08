@@ -1,5 +1,7 @@
 <?php
-require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\config.php';
+require_once  dirname(__FILE__).'/back-end/php/config.php';
+$_SESSION["loggedin"] = false;
+// require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\config.php';
 ?>
 
 

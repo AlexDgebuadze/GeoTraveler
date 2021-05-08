@@ -95,12 +95,12 @@ nav{
       border-radius: 50%;
       background-color: #fff;
   }
-  /*.show-btn,*/ .SignUpContainer{
+ /* .SignUpContainer{
     position:absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
+  } */
   /* .show-btn{
     top: 50%;
     left: 50%;
@@ -112,14 +112,18 @@ nav{
   .SignUpContainer{
       background: #fff;
       z-index: 11;
-      /* display: none; */
+      display: none; 
       width: 400px;
       padding: 30px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.4);
+      box-shadow: 0 0 8px rgba(5, 4, 4, 0.4);
+      position:absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
   }
-  #show:checked ~ .SignUpContainer{
+  /* #show:checked ~ .SignUpContainer{
       display: block;
-  }
+  } */
   .SignUpContainer .close-btn /*,
   .SignInContainer .close-btn*/{
       position: absolute;
@@ -359,14 +363,13 @@ h2{
     /* float: left; */
 }
 .select-container{
-    background-color: #5d4954;
-    margin-top:0px;
+    background-color: grey;
+    margin-top:15px;
     padding: 32px;
     height: 280px;
     width: max-content;
     position:relative;
-    left:25%;
-    right:25%;
+    left:21%;
 }
 .select-box{
     position:relative;
@@ -476,7 +479,7 @@ h2{
     color: #f5f6fa;
     cursor: pointer;
     float: right;
-    margin-top:100px;
+    margin-top:95px;
 }
 @media screen and (max-width:1600px){
     /* nav{

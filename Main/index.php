@@ -1,55 +1,7 @@
 <?php
-// Initialize the session
-session_start();
- 
-// Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: contactus.php");
-    exit;
-}
- 
-require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\crud.php';
-require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\user.php';
+session_start(); 
 
-$username = $password = "";
-$username_err = $password_err = $login_err = "";
- 
-// Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
-    // Check if username is empty
-    if(empty(trim($_POST["username"]))){
-        $username_err = "Please enter username.";
-    } else{
-        $username = trim($_POST["username"]);
-    }
-    
-    // Check if password is empty
-    if(empty(trim($_POST["password"]))){
-        $password_err = "Please enter your password.";
-    } else{
-        $password = trim($_POST["password"]);
-    }
-
-    $new_password = md5($password.$username);
-    
-    if(empty($username_err) && empty($password_err)){
-    $result = $user->getUser($username, $new_password);
-
-    if(!$result){
-       $login_err = "Username or Password is incorrect!";
-    }else{
-        $_SESSION["loggedin"] = true;
-        $_SESSION["id"] = $id;
-        $_SESSION["username"] = $username;
-
-        session_start();
-        header("location: contactus.php");
-    }
-}
-}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +14,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <title>GeoTraveler</title>
 </head>
+
+
+
 <body>
+
+
     <NAV>
         <div class="logo">
             <a href="index.php"><h3>GeoTraveler</h3></a>
@@ -70,10 +27,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <ul class="nav-links">
             <li><a href="index.php"> Main </a></li>
             <li><a href="#"> Destination </a></li>
-            <li><a href="#"> Plan Your Trip </a></li>
+            <li><a href="PlanYourTrip.php"> Plan Your Trip </a></li>
             <li><a href="AboutGeorgia.html"> About Georgia </a></li>
             <li><a href="contactus.php"> Contact Us </a></li>
-            <li><label id="LoginF" for="show" class="show-btn">Login</label></li>
+            <li>
+            <?php
+            
+            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+               echo ' <li> <a style=\'color : white\' href="myacc.php">   My Account  </a>  </li>'; 
+               echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black\' href="logout.php">   Logout  </a></label>';
+            }else{
+                echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black\' href="loginForm.php">   Login  </a>  </label>  ';
+            }
+            ?>
+            </li>
+
         </ul>
         <div class="burger">
             <div class="line1"></div>
@@ -92,67 +60,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class='center'>
             <input type="checkbox" id="show">
             <!-- <label for="show" class="show-btn">Sign In</label> -->
-            <div class='SignUpContainer'>
-                <label id= "closeForm" for="show" class="close-btn fas fa-times">X</label>
-                <div class="SignUpText">
-                    Login Form
-                </div>
-                <form action="<?php if(empty($username_err)&& empty($password_err)&& empty($login_err)){echo htmlspecialchars($_SERVER["PHP_SELF"]);}  ?>" method="POST">
-                    <div class="data">
-                        <label>Username</label>
-                        <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                        <span id="usernameErr"><?php echo $username_err; ?></span>
-                    </div>
-                    <div class="data">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
-                        <span id="passErr"><?php echo $password_err; ?></span>
-                    </div>
-                    <div class="forgot-pass"><a href="#">Forgot Password?</a></div>
 
-                    <span style="color:red;" id="loginErr"><?php if(!empty($login_err)){echo $login_err;} ?></span>
+        </div>
 
-                    <div class="SignUpbtn">
-                        <div class="inner"></div>
-                        <!-- <input type="submit" class="btn btn-primary" value="Login"> -->
-                        <button id="loginB" type="submit" class="btn btn-primary" value="Login">LogIn</button>
-                    </div>
-                    <div class="signUp-link">Not a member? <label for="show2">SignUp Now</label></div>
-                </form>
-            </div>
-        </div>
-        <div class="center2">
-            <input type="checkbox" id="show2">
-            <!-- <label for="show2" class="show-btn2"></label> -->
-            <div class="SignUpContainer2">
-                <label for="show2" class="close-btn2">X</label>
-                <div class="SignUpText2">SignUp Form</div>
-                <form action="#">
-                    <div class="data2">
-                        <label>Email</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="data2">
-                        <label>Username</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="data2">
-                        <label>Password</label>
-                        <input type="password" required>
-                    </div>
-                    <div class="data2">
-                        <label>Repeat password</label>
-                        <input type="password" required>
-                    </div>
-                    <div class="SignUpbtn2">
-                        <div class="inner2"></div>
-                        <button type="submit">Register</button>
-                    </div>
-                    <div class="signIn-Link">Already a member? <label for="show2">SignIn Now</label></div>
-                </form>
-            </div>
-        </div>
-    </div>
     <div class="select-container">
         <h1>Plan Your Trip</h1>
         <!-- <h2>Where To Go</h2> -->
@@ -216,7 +126,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
     <!-- select-ის სკრიპტი -->
     <script src="js/select.js"></script>
-    <div class="text">
+    <div class="text" style='margin-top: 25px;'>
         <h3>IN THE SPOTLIGHT</h3>
         
     </div>

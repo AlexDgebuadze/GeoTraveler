@@ -25,8 +25,13 @@ try {
     throw new PDOException($e->getMessage());
 }
 
-require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\crud.php';
-require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\user.php';
+// require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\crud.php';
+// require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\user.php';
+
+require_once 'crud.php';
+require_once 'user.php';
+
+
 $crud = new crud($pdo);
 $user = new user($pdo);
 
