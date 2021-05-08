@@ -103,6 +103,7 @@ input[type="checkbox"]{
 .SignUpContainer{
     background: #fff;
     z-index: 11;
+    position:fixed;
     display: none;
     width: 400px;
     padding: 30px;
