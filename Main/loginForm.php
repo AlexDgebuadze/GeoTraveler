@@ -61,6 +61,7 @@
 <body>
 <div style = 'margin-top: 50px;' class="container">
 	<div style="height:50px;">
+	<a style = "font-size: 20px;" href="index.php">< Back</a>
 	</div>
     <div class="row" id="loginform">
         <div class="col-md-4 col-md-offset-4">
@@ -125,28 +126,30 @@
                         	<button type="button" id="signupbutton" class="btn btn-lg btn-primary btn-block"><span class="glyphicon glyphicon-check"></span> <span id="signtext">Sign Up</span></button>
 							
 						</fieldset>
-
-
-						
-
-
-
-
-
                 	</form>
             	</div>
             </div>
         </div>
     </div>
-<!-- 
+
     <div id="myalert" style="display:none;">
     	<div class="col-md-4 col-md-offset-4">
     		<div class="alert alert-info">
-    			<center><span id="alerttext"></span></center>
+    			<center><span id="alerttext"><?php echo $login_err; ?> </span></center>
     		</div>
    	 	</div>
-    </div> -->
+    </div>
 </div>
+<script>
+var signup = document.getElementById('signupbutton');
+signup.onclick = function(){
+
+setTimeout(function(){
+	window.location.replace('loginForm.php');
+},3000);
+}
+
+</script>
 <script src="js/login.js"></script>
 </body>
 </html>

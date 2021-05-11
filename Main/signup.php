@@ -11,17 +11,12 @@ $email = trim($_POST["email"]);
 $Rusername = trim($_POST["rusername"]);
 $Rpassword = trim($_POST["rpassword"]);
 
-
-
-
 $result = $user->insertUser($name,$surname,$mobile,$email,$Rusername,$Rpassword);
+
+
 
 if(!$result){
 $login_err = "Something is wrong!";
-}else{
-	session_start();
-	header("location: loginForm.php");
-    exit;
 }
 
 ?>
