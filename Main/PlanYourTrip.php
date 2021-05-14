@@ -29,14 +29,14 @@ $result = $crud->getHotels();
         <ul class="nav-links">
             <li><a href="index.php"> Main </a></li>
             <li><a href="#"> Destination </a></li>
-            <li><a href="#"> Plan Your Trip </a></li>
+            <li><a href="PlanYourTrip.php"> Plan Your Trip </a></li>
             <li><a href="AboutGeorgia.html"> About Georgia </a></li>
             <li><a href="contactus.php"> Contact Us </a></li>
             <li>
             <?php
             
             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-               echo ' <li> <a style=\'color : white\' href="myacc.php">   My Account  </a>  </li>';  
+               echo ' <li> <a style=\'color : white\' href="userProfile.php">   My Account  </a>  </li>'; 
                echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black\' href="logout.php">   Logout  </a></label>';
             }else{
                 echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black\' href="loginForm.php">   Login  </a>  </label>  ';
@@ -44,7 +44,7 @@ $result = $crud->getHotels();
             ?>
             </li>
 
-        </ul>
+        </ul> 
         <div class="burger">
             <div class="line1"></div>
             <div class="line2"></div>

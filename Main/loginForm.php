@@ -38,8 +38,10 @@
 		if(!$result){
 		   $login_err = "Username or Password is incorrect!";
 		}else{
+            $userID = $user->getUserbyUsername($username);
+
 			$_SESSION["loggedin"] = true;
-			$_SESSION["id"] = $id;
+			$_SESSION["userID"] = $userID['id'];
 			$_SESSION["username"] = $username;
 	
 			session_start();

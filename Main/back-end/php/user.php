@@ -73,6 +73,24 @@ require_once 'config.php';
             }
         }
 
+        public function editUser($id, $fname, $lname, $mobile, $email){
+            try{ 
+                 $sql = "UPDATE geotraveler.users SET name=:fname,surname=:lname,mobile=:mobile, email=:mail WHERE id = :id ";
+                 $stmt = $this->db->prepare($sql);
+                 $stmt->bindparam(':id',$id);
+                 $stmt->bindparam(':fname',$fname);
+                 $stmt->bindparam(':lname',$lname);
+                 $stmt->bindparam(':mobile',$mobile);
+                 $stmt->bindparam(':mail',$email);
+ 
+                 $stmt->execute();
+                 return true;
+            }catch (PDOException $e) {
+             echo $e->getMessage();
+             return false;
+            }
+             
+         }
         public function getUsers(){
             try{
                 $sql = "SELECT * FROM geotraveler.users";

@@ -1,3 +1,15 @@
+<?php
+session_start(); 
+          
+require_once dirname(__FILE__).'/back-end/php/crud.php';
+require_once dirname(__FILE__).'/back-end/php/user.php';
+
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    $result = $user->getUserbyUsername($_SESSION["username"]);
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,11 +33,21 @@
         <ul class="nav-links">
             <li><a href="index.php"> Main </a></li>
             <li><a href="#"> Destination </a></li>
-            <li><a href="PlanYourTripFront.html"> Plan Your Trip </a></li>
+            <li><a href="PlanYourTrip.php"> Plan Your Trip </a></li>
             <li><a href="AboutGeorgia.html"> About Georgia </a></li>
             <li><a href="contactus.php"> Contact Us </a></li>
-            <li><label for="show" class="show-btn">Logout</label></li>
-        </ul>
+            <li>
+            <?php
+            
+            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+               echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black\' href="logout.php">   Logout  </a></label>';
+            }else{
+                echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black\' href="loginForm.php">   Login  </a>  </label>  ';
+            }
+            ?>
+            </li>
+
+        </ul> 
         <div class="burger">
             <div class="line1"></div>
             <div class="line2"></div>
@@ -47,18 +69,21 @@
             </nav>
         </div>
         <div class="right-box">
+        <form action="updateProfile.php" method="POST">
             <div class="profile tab-show">
                 <h1>Personal Info</h1>
                 <h2>First Name</h2>
-                <input type="text" class="input-info" value="Jane">
+                <input type="text" name="Uname" class="input-info" value="<?php echo $result['name'] ?>" >
                 <h2>Last Name</h2>
-                <input type="text" class="input-info" value="Doe">
+                <input type="text" name="Usurname" class="input-info" value="<?php echo $result['surname'] ?>">
                 <h2>Mobile</h2>
-                <input type="text" class="input-info" value="555555555">
+                <input type="text" name="Umobile" class="input-info" value="<?php echo $result['mobile'] ?>">
                 <h2>Email</h2>
-                <input type="mail" class="input-info" value="useruser@user.com">
+                <input type="mail" name="Uemail" class="input-info" value="<?php echo $result['email'] ?>">
+                <span  style="margin-top : 15px;"><?php echo $profileUpdateMessage; ?></span>
                 <button class="user-btn">Update</button>
             </div>
+        </form>
             <div class="Payment tab-show">
                 <h1>Payment Info</h1>
                 <h2>Payment Method</h2>
@@ -73,8 +98,6 @@
                 <input type="mail" class="input-info" value="Jane Doe">
                 <h2>cvv</h2>
                 <input type="mail" class="input-info" value="111">
-                <h2>Redeem Card</h2>
-                <input type="password" class="input" value="Enter Gift Code">
                 <button class="user-btn">Update</button>
             </div>
         </div>

@@ -25,11 +25,22 @@ $_SESSION["loggedin"] = false;
         <ul class="nav-links">
             <li><a href="index.php"> Main </a></li>
             <li><a href="#"> Destination </a></li>
-            <li><a href="#"> Plan Your Trip </a></li>
+            <li><a href="PlanYourTrip.php"> Plan Your Trip </a></li>
             <li><a href="AboutGeorgia.html"> About Georgia </a></li>
             <li><a href="contactus.php"> Contact Us </a></li>
-            <!--<li><a class ='login' href="#"> Login</a></li> მინდა რომ კომპზე არ გამოჩნდეს ნავიგაციაში და მობილურზე ბურგერ მენიუში გამოჩნდეს-->
-        </ul>
+            <li>
+            <?php
+            
+            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+               echo ' <li> <a style=\'color : white\' href="userProfile.php">   My Account  </a>  </li>'; 
+               echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black\' href="logout.php">   Logout  </a></label>';
+            }else{
+                echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black\' href="loginForm.php">   Login  </a>  </label>  ';
+            }
+            ?>
+            </li>
+
+        </ul> 
         <div class="burger">
             <div class="line1"></div>
             <div class="line2"></div>
