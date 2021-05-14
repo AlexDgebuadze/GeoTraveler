@@ -1,0 +1,60 @@
+body{
+    background-color: #eee5e9;
+}
+.nav-links a{
+    color: black;
+}
+.infobox{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    padding-top: 200px;
+}
+.textdiv{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+}
+.textdiv2{
+    margin-right: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-shadow: #eee5e9;
+}
+input{
+    padding-left: 5px;
+}
+
+.carddiv{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: row;
+    margin-top: 10px;
+}
+.carddiv2{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 150px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.CardINFO{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+.CardINFO input{
+    margin: 5px;
+}
+.CardINFO .form-control{
+    width: 300px;
+}
+.infoContainer{
+    border-style: solid;
+}

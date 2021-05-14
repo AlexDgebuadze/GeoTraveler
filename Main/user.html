@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User Settings</title>
+    <!--Font awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="css/userCSS.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+<section class="header">
+    <NAV class="navigation">
+        <div class="logo">
+            <a href="index.php"><h3>GeoTraveler</h3></a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.php"> Main </a></li>
+            <li><a href="#"> Destination </a></li>
+            <li><a href="PlanYourTripFront.html"> Plan Your Trip </a></li>
+            <li><a href="AboutGeorgia.html"> About Georgia </a></li>
+            <li><a href="contactus.php"> Contact Us </a></li>
+            <li><label for="show" class="show-btn">Logout</label></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </NAV>
+</section>
+<div class="user-interface">
+    <h1>USER INTERFACE</h1>
+</div>
+<section class="user-main-container">
+    <div class="user-container">
+        <div class="left-box">
+            <nav class="user-navigation">
+                <a onclick="tabs(0)" class="tab active"><i class="fa fa-user"></i></a>
+                <!-- <i class="fa fa-user"></i> -->
+                <a onclick="tabs(1)" class="tab"><i class="fa fa-credit-card"></i></a>
+                <!-- <i class="fa fa-credit-card"></i> -->
+            </nav>
+        </div>
+        <div class="right-box">
+            <div class="profile tab-show">
+                <h1>Personal Info</h1>
+                <h2>First Name</h2>
+                <input type="text" class="input-info" value="Jane">
+                <h2>Last Name</h2>
+                <input type="text" class="input-info" value="Doe">
+                <h2>Mobile</h2>
+                <input type="text" class="input-info" value="555555555">
+                <h2>Email</h2>
+                <input type="mail" class="input-info" value="useruser@user.com">
+                <button class="user-btn">Update</button>
+            </div>
+            <div class="Payment tab-show">
+                <h1>Payment Info</h1>
+                <h2>Payment Method</h2>
+                <input type="text" class="input-info" value="Mastercard 0202 **** **** 7336">
+                <h2>Billing Address</h2>
+                <input type="text" class="input-info" value="adress">
+                <h2>Zip Code</h2>
+                <input type="text" class="input-info" value="0167">
+                <h2>Exp Date</h2>
+                <input type="mail" class="input-info" value="24/02">
+                <h2>Name on Card</h2>
+                <input type="mail" class="input-info" value="Jane Doe">
+                <h2>cvv</h2>
+                <input type="mail" class="input-info" value="111">
+                <h2>Redeem Card</h2>
+                <input type="password" class="input" value="Enter Gift Code">
+                <button class="user-btn">Update</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/afb2ed20b4.js" crossorigin="anonymous"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
+    <script>
+        const tabBtn = document.querySelectorAll(".tab");
+        const tab = document.querySelectorAll(".tab-show");
+
+        function tabs(panelIndex) {
+            tab.forEach(function(node){
+                node.style.display = "none";
+            }
+            );
+            tab[panelIndex].style.display = "block";
+        }
+        tabs(0);
+    </script>
+    <script>
+        $(".tab").click(function(){
+            $(this).addClass("active").siblings().removeClass("active");
+        })
+    </script>
+</section>
+</body>   

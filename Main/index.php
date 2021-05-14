@@ -27,7 +27,7 @@ session_start();
         <ul class="nav-links">
             <li><a href="index.php"> Main </a></li>
             <li><a href="#"> Destination </a></li>
-            <li><a href="PlanYourTrip.php"> Plan Your Trip </a></li>
+            <li><a href="PlanYourTrip.html"> Plan Your Trip </a></li>
             <li><a href="AboutGeorgia.html"> About Georgia </a></li>
             <li><a href="contactus.php"> Contact Us </a></li>
             <li>
