@@ -12,19 +12,15 @@ $email = trim($_POST["Uemail"]);
 $result = $user->editUser($id,$name,$surname,$mobile,$email);
 
 
-
 if(!$result){
-$profileUpdateMessage = "Something is wrong!";
-
-header("location: userProfile.php");
-exit;
+  $_SESSION["messg"] = "Something is wrong!";
+echo '<script>window.location.href=\'userProfile.php\'; alert("Something is wrong!")</script>';
+// exit;
 
 }else{
-    $profileUpdateMessage = "your profile has been successfully updated!";
-
+  $_SESSION["messg"] = "your profile has been successfully updated!";
     session_start();
-    header("location: userProfile.php");
-		exit;
+    echo '<script>window.location.href=\'userProfile.php\'; </script>';
 }
 
 ?>

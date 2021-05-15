@@ -6,6 +6,10 @@ require_once dirname(__FILE__).'/back-end/php/user.php';
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     $result = $user->getUserbyUsername($_SESSION["username"]);
+
+    $uid = $_SESSION["userID"];
+
+    $card = $user->getCard($uid);
 }
 
 ?>
@@ -80,27 +84,41 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <input type="text" name="Umobile" class="input-info" value="<?php echo $result['mobile'] ?>">
                 <h2>Email</h2>
                 <input type="mail" name="Uemail" class="input-info" value="<?php echo $result['email'] ?>">
-                <span  style="margin-top : 15px;"><?php echo $profileUpdateMessage; ?></span>
-                <button class="user-btn">Update</button>
+                <button id = "updateProfile" class="user-btn">Update</button>
+                <br></br>
+                <?php if( $_SESSION["userMessg"]=="Something is wrong!" ){
+                    echo '<span  style="margin-top : 15px; color: red;">'.$_SESSION["userMessg"].' </span>';
+                } else{
+                    echo '<span  style="margin-top : 15px; color: green;">'.$_SESSION["userMessg"].' </span>';
+                } 
+                $_SESSION["userMessg"]=""; 
+                ?> 
+               
             </div>
         </form>
+        <form action="manageCard.php" method="POST">
             <div class="Payment tab-show">
                 <h1>Payment Info</h1>
                 <h2>Payment Method</h2>
-                <input type="text" class="input-info" value="Mastercard 0202 **** **** 7336">
-                <h2>Billing Address</h2>
-                <input type="text" class="input-info" value="adress">
-                <h2>Zip Code</h2>
-                <input type="text" class="input-info" value="0167">
+                <input name= "cardNum" type="text" class="input-info" placeholder="0202 5666 6855 7336" value="<?php echo $card['cardNumber'] ?>">
                 <h2>Exp Date</h2>
-                <input type="mail" class="input-info" value="24/02">
+                <input name= "expDate"  type="text" class="input-info" placeholder="24/02" value="<?php echo $card['exprDate'] ?>">
                 <h2>Name on Card</h2>
-                <input type="mail" class="input-info" value="Jane Doe">
+                <input name= "user"  type="text" class="input-info" placeholder="Jane Doe" value="<?php echo $card['cardUser'] ?>">
                 <h2>cvv</h2>
-                <input type="mail" class="input-info" value="111">
+                <input name= "cvv" type="text" class="input-info" placeholder="111" value="<?php echo $card['cardcvv'] ?>">
                 <button class="user-btn">Update</button>
+                <br></br>
+                <?php if( $_SESSION["cardMessg"]=="Something is wrong!" ){
+                    echo '<span  style="margin-top : 15px; color: red;">'.$_SESSION["cardMessg"].' </span>';
+                } else{
+                    echo '<span  style="margin-top : 15px; color: green;">'.$_SESSION["cardMessg"].' </span>';
+                } 
+                $_SESSION["cardMessg"]=""; 
+                ?> 
             </div>
         </div>
+        </form>
     </div>
     <script src="https://kit.fontawesome.com/afb2ed20b4.js" crossorigin="anonymous"></script>
     <script
@@ -108,6 +126,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
     <script>
+
         const tabBtn = document.querySelectorAll(".tab");
         const tab = document.querySelectorAll(".tab-show");
 
