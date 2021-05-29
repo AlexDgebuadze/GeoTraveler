@@ -3,6 +3,17 @@ body{
     background:linear-gradient(to right, #2ed573, #f9ca24);
     overflow-x: hidden;
 }
+.navHeader {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    /* background-color: #5d4954; */
+    font-family: 'Poppins', sans-serif;
+    z-index: 10;
+}
 .navigation {
     position: fixed;
     width:100%;
@@ -72,7 +83,7 @@ body{
 }
 /* USER INTERFACE */
 .user-interface h1{
-    padding-top: 150px !important;
+    padding-top: 110px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -84,10 +95,10 @@ body{
 .user-main-container{
     background: #fff;
     width: 540px;
-    height: 450px;
+    height: 500px;
     margin: 0 auto;
     position: relative;
-    margin-top: 50px;
+    margin-top: 40px;
     box-shadow: 2px 5px 20px rgba(119, 119, 119, .5);
 }
 .left-box{
@@ -176,8 +187,7 @@ h2{
     padding: 7px 15px;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .2);
     cursor: pointer;
-    margin-left: 30%;
-    margin-top: 50px;
+    margin-top: 15px;
 }
 .tab-show{
     display:none;

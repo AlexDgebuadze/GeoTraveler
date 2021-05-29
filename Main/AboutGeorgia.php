@@ -1,3 +1,8 @@
+<?php
+session_start(); 
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,18 +19,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Mountains+of+Christmas&display=swap" rel="stylesheet">
 </head>
 <body>
-    <NAV>
+<NAV>
         <div class="logo">
             <a href="index.php"><h3>GeoTraveler</h3></a>
         </div>
         <ul class="nav-links">
             <li><a href="index.php"> Main </a></li>
-            <li><a href="#"> Destination </a></li>
-            <li><a href="#"> Plan Your Trip </a></li>
-            <li><a href="#"> About Georgia </a></li>
+            <li><a href="destination.php"> Destination </a></li>
+            <li><a href="PlanYourTrip.php"> Plan Your Trip </a></li>
+            <li><a href="AboutGeorgia.php"> About Georgia </a></li>
             <li><a href="contactus.php"> Contact Us </a></li>
-            <li><label for="show" class="show-btn">Login</label></li>
-        </ul>
+            <li>
+            <?php
+            
+            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+               echo ' <li> <a style=\'color : white\' href="userProfile.php">   My Account  </a>  </li>'; 
+               echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="logout.php">   Logout  </a></label>';
+            }else{
+                echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="loginForm.php">   Login  </a>  </label>  ';
+            }
+            ?>
+            </li>
+
+        </ul> 
         <div class="burger">
             <div class="line1"></div>
             <div class="line2"></div>
@@ -55,69 +71,11 @@
             </div>
         </div>
     </div>
-        <div class='center'>
-            <input type="checkbox" id="show">
-            <!-- <label for="show" class="show-btn">Sign In</label> -->
-            <div class='SignUpContainer'>
-                <label for="show" class="close-btn fas fa-times">X</label>
-                <div class="SignUpText">
-                    Login Form
-                </div>
-                <form action='#'>
-                    <div class="data">
-                        <label>Email or Username</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="data">
-                        <label>Password</label>
-                        <input type="password" required>
-                    </div>
-                    <div class="forgot-pass"><a href="#">Forgot Password?</a></div>
-                    <div class="SignUpbtn">
-                        <div class="inner"></div>
-                        <button type="submit">LogIn</button>
-                    </div>
-                    <div class="signUp-link">Not a member? <label for="show2">SignUp Now</label></div>
-                </form>
-            </div>
-        </div>
-        <div class="center2">
-            <input type="checkbox" id="show2">
-            <!-- <label for="show2" class="show-btn2"></label> -->
-            <div class="SignUpContainer2">
-                <label for="show2" class="close-btn2">X</label>
-                <div class="SignUpText2">SignUp Form</div>
-                <form action="#">
-                    <div class="data2">
-                        <label>Email</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="data2">
-                        <label>Username</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="data2">
-                        <label>Password</label>
-                        <input type="password" required>
-                    </div>
-                    <div class="data2">
-                        <label>Repeat password</label>
-                        <input type="password" required>
-                    </div>
-                    <div class="SignUpbtn2">
-                        <div class="inner2"></div>
-                        <button type="submit">Register</button>
-                    </div>
-                    <div class="signIn-Link">Already a member? <label for="show2">SignIn Now</label></div>
-                </form>
-            </div>
-        </div>
-    </div>
     <div class="Regions">
         <div class="RegionsHeader">
             <h1>Regions Of Georgia</h1>
         </div>
-        <a href="AboutGeorgiaRegions.html">
+        <a href="AboutGeorgiaRegions.php">
             <div class="map">
             </div>
         </a>
@@ -134,7 +92,7 @@
                 <div class="NatureText">
                     <h3>Mountains</h3>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <a href="AboutGeorgiaNatureMountains.html"><button>READ MORE</button></a>
+                    <a href="AboutGeorgiaNatureMountains.php"><button>READ MORE</button></a>
                 </div>
             </article>
             <article>
@@ -142,7 +100,7 @@
                 <div class="NatureText">
                     <h3>Natural Reserves</h3>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <button>READ MORE</button>
+                    <a href="naturalreserves.php"><button>READ MORE</button></a>
                 </div>
             </article>
             <article>
@@ -150,7 +108,7 @@
                 <div class="NatureText">
                     <h3>Animals</h3>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <a href=""><button>READ MORE</button></a>
+                    <a href="animals.php"><button>READ MORE</button></a>
                 </div>
             </article>
         </main>
@@ -210,15 +168,15 @@
                 <div class="NatureText">
                     <h3>Architecture</h3>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <button>READ MORE/button>
+                    <a href="architecture.php"><button>READ MORE</button></a>
                 </div>
             </article>
             <article>
                 <img src="images/mxatvroba.jpg" alt="">
                 <div class="NatureText">
-                    <h3>Art</h3>
+                    <h3>Cuisine</h3>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <button>READ MORE</button>
+                    <a href="art.php"><button>READ MORE</button></a>
                 </div>
             </article>
             <article>
@@ -226,7 +184,7 @@
                 <div class="NatureText">
                     <h3>Wine</h3>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
-                    <button>READ MORE</button>
+                    <a href="wine.php"><button>READ MORE</button></a>
                 </div>
             </article>
         </main>

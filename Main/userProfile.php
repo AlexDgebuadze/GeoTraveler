@@ -24,29 +24,30 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     <title>User Settings</title>
     <!--Font awesome CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="css/userCSS.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
 <section class="header">
-    <NAV class="navigation">
+   
+<NAV class = "navHeader">
         <div class="logo">
             <a href="index.php"><h3>GeoTraveler</h3></a>
         </div>
         <ul class="nav-links">
             <li><a href="index.php"> Main </a></li>
-            <li><a href="#"> Destination </a></li>
+            <li><a href="destination.php"> Destination </a></li>
             <li><a href="PlanYourTrip.php"> Plan Your Trip </a></li>
-            <li><a href="AboutGeorgia.html"> About Georgia </a></li>
+            <li><a href="AboutGeorgia.php"> About Georgia </a></li>
             <li><a href="contactus.php"> Contact Us </a></li>
             <li>
             <?php
             
             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-               echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black\' href="logout.php">   Logout  </a></label>';
+               echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="logout.php">   Logout  </a></label>';
             }else{
-                echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black\' href="loginForm.php">   Login  </a>  </label>  ';
+                echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="loginForm.php">   Login  </a>  </label>  ';
             }
             ?>
             </li>

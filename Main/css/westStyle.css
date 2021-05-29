@@ -2,14 +2,12 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    background-color: none;
 }
-/* დაკლიკებით ჩამოსქროლვა */
-html{
-    scroll-behavior: smooth; 
-}
-body{
-    background: #eee5e9;
-}
+::selection {
+    color: #fff;
+    background: red;
+  }
 /* ნავიგაციის მენიუ */
 nav{
     position: fixed;
@@ -31,7 +29,8 @@ nav{
 }
 .logo a{
     text-decoration: none;
-    color:rgb(226, 226, 226);
+    /* color:rgb(226, 226, 226); */
+    color: #000;
 }
 .nav-links{
     display:flex;   
@@ -40,19 +39,20 @@ nav{
     width: 45%;
 }
 .nav-links li.active a{
-    background-color: white;
-    color: black;
+    background-color: #5CB9B1;
+    color: white;
 }
 .nav-links li{
     list-style: none;
     display: inline-block;
 }
 .nav-links li a:hover{
-    background-color: white;
+    background-color: #5CB9B1;
     color: black;
 }
 .nav-links a{
-    color:rgb(226, 226, 226);
+    /* color:rgb(226, 226, 226); */
+    color: #000;;
     text-decoration:none;
     letter-spacing: 1px;
     font-weight:bold;
@@ -75,91 +75,45 @@ nav{
     margin: 5px;
     transition: all 0.3s ease;
 }
-.AGHeader{
-    width: 100%;
-    height: 100vh;
-    background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../images/map1.png);
-    background-position: center;
-    background-size: cover;
-    border-bottom-width: 10px;
-    /* border-color: green; */
-    border-style: dotted;
-    border-top: 0cm;
-    border-right: 0cm;
-    border-left: 0cm;
-}
-.Subject{
+.maincontent{
+    padding-top: 100px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.Subject h1{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 100px;
-    font-family: 'Great Vibes', cursive;
-    margin-top: 450px;
-    color: #fff;
-}
-.Region{
-    margin-top: 70px;
-}
-.Region h1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    font-family: 'Mountains of Christmas', cursive;
-    font-size: 48px;
-    font-weight: bold;
-    text-align: center;
-}
-.RegionAbt{
-    display: flex;
-    margin-top: 50px;
-    margin-bottom: 50px;
     flex-direction: column;
-}
-.RegionAbt .Regionimg{
-    display: flex;
     justify-content: center;
     text-align: center;
+}
+.maincontent h1{
+    padding-left: 20px;
+    padding-right: 20px;
+    width:100%;
+    font-size: 72px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-family: 'Kaushan Script', cursive;
+    color: #000;
+    margin-bottom: 100px;
+    text-transform: uppercase;
+}
+.westmap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.westmap img{
+    width: 60%;
     margin-bottom: 50px;
 }
-.RegionAbt p{
-    margin-left: 50px;
-    color: #000;
-    font-size: 20px;
-    line-height: 20px;
-    padding: 50px;
-    /* justify-content: ; */
-    /* float: right; */
+.westmap p{
+    font-size: 24px;
+    padding: 24px;
+    font-family: 'KoHo', sans-serif;
+}
+@media screen and (max-width: 1330px){
+    .headermap img{
+        width:100%;
+    }
 }
 @media screen and (max-width:1381px){
-    .Region h1{
-        width: 100%;
-    }
-    .AGHeader{
-        background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../images/mapsmall.png);
-    }
-    .AGHeader h1{
-        font-size: 72px;
-    }
-    .RegionAbt{
-        flex-direction: column;
-    }
-    .RegionAbt p{
-        margin-top: 20px;
-        justify-content: center;
-    }
-    .RegionAbt .Regionimg{
-        justify-content: center;
-        text-align: center;
-    }
-    .Regionimg img{
-        width: 100%;
-    }
     /* nav{
         background-color: #5d4954;
     } */
@@ -171,9 +125,39 @@ nav{
         left:0%;
     }
 }
+
 @media screen and (max-width:768px){
+    .westmap img{
+        width: 100%;
+    }
     nav{
         background-color: #5d4954;
+    }
+    .select-box .options-container{
+        /* position absolute როცა წერია მობაილში არ მუშაობს და უნდა გავასწოროთ */
+        position: relative;
+    }
+    .select-box .options-container.active{
+        margin-top:50px;
+    }
+    .select-container{
+        padding-top: 20px;
+        height: 400px;
+    }
+    .select-box{
+        display: flex;
+        width: 200px;
+        flex-direction: column;
+        overflow-x:hidden;
+        overflow-y: hidden;
+        padding: 10px;
+    }
+
+    .title{ 
+        opacity:1;
+    }
+    body{
+        overflow-x: hidden;
     }
     .nav-links{
         position: absolute;
@@ -202,9 +186,9 @@ nav{
     .button{
         display: none;
     }
-    .nav-active{
+.nav-active{
     transform: translate(0%);
-    }
+}
 }
 @keyframes navLinkFade{
     from{

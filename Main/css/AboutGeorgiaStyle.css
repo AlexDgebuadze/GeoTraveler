@@ -348,6 +348,13 @@ form .signIn-Link label:hover{
     flex-basis: 50%;
     padding-left: 50px;
 }
+.col h1{
+    text-align: center;
+    justify-content: center;
+}
+.col p{
+    text-align: center;
+}
 col a{
     width: 250px;
     height: 330px;
@@ -537,9 +544,14 @@ col a{
 }
 /* 1380 ფიქსელზე გვინდა რესპონსივი AboutGeorgia-ზე*/
 @media screen and (max-width:1380px){
+    .Regions h1{
+        padding-top: 50px;
+    }
+
     .Regions .RegionsHeader{
-        margin-bottom: auto;
+        /* margin-bottom: auto; */
         font-size: 36px;
+        margin-bottom: 20px;
     }
     .Regions .map{
         background-image: url(../images/map.png);
@@ -556,9 +568,10 @@ col a{
         /* padding-top: 450px; */
     }
     .cards{
-        padding-top: 500px;
+        padding-top: 150px;
         display: flex;
         flex-direction: row;
+        padding-bottom: 50px;
     }
     .Regions{
         margin-top: 450px;
@@ -581,6 +594,9 @@ col a{
     .select-container{
         width:100%;
         left:0%;
+    }
+    .cards{
+        padding-top: 500px;
     }
 }
     /* .button{
@@ -645,6 +661,10 @@ col a{
 /*რესპონსივისთვის*/
 
 @media screen and (max-width:768px){
+    /* .Regions h1{
+        padding-top: 0px;
+    } */
+
     .Regions .RegionsHeader{
         margin-bottom: 0px;
         font-size: 32px;
@@ -656,7 +676,7 @@ col a{
         background-image: url(../images/mapsmall.png);
     }
     .cards{
-        /* padding-top: 450px; */
+        padding-top: 500px;
         display: flex;
         flex-direction: column;
     }

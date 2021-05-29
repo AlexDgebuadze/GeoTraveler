@@ -4,42 +4,39 @@ session_start();
 $result = $crud->getHotels();
 
 ?>
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=poppins" rel="stylesheet"> <!--Google ფონტები Nav-Bar-სთვის-->
-    <link href="https://fonts.googleapis.com/css2?family=Knewave&display=swap" rel="stylesheet"> <!--EXPLORE GEORGIA-სთვის-->
-
-    <title>GeoTraveler</title>
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Plan Your Trip</title>
+    <!--Font awesome CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="css/PlanYourTripFrontCSS.css">
 </head>
-
-
-
 <body>
-
-
+    <div class="header">
     <NAV>
         <div class="logo">
             <a href="index.php"><h3>GeoTraveler</h3></a>
         </div>
         <ul class="nav-links">
             <li><a href="index.php"> Main </a></li>
-            <li><a href="#"> Destination </a></li>
+            <li><a href="destination.php"> Destination </a></li>
             <li><a href="PlanYourTrip.php"> Plan Your Trip </a></li>
-            <li><a href="AboutGeorgia.html"> About Georgia </a></li>
+            <li><a href="AboutGeorgia.php"> About Georgia </a></li>
             <li><a href="contactus.php"> Contact Us </a></li>
             <li>
             <?php
             
             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                echo ' <li> <a style=\'color : white\' href="userProfile.php">   My Account  </a>  </li>'; 
-               echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black\' href="logout.php">   Logout  </a></label>';
+               echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="logout.php">   Logout  </a></label>';
             }else{
-                echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black\' href="loginForm.php">   Login  </a>  </label>  ';
+                echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="loginForm.php">   Login  </a>  </label>  ';
             }
             ?>
             </li>
@@ -51,113 +48,188 @@ $result = $crud->getHotels();
             <div class="line3"></div>
         </div>
     </NAV>
+</div>
     <!-- ბურგერ მენიუს სკრიპტი -->
     <script src="js/burger.js"></script>
-    <div class="containter">
-        <div class="banner">
-        </div>
-        <div class="title">
-            <h1>EXPLORE GEORGIA</h1>
-        </div>
-        <div class='center'>
-            <input type="checkbox" id="show">
-            <!-- <label for="show" class="show-btn">Sign In</label> -->
-
-        </div>
-
-    <div class="select-container">
-        <h1>Plan Your Trip</h1>
-        <!-- <h2>Where To Go</h2> -->
-        <div class="select-box">
-            <h2>Where To Go</h2>
-            <div class="options-container">
-                <div class="option">
-                    <input type="radio" class="radio" id="Tbilisi" name="Category" value="Tbilisi">
-                    <label for="Tbilisi">Tbilisi</label>
+    <main>
+        <div class="hero">
+            <div class="main">
+                <div class="main-heading">
+                    <h1 class="title">Discover</h1>
+                    <h2 class="subtitle">Hotels</h2>
                 </div>
-                <div class="option">
-                    <input type="radio" class="radio" id="Kutaisi" name="Category" value="Kutaisi">
-                    <label for="Kutaisi">Kutaisi</label>
-                </div>
-                <div class="option">
-                    <input type="radio" class="radio" id="Batumi" name="Category" value="Batumi">
-                    <label for="Batumi">Batumi</label>
-                </div>
-                <div class="option">
-                    <input type="radio" class="radio" id="Mcxeta" name="Category" value="Mcxeta">
-                    <label for="Mcxeta">Mcxeta</label>
-                </div>
-            </div>
-            <div class="selected">
-                Select where to go
-            </div>
-            <div class="search-box">
-                <input type="text" placeholder="Type City...">
+                <a href="#" class="btn btn-gradient">Explore now
+                    <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                </a>
             </div>
         </div>
-        <!-- <h2>What To Do</h2> -->
-        <div class="select-box">
-            <h2>What To Do</h2>
-            <div class="options-container">
-                <div class="option">
-                    <input type="radio" class="radio" id="Swim" name="Category" value="Swim">
-                    <label for="Swim">Swimming</label>
-                </div>
-                <div class="option">
-                    <input type="radio" class="radio" id="Hike" name="Category" value="Hike">
-                    <label for="Hike">Hiking</label>
-                </div>
-                <div class="option">
-                    <input type="radio" class="radio" id="Camp" name="Category" value="Camp">
-                    <label for="Camp">Camping</label>
-                </div>
-                <div class="option">
-                    <input type="radio" class="radio" id="Climb" name="Category" value="Climb">
-                    <label for="Climb">Climbing</label>
-                </div>
-                
+        <section class="booking">
+            <div class="Container">
+                <form action="#" class="form">
+                    <div class="input-group">
+                        <label for ="destination" class="input-label">Destination</label>
+                        <input type="text" class="input" id = "destination">
+                    </div>
+                    <div class="input-group">
+                        <label for ="check-in" class="input-label">Check in</label>
+                        <input type="date" class="input" id = "check-in">
+                    </div>
+                    <div class="input-group">
+                        <label for ="check-out" class="input-label">Check out</label>
+                        <input type="date" class="input" id = "check-out">
+                    </div>
+                    <div class="input-group">
+                        <label for ="adults" class="input-label">Rooms</label>
+                        <select id="adults" class="options">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for ="children" class="input-label">Visitors</label>
+                        <select id="children" class="options">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <button type ="submit"class="btn form-btn btn-purple">Search
+                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                    </button>
+                </form>
             </div>
-            <div class="selected">
-                Select what to do
+        </section>
+        <section class="hotels">
+            <div class="Container">
+                <h5 class="section-head">
+                    <span class="heading">Explore</span>
+                    <span class="sub-heading">Our Beautiful Hotels</span>
+                </h5>
+              
+                <div class="grid">
+                <?php while($res = $result->fetch(PDO::FETCH_ASSOC)) {?>
+                    <div class="grid-item featured-hotels">
+
+                    <?php echo '<img  class="hotel-image" style="" src="data:image/jpeg;base64,'.base64_encode( $res['photo'] ).'"/>'; ?> 
+                        <h5 class="hotel-name"><?php echo $res['hotelName']; ?> </h5>
+                        <span class="hote-price">From $ <?php echo $res['minCost']; ?>  /Night</span>
+                        <div class="hotel-rating">
+                         <?php 
+                        $c = (int)$res['rate'];
+                        while($c>0) {
+                            echo '<i class="fas fa-star rating"></i>';
+                            $c--;}
+                        ?> 
+                        </div>
+                        <a href="../Main/rooms.php" class="btn btn-gradient">Book now
+                            <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                        </a>
+
+                  
+                    </div>
+                    <?php }?>    
+                </div>
             </div>
-            <div class="search-box">
-                <input type="text" placeholder="Type Activity...">
+        </section>
+        <section class="offer">
+            <div class="Container">
+                <div class="offer-content">
+                    <div class="discount">
+                        40% off
+                    </div>
+                    <h5 class="hotel-name">The Paradise</h5>
+                    <div class="hotel-rating">
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star rating"></i>
+                        <i class="fas fa-star-half rating"></i>
+                    </div>
+                    <p class="paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Tempora magnam quibusdam nemo voluptatum pariatur dicta autem, 
+                        ex qui, quasi soluta est nulla dignissimos dolor atque. 
+                    </p>
+                    <a href="#" class="btn btn-gradient">Redeem Offer
+                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                    </a>
+                </div>
             </div>
-        </div>
-        <input type="submit" value="Upload" class="Select-Button">
-    </div>
-    <!-- select-ის სკრიპტი -->
-    <script src="js/select.js"></script>
+        </section>
+        <section class="rooms">
+            <div class="Container">
+                <h5 class="section-head">
+                    <span class="heading">Luxurious</span>
+                    <span class="sub-heading">Affordable Rooms</span>
+                </h5>
+                <div class="grid rooms-grid">
+                    <div class="grid-item featured-rooms">
+                        <div class="image-wrap">
+                            <img class = "room-image" src="../Main/images/room_1.jpg" alt="">
+                            <h5 class="room-name">Astro Hotel</h5>
+                        </div>
+                        <div class="room-info-wrap">
+                            <span class="room-price">$200 <span class="per-night">Per night</span></span>
+                            <p class="paragraph">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
+                            </p>
+                            <a href="#" class="btn rooms-btn">Book now &rarr;</a>
+                        </div>
+                    </div>
 
+                    <div class="grid-item featured-rooms">
+                        <div class="image-wrap">
+                            <img class = "room-image" src="../Main/images/room_2.jpg" alt="">
+                            <h5 class="room-name">Astro Hotel</h5>
+                        </div>
+                        <div class="room-info-wrap">
+                            <span class="room-price">$200 <span class="per-night">Per night</span></span>
+                            <p class="paragraph">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
+                            </p>
+                            <a href="#" class="btn rooms-btn">Book now &rarr;</a>
+                        </div>
+                    </div>
 
+                    <div class="grid-item featured-rooms">
+                        <div class="image-wrap">
+                            <img class = "room-image" src="../Main/images/room_3.jpg" alt="">
+                            <h5 class="room-name">Astro Hotel</h5>
+                        </div>
+                        <div class="room-info-wrap">
+                            <span class="room-price">$200 <span class="per-night">Per night</span></span>
+                            <p class="paragraph">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
+                            </p>
+                            <a href="#" class="btn rooms-btn">Book now &rarr;</a>
+                        </div>
+                    </div>
 
-
-
- <?php while($res = $result->fetch(PDO::FETCH_ASSOC)) {?>
-
-    <label> <?php echo $res['hotelName']; ?> </label>
-    <?php echo '<img style="" src="data:image/jpeg;base64,'.base64_encode( $res['photo'] ).'"/>'; ?> 
-    <label> <?php echo $res['hotelDescr']; ?>  </label>
-    <label> <?php echo $res['region']; ?> </label>
-    <label> <?php echo $res['nearAtractions']; ?> </label>
-    <label> <?php echo $res['roomSum']; ?> </label>
-    <label> <?php echo $res['rate']; ?> </label>
-
- <?php }?>
-
-
-
-
-
-
-
-
-
-
-    
-
+                    <div class="grid-item featured-rooms">
+                        <div class="image-wrap">
+                            <img class = "room-image" src="../Main/images/room_4.jpg" alt="">
+                            <h5 class="room-name">Astro Hotel</h5>
+                        </div>
+                        <div class="room-info-wrap">
+                            <span class="room-price">$200 <span class="per-night">Per night</span></span>
+                            <p class="paragraph">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
+                            </p>
+                            <a href="#" class="btn rooms-btn">Book now &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- მთავარი სკრიპტი -->
+    <script src="main.js"></script>
 </body>
-
-
-<script src="js/login.js"></script>
 </html>

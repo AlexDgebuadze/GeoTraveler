@@ -1,6 +1,6 @@
 <?php
+session_start(); 
 require_once  dirname(__FILE__).'/back-end/php/config.php';
-$_SESSION["loggedin"] = false;
 // require_once 'C:\Users\Tornike\Desktop\proeqti\GeoTraveler\Main\back-end\php\config.php';
 ?>
 
@@ -10,6 +10,7 @@ $_SESSION["loggedin"] = false;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/contactusStyle.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
@@ -18,35 +19,35 @@ $_SESSION["loggedin"] = false;
     <title>GeoTraveler</title>
 </head>
 <body>
-    <NAV>
-        <div class="logo">
-            <a href="index.php"><h3>GeoTraveler</h3></a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.php"> Main </a></li>
-            <li><a href="#"> Destination </a></li>
-            <li><a href="PlanYourTrip.php"> Plan Your Trip </a></li>
-            <li><a href="AboutGeorgia.html"> About Georgia </a></li>
-            <li><a href="contactus.php"> Contact Us </a></li>
-            <li>
-            <?php
-            
-            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-               echo ' <li> <a style=\'color : white\' href="userProfile.php">   My Account  </a>  </li>'; 
-               echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black\' href="logout.php">   Logout  </a></label>';
-            }else{
-                echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black\' href="loginForm.php">   Login  </a>  </label>  ';
-            }
-            ?>
-            </li>
-
-        </ul> 
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
-    </NAV>
+<NAV>
+            <div class="logo">
+                <a href="index.php"><h3>GeoTraveler</h3></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.php"> Main </a></li>
+                <li><a href="destination.php"> Destination </a></li>
+                <li><a href="PlanYourTrip.php"> Plan Your Trip </a></li>
+                <li><a href="AboutGeorgia.php"> About Georgia </a></li>
+                <li><a href="contactus.php"> Contact Us </a></li>
+                <li>
+                <?php
+                
+                if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+                   echo ' <li> <a style=\'color : white\' href="userProfile.php">   My Account  </a>  </li>'; 
+                   echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="logout.php">   Logout  </a></label>';
+                }else{
+                    echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="loginForm.php">   Login  </a>  </label>  ';
+                }
+                ?>
+                </li>
+    
+            </ul> 
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </NAV>
     <script src="js/burger.js"></script>
     <section class="contact">
         <div class="content">

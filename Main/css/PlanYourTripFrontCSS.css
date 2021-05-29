@@ -19,6 +19,17 @@
     --gradient-color: linear-gradient(to right, var(--yellow-solid), var(--purple-light));
     --gradient-color-alt: linear-gradient(to right, var(--purple-light), var(--yellow-solid));
 }
+.show-btn{
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #3498db;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    border-radius: 50%;
+    background-color: #fff;
+}
 /* Reusable Styles */
 .btn{
     color: #fff;
@@ -158,6 +169,7 @@ nav{
     margin-bottom: 2.5rem;
 }
 .title{
+    text-align: center;
     font-size: 4.8rem;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -423,6 +435,7 @@ nav{
 @media screen and (min-width:768px){
     .title{
         font-size: 8rem;
+        
     }
 }
 @media screen and (min-width:1000px){
@@ -469,11 +482,14 @@ nav{
     }
 }
 @media screen and (max-width:768px){
+
     nav{
         background-color: var(--purple-transparent);
     }
     .title{ 
         opacity:1;
+        font-size: 72px;
+        width: 100%;
     }
     body{
         overflow-x: hidden;
