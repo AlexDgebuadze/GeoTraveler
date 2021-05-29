@@ -360,6 +360,20 @@ nav{
 .rooms-btn:hover{
     color: var(--yellow-solid);
 }
+.allhotels a{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 30%;
+    margin: 0px auto;
+}
+@media screen and (max-width:1429px){
+    .allhotels a{
+        width: 50%;
+        margin-bottom: 20px;
+    }
+}
 @media screen and (max-width:1381px){
     /* nav{
         background-color: #5d4954;

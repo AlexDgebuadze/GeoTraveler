@@ -58,54 +58,11 @@ $result = $crud->getHotels();
                     <h1 class="title">Discover</h1>
                     <h2 class="subtitle">Hotels</h2>
                 </div>
-                <a href="#" class="btn btn-gradient">Explore now
+                <!-- <a href="#" class="btn btn-gradient">Explore now
                     <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
-                </a>
+                </a> -->
             </div>
         </div>
-        <section class="booking">
-            <div class="Container">
-                <form action="#" class="form">
-                    <div class="input-group">
-                        <label for ="destination" class="input-label">Destination</label>
-                        <input type="text" class="input" id = "destination">
-                    </div>
-                    <div class="input-group">
-                        <label for ="check-in" class="input-label">Check in</label>
-                        <input type="date" class="input" id = "check-in">
-                    </div>
-                    <div class="input-group">
-                        <label for ="check-out" class="input-label">Check out</label>
-                        <input type="date" class="input" id = "check-out">
-                    </div>
-                    <div class="input-group">
-                        <label for ="adults" class="input-label">Rooms</label>
-                        <select id="adults" class="options">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label for ="children" class="input-label">Visitors</label>
-                        <select id="children" class="options">
-                            <option value="0">0</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                        </select>
-                    </div>
-                    <button type ="submit"class="btn form-btn btn-purple">Search
-                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
-                    </button>
-                </form>
-            </div>
-        </section>
         <section class="hotels">
             <div class="Container">
                 <h5 class="section-head">
@@ -136,6 +93,11 @@ $result = $crud->getHotels();
                     </div>
                     <?php }?>    
                 </div>
+            </div>
+            <div class="allhotels">
+                <a href="hotels.php" class="btn btn-gradient">See All Hotels
+                        <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                    </a>
             </div>
         </section>
         <section class="offer">

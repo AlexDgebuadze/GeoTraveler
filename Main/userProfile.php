@@ -110,13 +110,14 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <input name= "cvv" type="text" class="input-info" placeholder="111" value="<?php echo $card['cardcvv'] ?>">
                 <button class="user-btn">Update</button>
                 <br></br>
-                <?php if( $_SESSION["cardMessg"]=="Something is wrong!" ){
-                    echo '<span  style="margin-top : 15px; color: red;">'.$_SESSION["cardMessg"].' </span>';
-                } else{
-                    echo '<span  style="margin-top : 15px; color: green;">'.$_SESSION["cardMessg"].' </span>';
-                } 
-                $_SESSION["cardMessg"]=""; 
-                ?> 
+                <?php 
+                // if( $_SESSION["cardMessg"]=="Something is wrong!" ){
+                //     echo '<span  style="margin-top : 15px; color: red;">'.$_SESSION["cardMessg"].' </span>';
+                // } else{
+                //     echo '<span  style="margin-top : 15px; color: green;">'.$_SESSION["cardMessg"].' </span>';
+                // } 
+                // $_SESSION["cardMessg"]=""; 
+                ?>
             </div>
         </div>
         </form>
