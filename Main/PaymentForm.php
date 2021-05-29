@@ -1,6 +1,15 @@
 <?php
 session_start(); 
+require_once dirname(__FILE__).'/back-end/php/crud.php';
+require_once dirname(__FILE__).'/back-end/php/user.php';
 
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+    $result = $user->getUserbyUsername($_SESSION["username"]);
+
+}else{
+    echo "<script> window.alert('ERROR please login!!!'); window.location.replace('loginForm.php'); </script>";
+
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +34,7 @@ session_start();
     <title>GeoTraveler</title>
 </head>
 <body>
-    <NAV>
+    <NAV style = "background-color: darkslategray;">
         <div class="logo">
             <a href="index.php"><h3>GeoTraveler</h3></a>
         </div>
@@ -65,74 +74,71 @@ session_start();
             <h4>Account</h4>
             <div class="input-group">
                 <div class="input-box">
-                    <input type="text" placeholder="Full Name" required class="name">
-                    <i class="fa fa-user icon" ></i>
-                </div>
-                <div class="input-box">
-                    <input type="text" placeholder="Nick Name" required class="name">
-                    <i class="fa fa-user icon" ></i>
+                    <input type="text" placeholder="Mobile" required class="name" value="<?php echo $result['mobile'] ?>">
+                    <i class="fa fa-mobile icon" ></i>
                 </div>
             </div>
             <div class="input-group">
                 <div class="input-box">
-                    <input type="Email Adress" placeholder="Email Adress"required class="name">
+                    <input type="Email Adress" placeholder="Email Adress"required class="name" value="<?php echo $result['email'] ?>">
                     <i class="fa fa-envelope icon"></i>
-                </div>
-            </div>
-            <div class="input-group">
-                <div class="input-box">
-                    <h4>Date of Birth</h4>
-                    <input type="text" placeholder="DD" class="dob">
-                    <input type="text" placeholder="MM" class="dob">
-                    <input type="text" placeholder="YYYY" class="dob">
-                </div>
-                <div class="input-box">
-                    <h4>Gender</h4>
-                    <input type="radio" id="b1" name="gender" checked class="radio">
-                    <label for="b1">Male</label>
-                    <input type="radio" id="b2" name="gender" class="radio">
-                    <label for="b2">Female</label>
                 </div>
             </div>
             <div class="input-group">
                 <div class="input-box">
                     <h4>Payment Details</h4>
                     <input type="radio" name="pay" id="bc1" checked class="radio">
-                    <label for="bc1"><span><i class="fa fa-cc-visa">Credit Card</i></span></label>
+                    <label id="my_card" for="bc1"><a>My Card</a></label>
                     <input type="radio" name="pay" id="bc2" class="radio">
-                    <label for="bc2"><span><i class="fa fa-cc-paypal">Paypal</i></span></label>
+                    <label id="new_card" for="bc2"><a>New Card</a></label>
                 </div>
             </div>
-            <div class="input-group">
+            <div id = "cardNumDiv" style = "display : none" class="input-group">
                 <div class="input-box">
                     <input type="tel" placeholder="Card Number" required class="name">
                     <i class="fa fa-credit-card icon"></i>
                 </div>
             </div>
-            <div class="input-group">
+            <div id = "cardExpDiv" style = "display : none" class="input-group">
+                <div class="input-box">
+                    <input type="tel" placeholder="Exp. Date (e.g 01/01) " required class="name">
+                    <i class="fa fa-calendar icon"></i>
+                </div>
+            </div>
+            <div id = "cardCVVDiv" style = "display : none" class="input-group">
                 <div class="input-box">
                     <input type="tel" placeholder="Card CVC" required class="name">
-                    <i class="fa fa-user icon"></i>
-                </div>
-                <div class="input-box">
-                    <select>
-                        <option>01 jun</option>
-                        <option>02 jun</option>
-                        <option>03 jun</option>
-                    </select>
-                    <select>
-                        <option>2020</option>
-                        <option>2021</option>
-                        <option>2022</option>
-                    </select>
+                    <i class="fa fa-credit-card icon"></i>
                 </div>
             </div>
             <div class="input-group">
                 <div class="input-box">
                     <button type="submit">PAY NOW</button>
                 </div>
-            </div>
+            </div>  
         </form>
     </div>
+<script>
+    var newCard = document.getElementById('new_card');
+    var myCard = document.getElementById('my_card');
 
+    var cardNumDiv = document.getElementById('cardNumDiv');
+    var cardExpDiv = document.getElementById('cardExpDiv');
+    var cardCVVDiv = document.getElementById('cardCVVDiv');
+
+    myCard.onclick = function(){
+        cardNumDiv.style.display = 'none';
+        cardExpDiv.style.display = 'none';
+        cardCVVDiv.style.display = 'none';
+    }
+
+    newCard.onclick = function(){
+        cardNumDiv.style.display = 'block';
+        cardExpDiv.style.display = 'block'; 
+        cardCVVDiv.style.display = 'block';
+    }
+
+</script>
     </body>
+
+    </html>

@@ -1,7 +1,7 @@
 <?php
 require_once dirname(__FILE__).'/back-end/php/crud.php';
 session_start(); 
-$result = $crud->getHotels();
+$result = $crud->getHotelsTop();
 
 ?>
 

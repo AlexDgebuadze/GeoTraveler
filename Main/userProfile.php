@@ -10,6 +10,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     $uid = $_SESSION["userID"];
 
     $card = $user->getCard($uid);
+}else{
+    echo "<script> window.alert('ERROR please login!!!'); window.location.replace('loginForm.php'); </script>";
 }
 
 ?>

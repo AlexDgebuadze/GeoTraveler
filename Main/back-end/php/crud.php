@@ -48,9 +48,9 @@ class crud{
    }
 
 
-   public function getHotels(){
+   public function getHotelsTop(){
       try{
-          $sql = "SELECT * FROM geotraveler.hotel";
+          $sql = "SELECT * FROM geotraveler.hotel limit 4";
           $result = $this->db->query($sql);
           return $result;
       }catch(PDOException $e){
