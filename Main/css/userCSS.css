@@ -3,17 +3,6 @@ body{
     background:linear-gradient(to right, #2ed573, #f9ca24);
     overflow-x: hidden;
 }
-.navHeader {
-    position: fixed;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 8vh;
-    /* background-color: #5d4954; */
-    font-family: 'Poppins', sans-serif;
-    z-index: 10;
-}
 .navigation {
     position: fixed;
     width:100%;
@@ -83,7 +72,7 @@ body{
 }
 /* USER INTERFACE */
 .user-interface h1{
-    padding-top: 110px;
+    padding-top: 200px;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -98,7 +87,8 @@ body{
     height: 500px;
     margin: 0 auto;
     position: relative;
-    margin-top: 40px;
+    margin-top: 150px;
+    margin-bottom: 150px;
     box-shadow: 2px 5px 20px rgba(119, 119, 119, .5);
 }
 .left-box{
@@ -115,7 +105,7 @@ body{
 .user-navigation a,
 .user-navigation i{
     list-style: none;
-    padding: 65px;
+    padding: 40px;
     padding-left: 20px;
     color: #fff;
     font-size: 1.1em;
@@ -149,6 +139,7 @@ body{
 .tab {
     transition: all .5s ease-in;
     width: 80%;
+    /* padding-top: ; */
 }
 h1 {
     font-family: "Montserrat", sans-serif;
@@ -189,8 +180,53 @@ h2{
     cursor: pointer;
     margin-top: 15px;
 }
+.dlt-btn{
+    background: crimson;
+}
 .tab-show{
     display:none;
+}
+.hotelhist{
+    display:flex;
+    flex-direction: row;
+    border: 1px solid black;
+    margin-bottom: 3px;
+}
+.hotelhist .inputrow{
+    padding: 2px;
+}
+label.input-info.hist{
+    width: 100%;
+}
+.hotelhist .hist,
+label.input-info.hist{
+    display:flex;
+    flex-direction: column;
+    padding-right: 5px;
+    text-align: center;
+}
+label{
+    padding-right: 5px;
+}
+.inputrow{
+    display: flex;
+    flex-direction: column;
+}
+.inputrow.cancel{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-left: 35px;
+    width: 35px;
+    border: 1px solid black;
+    color: #fff;
+    
+}
+.inputrow.cancel:hover{
+    color: #fff;
+    background: crimson;
 }
 @media screen and (max-width:1381px){
     /* nav{

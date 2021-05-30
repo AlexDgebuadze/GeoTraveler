@@ -26,13 +26,15 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     <title>User Settings</title>
     <!--Font awesome CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="css/userCSS.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
 <body>
 <section class="header">
-    <NAV class="navigation">
+   
+<NAV class = "navHeader">
         <div class="logo">
             <a href="index.php"><h3>GeoTraveler</h3></a>
         </div>
@@ -42,18 +44,18 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
             <li><a href="PlanYourTrip.php"> Plan Your Trip </a></li>
             <li><a href="AboutGeorgia.php"> About Georgia </a></li>
             <li><a href="contactus.php"> Contact Us </a></li>
-            <!-- <li><label for="show" class="show-btn">Logout</label></li> -->
             <li>
-                <?php
-                
-                if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-                   echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="logout.php">   Logout  </a></label>';
-                }else{
-                    echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="loginForm.php">   Login  </a>  </label>  ';
-                }
-                ?>
-                </li>
-        </ul>
+            <?php
+            
+            if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+               echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="logout.php">   Logout  </a></label>';
+            }else{
+                echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="loginForm.php">   Login  </a>  </label>  ';
+            }
+            ?>
+            </li>
+
+        </ul> 
         <div class="burger">
             <div class="line1"></div>
             <div class="line2"></div>
@@ -123,52 +125,25 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 ?>
             </div>
         </form>
-            <div class="history tab-show">
+        <form action="">
+        <div class="history tab-show">
                 <h1>Booking History</h1>
-                <!-- <h2>Photo</h2>
-                <input type="text" class="input-info hist" value="Jane"> -->
-                <div class="hotelhist">
-                    <div class="inputrow">
-                        <h2 class="hist">Hotel Name</h2>
-                        <label type="text" class="input-label hist" value="555555555">name</label>
-                    </div>
-                    <div class="inputrow">
-                        <h2 class="hist">Check-in Time</h2>
-                        <label type="date" class="input-label hist" value="Doe">01/11</label>
-                    </div>
-                    <div class="inputrow">
-                        <h2 class="hist">Check-Out Time</h2>
-                        <label type="date" class="input-label hist" value="Doe">03/11</label>
-                    </div>
-                    <div class="inputrow cancel">
-                        <a href="#">X</a>
-                    </div>
-                </div>
-                <div class="hotelhist">
-                    <div class="inputrow">
-                        <h2 class="hist">Hotel Name</h2>
-                        <label type="text" class="input-label hist" value="555555555">name</label>
-                    </div>
-                    <div class="inputrow">
-                        <h2 class="hist">Check-in Time</h2>
-                        <label type="date" class="input-label hist" value="Doe">01/11</label>
-                    </div>
-                    <div class="inputrow">
-                        <h2 class="hist">Check-Out Time</h2>
-                        <label type="date" class="input-label hist" value="Doe">03/11</label>
-                    </div>
-                    <div class="inputrow cancel">
-                        <a href="#">X</a>
-                    </div>
-                </div>
-                <!-- <h2>Contact number</h2>
+                <h2>Price</h2>
+                <input type="text" class="input-info" value="Jane">
+                <h2>Check-in Time</h2>
+                <input type="date" class="input-info" value="Doe">
+                <h2>Hotel Name</h2>
+                <input type="text" class="input-info" value="555555555">
+                <h2>Contact number</h2>
                 <input type="text" class="input-info" value="555555555">
                 <h2>Email</h2>
                 <input type="mail" class="input-info" value="useruser@user.com">
-                <button class="user-btn dlt-btn">Delete</button> -->
-                <!-- <button class="user-btn">Confirm</button> -->
+                <button class="user-btn dlt-btn">Delete</button>
+                <button class="user-btn">Confirm</button>
             </div>
+        </form>
         </div>
+        
     </div>
     <script src="https://kit.fontawesome.com/afb2ed20b4.js" crossorigin="anonymous"></script>
     <script
@@ -176,6 +151,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
     crossorigin="anonymous"></script>
     <script>
+
         const tabBtn = document.querySelectorAll(".tab");
         const tab = document.querySelectorAll(".tab-show");
 
@@ -195,3 +171,5 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     </script>
 </section>
 </body>   
+
+</html>

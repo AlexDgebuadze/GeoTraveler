@@ -85,7 +85,7 @@ $result = $crud->getHotelsTop();
                             $c--;}
                         ?> 
                         </div>
-                        <a href="../Main/rooms.php" class="btn btn-gradient">Book now
+                        <a href="rooms.php" class="btn btn-gradient">Book now
                             <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
                         </a>
 

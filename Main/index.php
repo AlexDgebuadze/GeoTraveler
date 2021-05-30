@@ -124,7 +124,7 @@ session_start();
         <div class="destinationheader">
             <h1>Destinations in Georgia</h1>
             <p>Explore outdoor and nature activities, cultural experiences,<br> coastal sailings and cruises in Georgia.</p>
-            <a href="destination.html"><button>See Destinations</button></a>
+            <a href="destination.php"><button>See Destinations</button></a>
         </div>
         <div class="destinationmap">
             <img src="./images/georgiabig.png" alt="">

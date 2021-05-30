@@ -41,7 +41,7 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
    
    }else{
     $total_records = $crud -> countHotels();
-    $total_records = $total_records['total_records'];
+    // $total_records = $total_records['total_records'];
     $total_no_of_pages = ceil($total_records / $total_records_per_page);
     $second_last = $total_no_of_pages - 1;
     $res = $crud->getHotelFrom($offset, $total_records_per_page);
