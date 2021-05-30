@@ -59,7 +59,73 @@ class crud{
       }
   }
 
+   public function getAllHotels(){
+   try{
+       $sql = "SELECT * FROM geotraveler.hotel";
+       $result = $this->db->query($sql);
+       return $result;
+   }catch(PDOException $e){
+       echo $e->getMessage();
+       return false;
+   }
+   }
 
+   public function countHotels(){
+      try{
+          $sql = "SELECT COUNT(*) FROM geotraveler.hotel";
+          $res =  $this->db->query($sql);
+          $count = $res->fetchColumn();
+          return $count;
+      }catch(PDOException $e){
+          echo $e->getMessage();
+          return false;
+      }
+   } 
+
+   public function getHotelFrom($start,$end){
+      try{
+          $sql = "SELECT * FROM geotraveler.hotel limit $start , $end "; 
+          $stmt = $this->db->query($sql);
+          return $stmt;
+      }catch(PDOException $e){
+          echo $e->getMessage();
+          return false;
+      }
+   }
+
+   public function getHotelFromSearch($region,$tag,$pFrom,$pTo){
+      if(strval($region) == 'Any'){
+         $region = region; 
+      }
+
+      if(strval($tag) == 'Anything'){
+         $tag = nearAtractions; 
+      }else{
+         $tag = '%'.strval($tag).'%';
+      }
+
+//AND ( minCost >= '$pFrom' AND minCost <= '$pTo')
+      try{
+          $sql = "SELECT * FROM geotraveler.hotel WHERE region = $region AND (nearAtractions like $tag )  AND ( minCost >= '$pFrom' AND minCost <= '$pTo')"; 
+          $stmt = $this->db->query($sql);
+          return $stmt;
+      }catch(PDOException $e){
+          echo $e->getMessage();
+          return false;
+      }
+   }
+
+   public function getHotelFromSearchCount($region,$tag,$pFrom,$pTo){
+      try{
+          $sql = "SELECT * FROM geotraveler.hotel WHERE region = '$region' AND (nearAtractions like '%$tag%' ) AND ( minCost >= '$pFrom' AND minCost <= '$pTo') "; 
+          $res = $this->db->query($sql);
+          $count = $res->fetchColumn();
+          return $count;
+      }catch(PDOException $e){
+          echo $e->getMessage();
+          return false;
+      }
+   }
 
 }
 

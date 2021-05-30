@@ -150,3 +150,5 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     </script>
 </section>
 </body>   
+
+</html>
