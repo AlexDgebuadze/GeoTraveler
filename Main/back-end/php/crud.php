@@ -96,17 +96,18 @@ class crud{
    public function getHotelFromSearch($region,$tag,$pFrom,$pTo){
       if(strval($region) == 'Any'){
          $region = region; 
+      }else{
+         $region = "'".strval($region)."'"; 
       }
-
       if(strval($tag) == 'Anything'){
          $tag = nearAtractions; 
       }else{
-         $tag = '%'.strval($tag).'%';
+         $tag = "'%".strval($tag)."%'";
       }
 
-//AND ( minCost >= '$pFrom' AND minCost <= '$pTo')
+// AND ( minCost >= $pFrom AND minCost <= $pTo)
       try{
-          $sql = "SELECT * FROM geotraveler.hotel WHERE region = $region AND (nearAtractions like $tag )  AND ( minCost >= '$pFrom' AND minCost <= '$pTo')"; 
+          $sql = "SELECT * FROM geotraveler.hotel WHERE region = $region AND (nearAtractions like $tag ) AND ( minCost >= $pFrom AND minCost <= $pTo)"; 
           $stmt = $this->db->query($sql);
           return $stmt;
       }catch(PDOException $e){
@@ -116,8 +117,18 @@ class crud{
    }
 
    public function getHotelFromSearchCount($region,$tag,$pFrom,$pTo){
+      if(strval($region) == 'Any'){
+         $region = region; 
+      }else{
+         $region = "'".strval($region)."'"; 
+      }
+      if(strval($tag) == 'Anything'){
+         $tag = nearAtractions; 
+      }else{
+         $tag = "'%".strval($tag)."%'";
+      }
       try{
-          $sql = "SELECT * FROM geotraveler.hotel WHERE region = '$region' AND (nearAtractions like '%$tag%' ) AND ( minCost >= '$pFrom' AND minCost <= '$pTo') "; 
+         $sql = "SELECT * FROM geotraveler.hotel WHERE region = $region AND (nearAtractions like $tag ) AND ( minCost >= $pFrom AND minCost <= $pTo)"; 
           $res = $this->db->query($sql);
           $count = $res->fetchColumn();
           return $count;
@@ -127,6 +138,36 @@ class crud{
       }
    }
 
+   public function getRooms($hotelID){
+      try{
+          $sql = "SELECT * FROM geotraveler.room WHERE roomid = '$hotelID' "; 
+          $res = $this->db->query($sql);
+          return $res;
+      }catch(PDOException $e){
+          echo $e->getMessage();
+          return false;
+      }
+   }
+
+
+
+   public function createReservation($hotelid,$roomid,$uid,$checkIn,$checkOut){
+      try {
+         $sql = "INSERT INTO geotraveler.reservation (hotelID,roomID,userID,checkIN,checkOUT) VALUES (:hotelID,:roomID,:userID,:checkIN,:checkOUT)";
+         $stmt = $this-> db->prepare($sql); 
+         $stmt->bindparam(':hotelID',$hotelid);
+         $stmt->bindparam(':roomID',$roomid);
+         $stmt->bindparam(':userID',$uid);
+         $stmt->bindparam(':checkIN',$checkIn);
+         $stmt->bindparam(':checkOUT',$checkOut);
+         $stmt->execute();
+         return true;
+      } catch (PDOException $e) {
+         echo $e->getMessage();
+         return false;
+      }
+
+   }
 }
 
 

@@ -5,11 +5,26 @@ require_once dirname(__FILE__).'/back-end/php/user.php';
 
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     $result = $user->getUserbyUsername($_SESSION["username"]);
+    $uid = $_SESSION["userID"];
+    $hotelid =  $_GET['hotelID'];
+    $roomid =  $_GET['roomID'];
 
+
+
+
+    
+    $card = $user->getCard($uid);
 }else{
     echo "<script> window.alert('ERROR please login!!!'); window.location.replace('loginForm.php'); </script>";
 
 }
+
+
+if(!$card){
+    
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +103,15 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <div class="input-box">
                     <h4>Payment Details</h4>
                     <input type="radio" name="pay" id="bc1" checked class="radio">
-                    <label id="my_card" for="bc1"><a>My Card</a></label>
+                   <?php 
+                   
+                        if(!$card){
+                             echo '<label style = "display : none;" id="my_card" for="bc1"><a>My Card</a></label>';
+                        }else{
+                            echo '<label id="my_card" for="bc1"><a>My Card</a></label>';   
+                        }
+                   
+                   ?>
                     <input type="radio" name="pay" id="bc2" class="radio">
                     <label id="new_card" for="bc2"><a>New Card</a></label>
                 </div>

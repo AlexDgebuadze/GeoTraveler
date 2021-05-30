@@ -80,7 +80,7 @@ session_start();
     <div class="cardcontainer">
         <div class="cardbox">
             <div class="thumb">
-                <a href="card1.html"><img src="./images/culture.jpg" alt=""></a>
+                <a href="card1.php"><img src="./images/culture.jpg" alt=""></a>
             </div>
             <div class="cardtext">
                 <h2>Georgian Culture</h2>
@@ -88,13 +88,13 @@ session_start();
                     dipisicing elit. Assumenda velit qui nostrum 
                     odit sequi est enim necessitatibus voluptatem
                 </p>
-                <a href="card1.html"><button>Read More</button></a>
+                <a href="card1.php"><button>Read More</button></a>
             </div>
         </div>
 
         <div class="cardbox">
             <div class="thumb">
-                <a href="card2.html"><img src="./images/caucasus1.jpg" alt=""></a>
+                <a href="card2.php"><img src="./images/caucasus1.jpg" alt=""></a>
             </div>
             <div class="cardtext">
                 <h2>Card 2</h2>
@@ -102,7 +102,7 @@ session_start();
                     dipisicing elit. Assumenda velit qui nostrum 
                     odit sequi est enim necessitatibus voluptatem
                 </p>
-                <a href="card2.html"><button>Read More</button></a>
+                <a href="card2.php"><button>Read More</button></a>
             </div>
         </div>
 

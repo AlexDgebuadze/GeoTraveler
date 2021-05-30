@@ -73,7 +73,6 @@ $result = $crud->getHotelsTop();
                 <div class="grid">
                 <?php while($res = $result->fetch(PDO::FETCH_ASSOC)) {?>
                     <div class="grid-item featured-hotels">
-
                     <?php echo '<img  class="hotel-image" style="" src="data:image/jpeg;base64,'.base64_encode( $res['photo'] ).'"/>'; ?> 
                         <h5 class="hotel-name"><?php echo $res['hotelName']; ?> </h5>
                         <span class="hote-price">From $ <?php echo $res['minCost']; ?>  /Night</span>
@@ -85,7 +84,7 @@ $result = $crud->getHotelsTop();
                             $c--;}
                         ?> 
                         </div>
-                        <a href="rooms.php" class="btn btn-gradient">Book now
+                        <a href=<?php  echo "rooms.php?hotelID=" . $res['hotelId']; ?> class="btn btn-gradient">Book now
                             <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
                         </a>
 
@@ -142,21 +141,6 @@ $result = $crud->getHotelsTop();
                             <p class="paragraph">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
                             </p>
-                            <a href="#" class="btn rooms-btn">Book now &rarr;</a>
-                        </div>
-                    </div>
-
-                    <div class="grid-item featured-rooms">
-                        <div class="image-wrap">
-                            <img class = "room-image" src="../Main/images/room_2.jpg" alt="">
-                            <h5 class="room-name">Astro Hotel</h5>
-                        </div>
-                        <div class="room-info-wrap">
-                            <span class="room-price">$200 <span class="per-night">Per night</span></span>
-                            <p class="paragraph">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
-                            </p>
-                            <a href="#" class="btn rooms-btn">Book now &rarr;</a>
                         </div>
                     </div>
 
@@ -170,7 +154,6 @@ $result = $crud->getHotelsTop();
                             <p class="paragraph">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
                             </p>
-                            <a href="#" class="btn rooms-btn">Book now &rarr;</a>
                         </div>
                     </div>
 
@@ -184,7 +167,6 @@ $result = $crud->getHotelsTop();
                             <p class="paragraph">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
                             </p>
-                            <a href="#" class="btn rooms-btn">Book now &rarr;</a>
                         </div>
                     </div>
                 </div>

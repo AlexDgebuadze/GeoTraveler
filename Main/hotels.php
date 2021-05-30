@@ -119,7 +119,7 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
                         <label for ="destination" class="input-label">Choose Region</label>
                         <!-- <input type="text" class="input" id = "destination"> -->
                         <select id="adults" name="regionValue" style = "background-color: white;" class="options">
-                            <option Choose value="Adjara">Any</option>
+                            <option Choose value="any">Any</option>
                             <option value="Adjara">Adjara</option>
                             <option value="Abkhazia">Abkhazia</option>
                             <option value="Tbilisi">Tbilisi</option>
@@ -153,7 +153,7 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
                     <div class="input-group">
                         <label for ="check-out" class="input-label">Tags</label>
                         <select id="adults" name="tagValue" style = "background-color: white;" class="options">
-                            <option value="Anything">Anything</option>
+                            <option Choose value="Anything">Anything</option>
                             <option value="Architecture">Architecture</option>
                             <option value="Arctic Wildlife">Arctic Wildlife</option>
                             <option value="Art">Art</option>

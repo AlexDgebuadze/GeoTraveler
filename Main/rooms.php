@@ -1,5 +1,9 @@
 <?php
+require_once dirname(__FILE__).'/back-end/php/crud.php';
 session_start(); 
+
+$hotelid = $_GET['hotelID'];
+$rooms = $crud->getRooms($hotelid);
 
 ?>
 <!doctype html>
@@ -57,61 +61,24 @@ session_start();
                 <span class="sub-heading">Rooms</span>
             </h5>
             <div class="grid rooms-grid">
+
+            <?php while($res = $rooms->fetch(PDO::FETCH_ASSOC)) {?>
+                    
                 <div class="grid-item featured-rooms">
                     <div class="image-wrap">
-                        <img class = "room-image" src="../Main/images/room_1.jpg" alt="">
-                        <h5 class="room-name">Astro Hotel</h5>
+                    <?php echo '<img  class="room-image" style="" src="data:image/jpeg;base64,'.base64_encode( $res['roomPhoto'] ).'"/>'; ?>
                     </div>
                     <div class="room-info-wrap">
-                        <span class="room-price">$200 <span class="per-night">Per night</span></span>
+                        <span class="room-price"><?php echo $res['cost']; ?> <span class="per-night"> Per night</span></span>
                         <p class="paragraph">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
+                        <?php echo $res['roomDescr']; ?>
                         </p>
-                        <a href="#" class="btn rooms-btn">Book now &rarr;</a>
+                        <a href=<?php  echo "PaymentForm.php?hotelID=" . $hotelid . "&roomID=" . $res['roomid'] ?> class="btn rooms-btn">Book now &rarr;</a>
                     </div>
                 </div>
 
-                <div class="grid-item featured-rooms">
-                    <div class="image-wrap">
-                        <img class = "room-image" src="../Main/images/room_2.jpg" alt="">
-                        <h5 class="room-name">Astro Hotel</h5>
-                    </div>
-                    <div class="room-info-wrap">
-                        <span class="room-price">$200 <span class="per-night">Per night</span></span>
-                        <p class="paragraph">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
-                        </p>
-                        <a href="#" class="btn rooms-btn">Book now &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="grid-item featured-rooms">
-                    <div class="image-wrap">
-                        <img class = "room-image" src="../Main/images/room_3.jpg" alt="">
-                        <h5 class="room-name">Astro Hotel</h5>
-                    </div>
-                    <div class="room-info-wrap">
-                        <span class="room-price">$200 <span class="per-night">Per night</span></span>
-                        <p class="paragraph">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
-                        </p>
-                        <a href="#" class="btn rooms-btn">Book now &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="grid-item featured-rooms">
-                    <div class="image-wrap">
-                        <img class = "room-image" src="../Main/images/room_4.jpg" alt="">
-                        <h5 class="room-name">Astro Hotel</h5>
-                    </div>
-                    <div class="room-info-wrap">
-                        <span class="room-price">$200 <span class="per-night">Per night</span></span>
-                        <p class="paragraph">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
-                        </p>
-                        <a href="#" class="btn rooms-btn">Book now &rarr;</a>
-                    </div>
-                </div>
+            <?php }?>    
+               
             </div>
         </div>
     </section>
