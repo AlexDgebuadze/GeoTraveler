@@ -6,13 +6,12 @@ require_once dirname(__FILE__).'/back-end/php/user.php';
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     $result = $user->getUserbyUsername($_SESSION["username"]);
     $uid = $_SESSION["userID"];
-    $hotelid =  $_GET['hotelID'];
-    $roomid =  $_GET['roomID'];
+    $hotelid =  $_SESSION["hotelid"];
+    $roomid =  $_SESSION["roomid"];
 
-
-
-
-    
+     
+    $checkI =  $_SESSION["checkin"];
+    $checkO =  $_SESSION["checkout"];
     $card = $user->getCard($uid);
 }else{
     echo "<script> window.alert('ERROR please login!!!'); window.location.replace('loginForm.php'); </script>";
@@ -20,10 +19,12 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
 
 
-if(!$card){
-    
+if(isset($_POST['submitPayy'])){
+    // $crud->createReservation($hotelid,$roomid,$uid,$checkI,$checkO);
+    // header("location: index.php");
+    // session_start();
 }
-
+//$crud->createReservation($hotelid,$roomid,$uid,$checkI,$checkO);
 
 ?>
 <!DOCTYPE html>
@@ -85,7 +86,7 @@ if(!$card){
     </div>
     <div class="paymentwrapper">
         <h2>Payment Form</h2>
-        <form method="POST">
+        <form action="" method="POST">
             <h4>Account</h4>
             <div class="input-group">
                 <div class="input-box">
@@ -136,7 +137,7 @@ if(!$card){
             </div>
             <div class="input-group">
                 <div class="input-box">
-                    <button type="submit">PAY NOW</button>
+                    <a href = "RegistrateReservation.php" name="submitPayy" style = "padding: 5px 15px; border-style: double;" type="submit" >PAY NOW</a>
                 </div>
             </div>  
         </form>

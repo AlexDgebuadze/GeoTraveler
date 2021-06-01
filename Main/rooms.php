@@ -3,7 +3,7 @@ require_once dirname(__FILE__).'/back-end/php/crud.php';
 session_start(); 
 
 $hotelid = $_GET['hotelID'];
-$rooms = $crud->getRooms($hotelid);
+$room = $crud->getRooms($hotelid);
 
 ?>
 <!doctype html>
@@ -62,7 +62,7 @@ $rooms = $crud->getRooms($hotelid);
             </h5>
             <div class="grid rooms-grid">
 
-            <?php while($res = $rooms->fetch(PDO::FETCH_ASSOC)) {?>
+            <?php while($res = $room->fetch(PDO::FETCH_ASSOC)) {?>
                     
                 <div class="grid-item featured-rooms">
                     <div class="image-wrap">
@@ -73,7 +73,7 @@ $rooms = $crud->getRooms($hotelid);
                         <p class="paragraph">
                         <?php echo $res['roomDescr']; ?>
                         </p>
-                        <a href=<?php  echo "PaymentForm.php?hotelID=" . $hotelid . "&roomID=" . $res['roomid'] ?> class="btn rooms-btn">Book now &rarr;</a>
+                        <a href=<?php  echo "bookroom.php?hotelID=" . $hotelid . "&roomID=" . $res['roomid'] ?> class="btn rooms-btn">Book now &rarr;</a>
                     </div>
                 </div>
 

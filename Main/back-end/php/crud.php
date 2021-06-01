@@ -140,7 +140,7 @@ class crud{
 
    public function getRooms($hotelID){
       try{
-          $sql = "SELECT * FROM geotraveler.room WHERE roomid = '$hotelID' "; 
+          $sql = "SELECT * FROM geotraveler.room WHERE hotelID = '$hotelID' "; 
           $res = $this->db->query($sql);
           return $res;
       }catch(PDOException $e){
@@ -148,6 +148,37 @@ class crud{
           return false;
       }
    }
+   public function getRoom($hotelID,$roomid){
+      try{
+          $sql = "SELECT * FROM geotraveler.room WHERE hotelID = '$hotelID' AND roomid = '$roomid' "; 
+          $res = $this->db->query($sql);
+          return $res;
+      }catch(PDOException $e){
+          echo $e->getMessage();
+          return false;
+      }
+   }
+   public function getRoomPics($hotelID,$roomID){
+      try{
+         $sql = "SELECT * FROM geotraveler.roomPictures WHERE hotelID = '$hotelID' AND roomID = '$roomID' "; 
+          $res = $this->db->query($sql);
+          return $res;
+      }catch(PDOException $e){
+         echo $e->getMessage();
+          return false;
+      }
+   }
+   public function getUserReservations($uid){
+      try{
+         $sql = "SELECT * FROM geotraveler.reservation WHERE userID = '$uid'"; 
+          $res = $this->db->query($sql);
+          return $res;
+      }catch(PDOException $e){
+         echo $e->getMessage();
+          return false;
+      }
+   }
+   
 
 
 

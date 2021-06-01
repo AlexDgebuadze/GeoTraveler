@@ -10,6 +10,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     $uid = $_SESSION["userID"];
 
     $card = $user->getCard($uid);
+    $reservation = $crud->getUserReservations($uid);
 }else{
     echo "<script> window.alert('ERROR please login!!!'); window.location.replace('loginForm.php'); </script>";
 }
@@ -127,40 +128,26 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <h1>Booking History</h1>
                 <!-- <h2>Photo</h2>
                 <input type="text" class="input-info hist" value="Jane"> -->
+                <?php while($row = $reservation->fetch(PDO::FETCH_ASSOC)) { ?>      
                 <div class="hotelhist">
                     <div class="inputrow">
-                        <h2 class="hist">Hotel Name</h2>
-                        <label type="text" class="input-label hist" value="555555555">name</label>
+                        <h2 class="hist">Reservation ID</h2>
+                        <label type="text" class="input-label hist" value="555555555"><?php echo $row['reservationID']; ?> </label>
                     </div>
                     <div class="inputrow">
                         <h2 class="hist">Check-in Time</h2>
-                        <label type="date" class="input-label hist" value="Doe">01/11</label>
+                        <label type="date" class="input-label hist" value="Doe"><?php echo $row['checkIN']; ?></label>
                     </div>
                     <div class="inputrow">
                         <h2 class="hist">Check-Out Time</h2>
-                        <label type="date" class="input-label hist" value="Doe">03/11</label>
-                    </div>
+                        <label type="date" class="input-label hist" value="Doe"><?php echo $row['checkOUT']; ?></label>
+                    </div>  
                     <div class="inputrow cancel">
                         <a href="#">X</a>
                     </div>
                 </div>
-                <div class="hotelhist">
-                    <div class="inputrow">
-                        <h2 class="hist">Hotel Name</h2>
-                        <label type="text" class="input-label hist" value="555555555">name</label>
-                    </div>
-                    <div class="inputrow">
-                        <h2 class="hist">Check-in Time</h2>
-                        <label type="date" class="input-label hist" value="Doe">01/11</label>
-                    </div>
-                    <div class="inputrow">
-                        <h2 class="hist">Check-Out Time</h2>
-                        <label type="date" class="input-label hist" value="Doe">03/11</label>
-                    </div>
-                    <div class="inputrow cancel">
-                        <a href="#">X</a>
-                    </div>
-                </div>
+                <?php }?>
+                
                 <!-- <h2>Contact number</h2>
                 <input type="text" class="input-info" value="555555555">
                 <h2>Email</h2>
