@@ -94,20 +94,20 @@ class crud{
    }
 
    public function getHotelFromSearch($region,$tag,$pFrom,$pTo){
-      if(strval($region) == 'Any'){
-         $region = region; 
+      if(strval($region) == 'any'){
+         $regionF = "region = region"; 
       }else{
-         $region = "'".strval($region)."'"; 
+         $regionF = "region = '".strval($region)."'"; 
       }
       if(strval($tag) == 'Anything'){
-         $tag = nearAtractions; 
+         $tagF = "nearAtractions = nearAtractions"; 
       }else{
-         $tag = "'%".strval($tag)."%'";
+         $tagF = "nearAtractions like '%".strval($tag)."%'";
       }
 
 // AND ( minCost >= $pFrom AND minCost <= $pTo)
       try{
-          $sql = "SELECT * FROM geotraveler.hotel WHERE region = $region AND (nearAtractions like $tag ) AND ( minCost >= $pFrom AND minCost <= $pTo)"; 
+          $sql = "SELECT * FROM geotraveler.hotel WHERE $regionF AND $tagF  AND ( minCost >= $pFrom AND minCost <= $pTo)"; 
           $stmt = $this->db->query($sql);
           return $stmt;
       }catch(PDOException $e){
@@ -117,18 +117,18 @@ class crud{
    }
 
    public function getHotelFromSearchCount($region,$tag,$pFrom,$pTo){
-      if(strval($region) == 'Any'){
-         $region = region; 
+      if(strval($region) == 'any'){
+         $regionF = "region = region"; 
       }else{
-         $region = "'".strval($region)."'"; 
+         $regionF = "region = '".strval($region)."'"; 
       }
       if(strval($tag) == 'Anything'){
-         $tag = nearAtractions; 
+         $tagF = "nearAtractions = nearAtractions"; 
       }else{
-         $tag = "'%".strval($tag)."%'";
+         $tagF = "nearAtractions like '%".strval($tag)."%'";
       }
       try{
-         $sql = "SELECT * FROM geotraveler.hotel WHERE region = $region AND (nearAtractions like $tag ) AND ( minCost >= $pFrom AND minCost <= $pTo)"; 
+         $sql = "SELECT * FROM geotraveler.hotel WHERE $regionF AND $tagF AND ( minCost >= $pFrom AND minCost <= $pTo) "; 
           $res = $this->db->query($sql);
           $count = $res->fetchColumn();
           return $count;
@@ -140,7 +140,7 @@ class crud{
 
    public function getRooms($hotelID){
       try{
-          $sql = "SELECT * FROM geotraveler.room WHERE hotelID = '$hotelID' "; 
+          $sql = "SELECT * FROM geotraveler.room WHERE hotelID = '$hotelID' AND reserved = '0'"; 
           $res = $this->db->query($sql);
           return $res;
       }catch(PDOException $e){
@@ -168,11 +168,54 @@ class crud{
           return false;
       }
    }
+   public function markRoomReserved($hotelID,$roomID){
+      try{
+         $sql = "UPDATE geotraveler.room SET reserved='1' WHERE hotelID = '$hotelID' AND roomid = '$roomID'";
+         $stmt = $this->db->query($sql);
+         $stmt->execute();
+         return true;
+     }catch(PDOException $e){
+         echo $e->getMessage();
+         return false;
+     }
+   }
+   public function markRoomUnreserved($hotelID,$roomID){
+      try{
+         $sql = "UPDATE geotraveler.room SET reserved='0' WHERE hotelID = '$hotelID' AND roomid = '$roomID'";
+         $stmt = $this->db->query($sql);
+         $stmt->execute();
+         return true;
+     }catch(PDOException $e){
+         echo $e->getMessage();
+         return false;
+     }
+   }
+
    public function getUserReservations($uid){
       try{
          $sql = "SELECT * FROM geotraveler.reservation WHERE userID = '$uid'"; 
           $res = $this->db->query($sql);
           return $res;
+      }catch(PDOException $e){
+         echo $e->getMessage();
+          return false;
+      }
+   }
+   public function getReservationsByID($ID){
+      try{
+         $sql = "SELECT * FROM geotraveler.reservation WHERE reservationID = '$ID'"; 
+          $res = $this->db->query($sql);
+          return $res;
+      }catch(PDOException $e){
+         echo $e->getMessage();
+          return false;
+      }
+   }
+   public function deleteReservation($ID){
+      try{
+         $sql = "DELETE FROM geotraveler.reservation WHERE reservationID = '$ID'"; 
+         $stmt = $this->db->query($sql);
+         $stmt->execute();
       }catch(PDOException $e){
          echo $e->getMessage();
           return false;

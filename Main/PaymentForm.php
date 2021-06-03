@@ -8,7 +8,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     $uid = $_SESSION["userID"];
     $hotelid =  $_SESSION["hotelid"];
     $roomid =  $_SESSION["roomid"];
-
+    
      
     $checkI =  $_SESSION["checkin"];
     $checkO =  $_SESSION["checkout"];
@@ -19,11 +19,12 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
 
 
-if(isset($_POST['submitPayy'])){
-    // $crud->createReservation($hotelid,$roomid,$uid,$checkI,$checkO);
-    // header("location: index.php");
-    // session_start();
-}
+// if($_SERVER['REQUEST_METHOD'] == "POST"){
+//     $crud->createReservation($hotelid,$roomid,$uid,$checkI,$checkO);
+//     $crud->markRoomReserved($hotelid,$roomid);
+//     header("location: userProfile.php");
+//     session_start(); 
+// }
 //$crud->createReservation($hotelid,$roomid,$uid,$checkI,$checkO);
 
 ?>
@@ -85,8 +86,8 @@ if(isset($_POST['submitPayy'])){
         <h1>PLACEHOLDER</h1>
     </div>
     <div class="paymentwrapper">
+     <form action=<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="POST">
         <h2>Payment Form</h2>
-        <form action="" method="POST">
             <h4>Account</h4>
             <div class="input-group">
                 <div class="input-box">
@@ -137,7 +138,7 @@ if(isset($_POST['submitPayy'])){
             </div>
             <div class="input-group">
                 <div class="input-box">
-                    <a href = "RegistrateReservation.php" name="submitPayy" style = "padding: 5px 15px; border-style: double;" type="submit" >PAY NOW</a>
+                    <a href="RegistrateReservation.php" name="submitPayy" style = "padding: 5px 15px; border-style: double;" type="submit" >PAY NOW</a>
                 </div>
             </div>  
         </form>

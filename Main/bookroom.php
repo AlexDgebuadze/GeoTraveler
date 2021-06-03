@@ -135,11 +135,10 @@ header("location: PaymentForm.php");
             <h3>description</h3>
         </div>
         <div class="descbox">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Quasi, nisi? Dolorem vel vitae suscipit in, molestiae 
-                tempora minus natus! Ducimus commodi adipisci perspiciatis 
-                ut. Temporibus accusantium illo optio deleniti consequatur.
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem laborum ullam non nobis minima amet quasi modi. Sunt, ad quis. Provident iure obcaecati iusto possimus explicabo enim hic est error?Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis adipisci quaerat neque architecto aliquam hic vel, dolores vero quas ex, quos illum ipsam voluptate alias. Deleniti quia ipsa sequi doloremque?</p>
+            <p>
+            <?php echo $result['roomDescr']; ?>
+            
+            </p>
         </div>
     </div>
     </div>

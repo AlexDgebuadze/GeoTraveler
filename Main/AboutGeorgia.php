@@ -189,4 +189,18 @@ session_start();
             </article>
         </main>
     </div>
+<script>
+
+var count = 11; 
+    // for(var i = 1 ; i<count ; i++){
+
+    //     setInterval(function(){document.getElementById(i).click();}, 3000);
+    //     if(i==10){
+    //         i=1;
+    //     }
+        
+    // }
+</script>
+
+
 </body>

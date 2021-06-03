@@ -14,13 +14,13 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
     $previous_page = $page_no - 1;
     $next_page = $page_no + 1;
     $adjacents = "2";
-
+    
 
 //    $total_records = $crud -> countHotels();
-//    $total_records = $total_records['total_records'];
+//  //  $total_records = $total_records['total_records'];
 //    $total_no_of_pages = ceil($total_records / $total_records_per_page);
 //    $second_last = $total_no_of_pages - 1;
-
+// $res = $crud->getHotelFrom($offset, $total_records_per_page);
 
    if($_SERVER['REQUEST_METHOD'] == "POST")
    {
@@ -204,7 +204,7 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
                         <p class="paragraph">    
                         <?php echo $row['hotelDescr']; ?>
                         </p>
-                        <a href="PaymentForm.php" class="btn rooms-btn">Book now &rarr;</a>
+                        <a href=<?php  echo "rooms.php?hotelID=" . $row['hotelId']; ?> class="btn rooms-btn">Book now &rarr;</a>
                     </div>
                 </div>
 

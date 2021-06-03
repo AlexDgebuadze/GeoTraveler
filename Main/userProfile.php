@@ -73,7 +73,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                 <!-- <i class="fa fa-user"></i> -->
                 <a onclick="tabs(1)" class="tab"><i class="fa fa-credit-card"></i></a>
                 <!-- <i class="fa fa-credit-card"></i> -->
-                <a onclick="tabs(2)" class="tab"><i class="fa fa-history"></i></a>
+                <a id = "reservT" onclick="tabs(2)" class="tab"><i class="fa fa-history"></i></a>
             </nav>
         </div>
         <div class="right-box">
@@ -141,9 +141,9 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                     <div class="inputrow">
                         <h2 class="hist">Check-Out Time</h2>
                         <label type="date" class="input-label hist" value="Doe"><?php echo $row['checkOUT']; ?></label>
-                    </div>  
-                    <div class="inputrow cancel">
-                        <a href="#">X</a>
+                    </div>
+                    <div class="cancelrow" style="margin-left:30px;">
+                        <a href= <?php echo "deleteReservation.php?resID=" . $row['reservationID']; ?> id = "updateProfile" class="user-btn" style="background:crimson;">X</a>
                     </div>
                 </div>
                 <?php }?>
