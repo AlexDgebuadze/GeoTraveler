@@ -190,16 +190,15 @@ session_start();
         </main>
     </div>
 <script>
+  var i = 2;
+  setInterval(
+  function() { 
+  if(i == 11){i = 1;}    
+  document.getElementById(i.toString()).click();
+  i++;
+  }
+  , 3000);
 
-var count = 11; 
-    // for(var i = 1 ; i<count ; i++){
-
-    //     setInterval(function(){document.getElementById(i).click();}, 3000);
-    //     if(i==10){
-    //         i=1;
-    //     }
-        
-    // }
 </script>
 
 

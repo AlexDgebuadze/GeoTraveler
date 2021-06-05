@@ -82,7 +82,10 @@ header("location: PaymentForm.php");
     <?php $count = 0;
     while($res = $roomPics->fetch(PDO::FETCH_ASSOC)) {?>           
         <div class="mySlides fade">
-            <?php echo '<img  class="room-image" style="width:100%" src="data:image/jpeg;base64,'.base64_encode( $res['roomPhoto'] ).'"/>'; ?>
+            <?php 
+            //echo '<img  class="room-image" style="width:100%" src="data:image/jpeg;base64,'.base64_encode( $res['roomPhoto'] ).'"/>';
+             ?>
+             <img  class="room-image" style="width:100%; height : 500px;" src=<?php echo $res['picSrc'];  ?> />
         </div>
     <?php $count++;  }?> 
         <!-- <div class="mySlides fade">
@@ -158,8 +161,28 @@ header("location: PaymentForm.php");
     </div>
     </div>
     <div class="btnclass">
-        <button name="submitt" class="btn rooms-btn book">Book now &rarr;</button>
+        <button id = "subBtn" name="submitt" class="btn rooms-btn book" disabled>Book now &rarr;</button>
     </div>
     </form> 
     <script src="js/script.js"></script>
+<script>
+
+function checkValid(){
+    if(document.getElementById("check-in").value < document.getElementById("check-out").value ){
+    document.getElementById("subBtn").disabled = false;
+    }else{
+        document.getElementById("subBtn").disabled = true;
+    }
+}
+document.getElementById("check-out").onchange = function () {
+    checkValid();
+}
+document.getElementById("check-in").onchange = function () {
+    checkValid();
+}
+
+
+
+</script>
+
 <body>

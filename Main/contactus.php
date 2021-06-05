@@ -89,19 +89,19 @@ require_once  dirname(__FILE__).'/back-end/php/config.php';
                         Send Message
                     </h2>
                     <div class="inputBox">
-                        <input type="text" name="Cname" required="required">
+                        <input id = "name" type="text" name="Cname" required="required">
                         <span>Full Name</span>
                     </div>
                     <div class="inputBox">
-                        <input type="text" name="Cmail" required="required">
+                        <input id = "mail" type="text" name="Cmail" required="required">
                         <span>Email</span>
                     </div>
                     <div class="inputBox">
-                        <textarea style="height: 75px;" name="Cmessage" required="required"></textarea>
+                        <textarea id = "message" style="height: 75px;" name="Cmessage" required="required"></textarea>
                         <span>Type your Message...</span>
                     </div>
                     <div class="inputBox">
-                        <input type="submit" name="submit" value="Send">
+                        <input id = "sendMessagebtn" type="submit" name="submit" value="Send" disabled>
                     </div>
 
                 <?php
@@ -130,5 +130,30 @@ require_once  dirname(__FILE__).'/back-end/php/config.php';
             </div>
         </div>
     </section>
+
+ <script>
+
+function checkInput(){
+    if(document.getElementById("name").value.length > 0 && document.getElementById("mail").value.length > 0 && document.getElementById("message").value.length > 0  ){
+    document.getElementById("sendMessagebtn").disabled = false;
+    }else{
+        document.getElementById("sendMessagebtn").disabled = true;
+    }
+}
+
+  document.getElementById("message").onchange = function () {
+    checkInput();
+}
+document.getElementById("name").onchange = function () {
+    checkInput();
+}
+document.getElementById("mail").onchange = function () {
+    checkInput();
+}
+
+
+
+
+ </script>   
 </body>
 </html>

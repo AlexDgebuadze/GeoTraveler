@@ -120,18 +120,18 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
                         <!-- <input type="text" class="input" id = "destination"> -->
                         <select id="adults" name="regionValue" style = "background-color: white;" class="options">
                             <option Choose value="any">Any</option>
-                            <option value="Adjara">Adjara</option>
-                            <option value="Abkhazia">Abkhazia</option>
-                            <option value="Tbilisi">Tbilisi</option>
-                            <option value="Imereti">Imereti</option>    
-                            <option value="Kvemo Kartli">Kvemo Kartli</option>
-                            <option value="Samegrelo and Zemo Svaneti">Samegrelo and Zemo Svaneti</option>
-                            <option value="Kakheti">Kakheti</option>
-                            <option value="Shida Kartli">Shida Kartli</option>
-                            <option value="Samtskhe-Javakheti">Samtskhe-Javakheti</option>  
-                            <option value="Guria">Guria</option>
-                            <option value="Mtskheta-Mtianeti">Mtskheta-Mtianeti</option>
-                            <option value="Racha-Lechkhumi and Kvemo Svaneti">Racha-Lechkhumi and Kvemo Svaneti</option>
+                            <option <?php if($reg==='Adjara') echo 'selected="selected"'; ?> value="Adjara">Adjara</option>
+                            <option <?php if($reg==='Abkhazia') echo 'selected="selected"'; ?> value="Abkhazia">Abkhazia</option>
+                            <option <?php if($reg==='Tbilisi') echo 'selected="selected"'; ?> value="Tbilisi">Tbilisi</option>
+                            <option <?php if($reg==='Imereti') echo 'selected="selected"'; ?> value="Imereti">Imereti</option>    
+                            <option <?php if($reg==='Kvemo Kartli') echo 'selected="selected"'; ?> value="Kvemo Kartli">Kvemo Kartli</option>
+                            <option <?php if($reg==='Samegrelo and Zemo Svaneti') echo 'selected="selected"'; ?> value="Samegrelo and Zemo Svaneti">Samegrelo and Zemo Svaneti</option>
+                            <option <?php if($reg==='Kakheti') echo 'selected="selected"'; ?> value="Kakheti">Kakheti</option>
+                            <option <?php if($reg==='Shida Kartli') echo 'selected="selected"'; ?> value="Shida Kartli">Shida Kartli</option>
+                            <option <?php if($reg==='Samtskhe-Javakheti') echo 'selected="selected"'; ?> value="Samtskhe-Javakheti">Samtskhe-Javakheti</option>  
+                            <option <?php if($reg==='Guria') echo 'selected="selected"'; ?> value="Guria">Guria</option>
+                            <option <?php if($reg==='Mtskheta-Mtianeti') echo 'selected="selected"'; ?> value="Mtskheta-Mtianeti">Mtskheta-Mtianeti</option>
+                            <option <?php if($reg==='Racha-Lechkhumi and Kvemo Svaneti') echo 'selected="selected"'; ?> value="Racha-Lechkhumi and Kvemo Svaneti">Racha-Lechkhumi and Kvemo Svaneti</option>
                         </select>
                     </div>
                     <!-- <div class="input-group">
@@ -154,13 +154,13 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
                         <label for ="check-out" class="input-label">Tags</label>
                         <select id="adults" name="tagValue" style = "background-color: white;" class="options">
                             <option Choose value="Anything">Anything</option>
-                            <option value="Architecture">Architecture</option>
-                            <option value="Arctic Wildlife">Arctic Wildlife</option>
-                            <option value="Art">Art</option>
-                            <option value="History">History</option>
-                            <option value="Hot Springs">Hot Springs</option>
-                            <option value="Music">Music</option>
-                            <option value="Wildlife tours">Wildlife tours</option>
+                            <option <?php if($tag==='Architecture') echo 'selected="selected"'; ?> value="Architecture">Architecture</option>
+                            <option <?php if($tag==='Wildlife') echo 'selected="selected"'; ?> value="Wildlife">Wildlife</option>
+                            <option <?php if($tag==='Art') echo 'selected="selected"'; ?> value="Art">Art</option>
+                            <option <?php if($tag==='History') echo 'selected="selected"'; ?> value="History">History</option>
+                            <option <?php if($tag==='Hot Springs') echo 'selected="selected"'; ?> value="Hot Springs">Hot Springs</option>
+                            <option <?php if($tag==='Music') echo 'selected="selected"'; ?> value="Music">Music</option>
+                            <option <?php if($tag==='Wildlife tours') echo 'selected="selected"'; ?> value="Wildlife tours">Wildlife tours</option>
                         </select>
                     </div> 
 

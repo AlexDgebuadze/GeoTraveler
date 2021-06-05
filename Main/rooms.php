@@ -66,7 +66,9 @@ $room = $crud->getRooms($hotelid);
                     
                 <div class="grid-item featured-rooms">
                     <div class="image-wrap">
-                    <?php echo '<img  class="room-image" style="" src="data:image/jpeg;base64,'.base64_encode( $res['roomPhoto'] ).'"/>'; ?>
+                    <?php 
+                    echo '<img  class="room-image" style="" src="data:image/jpeg;base64,'.base64_encode( $res['roomPhoto'] ).'"/>'; 
+                    ?>
                     </div>
                     <div class="room-info-wrap">
                         <span class="room-price"><?php echo $res['cost']; ?> $<span class="per-night"> Per night</span></span>
