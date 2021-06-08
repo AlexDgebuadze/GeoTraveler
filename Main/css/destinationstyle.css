@@ -127,6 +127,41 @@ nav{
 .map img{
     width: 100%;
 }
+.tagcontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.tagrow{
+    display:flex;
+    flex-direction: row;
+}
+.tagrow .tagbtn{
+    padding: 20px;
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: rgb(15, 13, 13);
+    transition: 0.3s ease;
+}
+.tagrow .tagbtn a{
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'poppins', sans-serif;
+    color: #fff;
+    text-decoration: none;
+}
+.tagrow .tagbtn:hover{
+    background-color: #5CB9B1;
+}
+@media screen and (max-width: 1042px){
+    .tagcontainer{
+        display: flex;
+        flex-direction: column;
+    }
+}
 @media screen and (max-width: 1200px){
     .mainregmap{
         flex-direction: column;
@@ -232,3 +267,21 @@ nav{
 .toggle .line3{
     transform: rotate(45deg) translate(-5px,-6px);
 }
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }

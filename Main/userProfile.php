@@ -30,6 +30,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     <!-- <link rel="stylesheet" href="styles.css"> -->
     <link rel="stylesheet" href="css/userCSS.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="js/burger.js"></script>
 </head>
 <body>
 <section class="header">
@@ -143,7 +144,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                         <label type="date" class="input-label hist" value="Doe"><?php echo $row['checkOUT']; ?></label>
                     </div>
                     <div class="cancelrow" style="margin-left:30px;">
-                        <a href= <?php echo "deleteReservation.php?resID=" . $row['reservationID']; ?> id = "updateProfile" class="user-btn" style="background:crimson;">X</a>
+                        <a href= <?php echo "deleteReservation.php?resID=" . $row['reservationID']; ?> id = "updateProfile" class="user-btn x-btn" style="color:crimson; margin-top:5px;">X</a>
                     </div>
                 </div>
                 <?php }?>

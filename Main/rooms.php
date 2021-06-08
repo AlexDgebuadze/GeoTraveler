@@ -18,6 +18,9 @@ $room = $crud->getRooms($hotelid);
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="css/PlanYourTripFrontCSS.css">
     <link rel="stylesheet" href="rooms.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
 </head>
 <body>
     <div class="header">
@@ -75,7 +78,7 @@ $room = $crud->getRooms($hotelid);
                         <p class="paragraph">
                         <?php echo $res['roomDescr']; ?>
                         </p>
-                        <a href=<?php  echo "bookroom.php?hotelID=" . $hotelid . "&roomID=" . $res['roomid'] ?> class="btn rooms-btn">Book now &rarr;</a>
+                        <a href=<?php  echo "bookroom.php?hotelID=" . $hotelid . "&roomID=" . $res['roomid']; ?> class="btn rooms-btn">Book now &rarr;</a>
                     </div>
                 </div>
 
@@ -84,5 +87,43 @@ $room = $crud->getRooms($hotelid);
             </div>
         </div>
     </section>
+    <footer class="footer">
+        <div class="footercontainer">
+            <div class="footerrow">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="">About Georgia</a></li>
+                        <li><a href="">our services</a></li>
+                        <li><a href="">privacy policy</a></li>
+                        <li><a href="">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Plan Your Trip</h4>
+                    <ul>
+                        <li><a href="">Our Hotels</a></li>
+                        <li><a href="">Destinations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                        <a href=""><i class="fab fa-twitter"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href=""><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </main>
 </body>

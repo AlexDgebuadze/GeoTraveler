@@ -180,9 +180,20 @@ h2{
     cursor: pointer;
     margin-top: 15px;
 }
-.dlt-btn{
-    background: crimson;
+.x-btn{
+    background: none;
+    text-decoration: none;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: none;
+    box-shadow: none;
 }
+/* .dlt-btn{
+    background: crimson;
+} */
 .tab-show{
     display:none;
 }
@@ -191,6 +202,7 @@ h2{
     flex-direction: row;
     border: 1px solid black;
     margin-bottom: 3px;
+    width: 103%;
 }
 .hotelhist .inputrow{
     padding: 2px;
@@ -226,7 +238,7 @@ label{
 }
 .inputrow.cancel:hover{
     color: #fff;
-    background: crimson;
+    /* background: crimson; */
 }
 @media screen and (max-width:1381px){
     /* nav{
@@ -240,6 +252,11 @@ label{
         left:0%;
     }
 }
+/* @media screen and(max-width:565px){
+    .user-main-container{
+        overflow-x: auto;
+    }
+} */
 @media screen and (max-width:768px){
     nav{
         background-color: var(--purple-transparent);
@@ -281,6 +298,7 @@ label{
     transform: translate(0%);
 }
 }
+
 /*Burger მენიუში ნელ-ნელა რომ ამოვიდეს ლინკები*/
 @keyframes navLinkFade{
     from{
