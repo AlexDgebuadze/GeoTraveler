@@ -140,6 +140,11 @@ nav{
     .Region h1{
         width: 100%;
     }
+    .RegionAbt p{
+        margin-left: 0px;
+        margin-right: 10px;
+        padding-right: 30px;
+    }
     .AGHeader{
         background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../images/mapsmall.png);
     }
@@ -157,9 +162,7 @@ nav{
         justify-content: center;
         text-align: center;
     }
-    .Regionimg img{
-        width: 100%;
-    }
+    
     /* nav{
         background-color: #5d4954;
     } */
@@ -172,6 +175,9 @@ nav{
     }
 }
 @media screen and (max-width:768px){
+    .Regionimg img{
+        width: 100%;
+    }
     nav{
         background-color: #5d4954;
     }

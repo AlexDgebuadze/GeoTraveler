@@ -58,7 +58,7 @@ session_start();
             Archeological findings are now adding material evidence to support Georgia’s claim as the world’s oldest wine-producing country.</p>
             <h3>PREHISTORIC WINEMAKING ARTIFACTS</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/wine.jpg"></div>
+            <div class="Mountainsimg"><img src="images/wine/ancient-qvevri_lightened.jpeg"></div>
             <p>In 2015, scientists studying the history of agriculture uncovered ancient clay vessels dating back 8,000 years at an archeological dig in southeastern Georgia. The Neolithic-era site is a joint project of the Georgian National Museum and the University of Toronto.
 
                 Researchers analyzing the residue contained within the vessels—the remains of grapes and grape seeds—dated the material to 6000 BCE. This establishes ancient Georgia as the first known location of grape winemaking.
@@ -69,7 +69,7 @@ session_start();
     <div class="Mountains">
         <h3>LONGEST UNINTERRUPTED WINEMAKING TRADITION</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/wine.jpg"></div>
+            <div class="Mountainsimg"><img src="images/wine/culture.jpg"></div>
             <p>Situated at the crossroads of Europe, Asia, and the Middle East—and enjoying a climate and terrain perfectly suited for the cultivation of grapes—ancient Georgia supplied wines and vines to the first cities of the Fertile Crescent: Babylon and Ur.
 
                 Georgia’s location has made it vulnerable to a host of adversaries throughout history.
@@ -88,13 +88,13 @@ session_start();
     <div class="Mountains">
         <h3>AN EMERGING ARTISANAL WINE CENTER</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/wine.jpg"></div>
+            <div class="Mountainsimg"><img src="images/wine/History5.jpg"></div>
             <p>Winemaking has long been the engine of the Georgian economy, elevating the vine to a symbol of endurance, rebirth, and prosperity. Shared fervor for the grape continues as winemakers explore new markets, reexamine centuries-old terroirs, and carve out a new place for their wines on the world stage.
 
                 As the Georgian wine revival gathers steam, today’s local winemakers are harnessing their national heritage to produce some of the world’s most distinctive wines. In the process, they’re transforming into an emerging artisanal powerhouse—tying wine’s deep past to a dynamic future.</p>
             </div>
     </div>
-    <div class="slider">
+    <!-- <div class="slider">
         <input type="radio" name="slider" checked="checked" id="1">
         <div class="imgBox">
             <label for="2"><img src="images/Tbilisi-night.jpg"></label>
@@ -103,7 +103,7 @@ session_start();
         <div class="imgBox">
             <label for="1"><img src="images/Tbilisi-view-1.jpg"></label>
         </div>
-    </div>
+    </div> -->
     <footer class="footer">
         <div class="footercontainer">
             <div class="footerrow">

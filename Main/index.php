@@ -86,9 +86,7 @@ session_start();
             </div>
             <div class="cardtext">
                 <h2>Georgian Culture</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, 
-                    dipisicing elit. Assumenda velit qui nostrum 
-                    odit sequi est enim necessitatibus voluptatem
+                <p>Georgian culture is an exotic, mysterious and ancient culture stretching back for millennia.
                 </p>
                 <a href="card1.php"><button>Read More</button></a>
             </div>
@@ -96,13 +94,11 @@ session_start();
 
         <div class="cardbox">
             <div class="thumb">
-                <a href="card2.php"><img src="./images/caucasus1.jpg" alt=""></a>
+                <a href="card2.php"><img src="images/card2/intfacts.jpg" alt=""></a>
             </div>
             <div class="cardtext">
-                <h2>Card 2</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, 
-                    dipisicing elit. Assumenda velit qui nostrum 
-                    odit sequi est enim necessitatibus voluptatem
+                <h2>Fun Facts About Georgia</h2>
+                <p>The birthplace of wine, a cave city and a unique alphabet – for these and other fun and interesting Georgia country facts
                 </p>
                 <a href="card2.php"><button>Read More</button></a>
             </div>
@@ -110,15 +106,13 @@ session_start();
 
         <div class="cardbox">
             <div class="thumb">
-                <img src="./images/caucasus1.jpg" alt="">
+                <img src="./images/WEB_VAL_8985-1.jpg" alt="">
             </div>
             <div class="cardtext">
-                <h2>Card 3</h2>
-                <p>Lorem ipsum dolor sit amet consectetur, 
-                    dipisicing elit. Assumenda velit qui nostrum 
-                    odit sequi est enim necessitatibus voluptatem
+                <h2>Reasons to visit Georgia</h2>
+                <p>From delicious food to hospitable people, from incredible landscape to vibrant cities – Georgia has it all!
                 </p>
-                <a href="#"><button>Read More</button></a>
+                <a href="card3.php"><button>Read More</button></a>
             </div>
         </div>
     </div>

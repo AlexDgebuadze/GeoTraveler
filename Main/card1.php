@@ -54,7 +54,7 @@ session_start();
     <div class="Mountains">
         <h1>Georgian Culture</h1>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Svaneti.jpg"></div>
+            <div class="Mountainsimg"><img src="images/card1/georgia-culture.jpg"></div>
             <p>Georgian culture is an exotic, mysterious and ancient culture stretching back for millennia. Elements of Anatolian, European, Persian, Arabian, Ottoman and Far Eastern cultures have influenced Georgia’s own ethnic identity resulting in one of the most unique and hospitable cultures in the world. Georgian culture is world renowned for being accommodating and tolerant. Traditionally, Georgian people consider guests to be a gift from god and their welcoming amiability is immediately apparent upon a traveler’s arrival.<br><br>
 
                 Georgia’s strategic geographic location between Europe and Asia is one of the primary reasons for its diverse, yet distinct, cultural features. Its vector on the historic Silk Road enabled important trade connecting the north, south, east and west. This junction of commerce along with Georgia’s own bounty of resources combined to form a definitive amalgamation of cultures.<br><br>
@@ -79,7 +79,7 @@ session_start();
     <div class="Mountains">
         <h3>Georgian Supra</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Svaneti.jpg"></div>
+            <div class="Mountainsimg"><img src="images/card1/supra.jpg"></div>
             <p>
                 Georgian social culture is encapsulated in a single ceremonial feast of traditional Georgian cuisine, multitudes of Georgian wine and the traditional Georgian toastmaster – “Tamada”. This banquet is called “Supra”.
 
@@ -90,7 +90,7 @@ session_start();
     <div class="Mountains">
         <h3>Georgian Applied Art</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Svaneti.jpg"></div>
+            <div class="Mountainsimg"><img src="images/card1/applied-art2.jpg"></div>
             <p>
                 The traditional Georgian applied art is mainly represented by high art items from ceramics, metal, wood, and bones. Georgia is famous for its fine jewelry, engraving on metal, armory.
             </p>
@@ -99,13 +99,13 @@ session_start();
     <div class="Mountains">
         <h3>Georgian Music and Dances (Folklore)</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Svaneti.jpg"></div>
+            <div class="Mountainsimg"><img src="images/card1/georgian-music3.jpg"></div>
             <p>
                 Georgian music and dance are among the most developed in the world in terms of their advanced choral harmony and rhythm. Not only that, they are a beautiful reflection of the national heritage of the Georgian people.
             </p>
         </div>
     </div>
-    <div class="Mountains">
+    <!-- <div class="Mountains">
         <h3>Georgian Literature</h3>
         <div class="MountainContent">
             <div class="Mountainsimg"><img src="images/Svaneti.jpg"></div>
@@ -113,11 +113,11 @@ session_start();
                 Georgian literature began to take shape in the 5th century AD. Religious writings of the country’s early Christian era recounted the lives of martyrs and saints, while folklore from later centuries were filled with legends of national heroes and instructive poems.
             </p>
         </div>
-    </div>
+    </div> -->
     <div class="Mountains">
         <h3>Georgian Painting and Architecture</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Svaneti.jpg"></div>
+            <div class="Mountainsimg"><img src="images/card1/mtskheta3.jpg"></div>
             <p>
                 Georgian painting is represented by the works of such masters as legendary Niko Pirosmani, Gigo Gabashvili, David Kakabadze, Lado Gudiashvili, Cornelius Sanadze, Elena Akhvlediani, Sergey Kobuladze, Simon Virsalasze and Ekaterina Bagdavadze. Famous Georgian sculptors include Eldudzha Amashukeli, Irakli Ochiauri and Zurab Tsereteli.
             </p>
@@ -126,13 +126,13 @@ session_start();
     <div class="Mountains">
         <h3>Georgian Theatre</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Svaneti.jpg"></div>
+            <div class="Mountainsimg"><img src="images/card1/tbilisi-theatre3.jpg"></div>
             <p>
                 Georgian dramaturgy goes back to the mid-19 th century. Its founder is the writer, translator and theater figure Georgi Eristavi (1811–1864).
             </p>
         </div>
     </div>
-    <div class="Mountains">
+    <!-- <div class="Mountains">
         <h3>Georgian Cinema</h3>
         <div class="MountainContent">
             <div class="Mountainsimg"><img src="images/Svaneti.jpg"></div>
@@ -140,17 +140,17 @@ session_start();
                 The birth of Georgian cinema is related to the beginning of the 20 th century. The first film was made in 1912. Back then nobody knew that Georgian movies would be recognized all over the world.
             </p>
         </div>
-    </div>
+    </div> -->
     <div class="Mountains">
         <h3>Georgian Museums</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Svaneti.jpg"></div>
+            <div class="Mountainsimg"><img src="images/card1/georgia-culture-museums.jpg"></div>
             <p>
                 Georgian museums number over 100, and more than 20 of these are in Tbilisi alone. The largest museum in the country is the Georgian National Museum, founded in 1852 and known until 1919 as the Caucasian Museum.
             </p>
         </div>
     </div>
-    <div class="slider">
+    <!-- <div class="slider">
         <input type="radio" name="slider" checked="checked" id="1">
         <div class="imgBox">
             <label for="2"><img src="images/Tbilisi-night.jpg"></label>
@@ -159,7 +159,7 @@ session_start();
         <div class="imgBox">
             <label for="1"><img src="images/Tbilisi-view-1.jpg"></label>
         </div>
-    </div>
+    </div> -->
     <footer class="footer">
         <div class="footercontainer">
             <div class="footerrow">

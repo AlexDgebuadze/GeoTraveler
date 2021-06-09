@@ -72,7 +72,7 @@ session_start();
             </div>
             <div class="westheader">
                 <h3>Western Georgia</h3>
-                <p>Western Georgia Western Georgia Western Georgia Western Georgia</p>
+                <!-- <p>Western Georgia Western Georgia Western Georgia Western Georgia</p> -->
             </div>
         </div>
         <div class="regmap">
@@ -81,7 +81,7 @@ session_start();
             </div>
             <div class="eastheader">
                 <h3>Eastern Georgia</h3>
-                <p>Eastern Georgia Eastern Georgia Eastern Georgia Eastern Georgia</p>
+                <!-- <p>Eastern Georgia Eastern Georgia Eastern Georgia Eastern Georgia</p> -->
             </div>
         </div>
     </div>
@@ -92,7 +92,7 @@ session_start();
             </div>
             <div class="capital">
                 <h3>Capital of georgia</h3>
-                <p>Capital of georgia Capital of georgia Capital of georgia Capital of georgia</p>
+                <p>Tbilisi in some languages still known by its pre-1936 name Tiflis is the capital and the largest city of Georgia</p>
             </div>
         </div>
     </div>

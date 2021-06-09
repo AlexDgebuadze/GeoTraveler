@@ -58,70 +58,70 @@ session_start();
         <p>One would not expect such a variety of architectural styles in a country located on the battlefield of civilizations. As a rule, each civilization tends to impose its cultural values on others by destroying the alien one and building its heritage. But architecture of Georgia somehow survived. From ancient stone towers and monasteries to medieval fortresses and traditional houses. Even the neoclassical, art nouveau, cool socialist and ultra-modern architecture, it’s all there at its finest! Not only its incredible capital Tbilisi and the sea side resort of Batumi house an enormous architectural treasure, but the rest of the country has a lot to offer too.        </p>
         <h3>Svanetian Towers</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Architecture small.png"></div>
+            <div class="Mountainsimg"><img src="images/architecture/Svanetian-towers.jpg"></div>
             <p>Set amongst the mighty Caucasus Mountain Range, Svaneti is home to thousand year old defense towers, now World Heritage Site. Svan people were not always in peace with northern and eastern neighbors, especially when there wasn’t enough food for all. In order to protect themselves they had to build some kind of stone fortress. Unlike elsewhere in the world where an entire village was built within a surrounding fortress, in Svaneti each family would have its own in the shape of a tall stone tower. During a siege, the whole family (up to hundred people) would hide inside the tower and stay there until the oppressor left.</p>
             </div>
     </div>
     <div class="Mountains">
         <h3>Georgian Monasteries</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Architecture small.png"></div>
+            <div class="Mountainsimg"><img src="images/architecture/Monasteries.jpg"></div>
             <p>Georgia was the second country in the world to adopt Christianity in the 4th century. Historically, the church played an important role in preserving Georgian identity, and while largely left aside during the communist rule, it has emerged as the country’s most loved institution. Hundreds of medieval monasteries can be visited all around the country. Reminiscent of Romanesque art they are easily recognisable, due to their tall drum and conic shape dome. Apart from that, Georgia is home to two uniquely authentic cave monasteries: Vardzia and David Gareja.</p>
             </div>
     </div>
     <div class="Mountains">
         <h3>Traditional Houses</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Architecture small.png"></div>
+            <div class="Mountainsimg"><img src="images/architecture/Houses.jpg"></div>
             <p>In Georgia there is a long tradition of building colourful vernacular architecture. Different regions have different house types but they do share some features. A typical Georgian urban house would be a two storey building with a characteristic balcony with lace like decoration. Some of them with modest classical wooden balustrades others with arabesque shapes. Tbilisi’s houses are larger and have balconies spanning over several stories. In the wine region of Kakheti, the town of Sighnaghi hosts many outstanding traditional houses.</p>
             </div>
     </div>
     <div class="Mountains">
         <h3>Persian Influences</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Architecture small.png"></div>
+            <div class="Mountainsimg"><img src="images/architecture/Persian.jpg"></div>
             <p>Between the 16th and 20th Centuries, Persia (where current Iran is) influenced heavily Georgian architecture. Art was very important in Persian culture, and architecture considered its highest form. Cosmic symbolism is the main motif in all Persian inspired buildings. You can see the latter in the perfect relationship of form and scale, structural creativity, and lavish geometrical decorations. Symbolic geometry is everywhere, including rectangular courtyards, circles, squares, and decorative elements. Some of the best examples of this superb architecture are in Tbilisi, such as the Chreli Abano Baths and the Georgian National Opera Theater.</p>
             </div>
     </div>
     <div class="Mountains">
         <h3>Fin de Siècle and Art Nouveau Architecture</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Architecture small.png"></div>
+            <div class="Mountainsimg"><img src="images/architecture/Fin.jpg"></div>
             <p>Following the discovery of oil in Azerbaijan in the mid 19th century, massive pipelines were laid throughout Georgia to bring oil to Europe. Money from the oil boom financed international style architecture all around the country. In Batumi, a large port on the Black Sea, hundreds of elegant fin de siècle buildings were erected bringing a European feel to this charming city. Although in style neoclassical, their colours and shapes were far off the usual grid. In the meantime Tbilisi was a Mecca for numerous Art Nouveau artists. The best example of that exciting period is the cosmopolitan David Aghmashenebeli Avenue.</p>
             </div>
     </div>
     <div class="Mountains">
         <h3>Soviet Architecture</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Architecture small.png"></div>
+            <div class="Mountainsimg"><img src="images/architecture/Soviet.jpg"></div>
             <p>Soviet times were marked by the massive construction of huge residential blocks all over the country. While late post-war architecture reflects simple lines, the early national socialist style incorporated some elements of Georgian art. Probably the most interesting example of that period is the Georgian National Academy of Sciences in Tbilisi. The other extraordinary building is from the late period and serves as the headquarters of the Bank of Georgia. Built as the Ministry of Infrastructure in 1975, it was inspired by the surrounding forest. The idea was to cover the least space possible on the ground and leave it for nature.</p>
             </div>
     </div>
     <div class="Mountains">
         <h3>Contemporary Architecture of Georgia</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Architecture small.png"></div>
+            <div class="Mountainsimg"><img src="images/architecture/Contemporary.jpg"></div>
             <p>Despite the not so bright economic situation in Georgia since the fall of Communism the state funded numerous large projects. Cool innovative designs and different materials, shapes and colours were used for public service halls, border crossings, police stations, government buildings, airports, office towers and hotels, especially in Batumi and Tbilisi. New interesting parks and bridges and several grand scale renovations gave new life to a nation slowly awakening. The new ultra-modern parliament building in Kutaisi was finished in 2012. It was Georgia’s Legislative seat until 2019, when the parliament moved back to Tbilisi.</p>
             </div>
     </div>
     <div class="Mountains">
         <h3>Architecture of Tbilisi</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Architecture small.png"></div>
+            <div class="Mountainsimg"><img src="images/architecture/Tbilisi.jpg"></div>
             <p>To us, Tbilisi is one of the most beautiful cities in the world. We couldn’t resist the way architecture interacts with the landscape. It’s so unique that we felt in a fairy tale city. In Tbilisi, you’ll find plenty of wooden houses with lace decorated balconies, ancient baths, centuries-old churches, elegant neoclassical and art nouveau palaces, cool soviet buildings, and even high-quality contemporary architecture. The River Mtkvari cuts deep into the rocks dividing the city in two. Art is everywhere, and Tbilisi citizens stylish and cosmopolitan. All you have to do is get lost in one of its old neighborhoods and let the city conquer you. </p>
             </div>
     </div>
     <div class="Mountains">
         <h3>Architecture of Batumi</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Architecture small.png"></div>
+            <div class="Mountainsimg"><img src="images/architecture/Batumi.jpg"></div>
             <p>Batumi’s rich and varied architecture impressed us greatly. The city rose to prominence at the end of the 19th Century, thus the lavish neoclassical and art nouveau buildings from that time. At the beginning of the 21st Century Batumi flourished again, but this time it grew in height. The coast line is full of bizarre towers and novelty buildings of different colors, shapes and styles. Three interesting squares, plenty of nice parks and a 5 kilometer long Seaside Promenade complete the feast. Everything is uniquely Georgian and set amongst outstanding nature. What an outstanding city!</p>
             </div>
     </div>
     <div class="Mountains">
         <h3>Staying in an Architectural Landmark</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Architecture small.png"></div>
+            <div class="Mountainsimg"><img src="images/architecture/Georgia.jpg"></div>
             <p>If you are a hotel queen like us, you’ll be delighted to know that in Georgia you can stay in iconic historic and contemporary architectural landmarks.
 
                 In Tbilisi, you have plenty of options to choose from. Our favorite is the Stamba Hotel, a former Soviet-era publishing house. This brutalist gem has been refurbished to include top-notch facilities and embellished with plants and art.
@@ -137,11 +137,38 @@ session_start();
     <div class="slider">
         <input type="radio" name="slider" checked="checked" id="1">
         <div class="imgBox">
-            <label for="2"><img src="images/Tbilisi-night.jpg"></label>
+            <label for="2"><img src="images/architecture/Georgia.jpg"></label>
         </div>
         <input type="radio" name="slider" id="2">
         <div class="imgBox">
-            <label for="1"><img src="images/Tbilisi-view-1.jpg"></label>
+            <label for="1"><img src="images/architecture/Batumi.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="2">
+        <div class="imgBox">
+            <label for="1"><img src="images/architecture/Tbilisi.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="2">
+        <div class="imgBox">
+            <label for="1"><img src="images/architecture/Contemporary.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="2">
+        <div class="imgBox">
+            <label for="1"><img src="images/architecture/Soviet.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="2">
+        <div class="imgBox">
+            <label for="1"><img src="images/architecture/Fin.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="2">
+        <div class="imgBox">
+            <label for="1"><img src="images/architecture/Persian.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="2">
+        <div class="imgBox">
+            <label for="1"><img src="images/architecture/Monasteries.jpg"></label>
+        </div><input type="radio" name="slider" id="2">
+        <div class="imgBox">
+            <label for="1"><img src="images/architecture/Svanetian-towers.jpg"></label>
         </div>
     </div>
     <footer class="footer">

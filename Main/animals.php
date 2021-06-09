@@ -55,46 +55,58 @@ session_start();
         <h1>Fauna</h1>
         <h3>Red deer</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Svaneti.jpg"></div>
+            <div class="Mountainsimg"><img src="images/animals/deer.jpg"></div>
             <p>The red deer, also known as Cervus elaphus, despite being one of the most beautiful inhabitants of Georgian forests, is nearly extinct in the country. Several subspecies of red deer exist, and one of them exclusively inhabits Georgia. The beautiful red deer can be found in the national reserves of Borjomi and Lagodekhi. Red deer were listed among Georgia’s endangered species as far back as the beginning of the 19th century.</p>
             </div>
     </div>
     <div class="Mountains">
         <h3>Leopard</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Svaneti.jpg"></div>
+            <div class="Mountainsimg"><img src="images/animals/leopard.jpg"></div>
             <p>The leopard, now considered to be one of the rarest animals in the world, used to inhabit large swathes of Georgia’s territory many years ago. A number of Georgian folk tales is related to this predator. Unfortunately, leopards are on the brink of extinction; there are barely a few dozens left worldwide. One has recently been noticed in Vashlovani National Park, Georgia. Hunting this animal is strongly prohibited.</p>
             </div>
     </div>
     <div class="Mountains">
         <h3>Caucasian tur</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Svaneti.jpg"></div>
+            <div class="Mountainsimg"><img src="images/animals/tur.jpg"></div>
             <p>Caucasian tur is a mountain-dwelling caprine found only in the Caucasus. There are two types of turs: East and West Caucasian. These wild goats usually live in rough mountainous terrain and feed on alpine grass. Hunting them is strongly banned, since they are included into Georgia’s Red List. Caucasian turs are found in the regions of Lagodekhi,Kvareli, Telavi, Lentekhi, Mestia, Oni and in the mountains of Abkhazia.</p>
             </div>
     </div>
     <div class="Mountains">
         <h3>Goitered gazelle</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Svaneti.jpg"></div>
+            <div class="Mountainsimg"><img src="images/animals/gazele"></div>
             <p>Goitered gazelle is another inhabitant of Georgia’s landscapes that is considered endangered. The goitered gazelle inhabits sands, gravel plains and limestone plateaus. In Georgia it could mostly be found in the eastern part of Shiraqi field, as well as Gardabani and Samgori fileds. Unfortunately, due to massive and uncontrolled hunting, the population of goitered gazelles was almost entirely devastated.</p>
             </div>
     </div>
     <div class="Mountains">
         <h3>Striped hyena</h3>
         <div class="MountainContent">
-            <div class="Mountainsimg"><img src="images/Svaneti.jpg"></div>
+            <div class="Mountainsimg"><img src="images/animals/striped-hyena-face.jpg"></div>
             <p>The striped hyena is also listed as an endangered animal. In the 19th century, these animals were far more widespread than they are now, even dwelling around Tbilisi, the capital of Georgia. They mostly inhabited Makhata Mountain, Martkopi, Akhmeta and Shiraqi regions of the country. At present, remnants of striped hyena population can still be found in the vicinity of Alazani River’s bank, Black Mountain and Sarkliskuri areas. Their numbers have significantly decreased over the years.</p>
             </div>
     </div>
     <div class="slider">
         <input type="radio" name="slider" checked="checked" id="1">
         <div class="imgBox">
-            <label for="2"><img src="images/Tbilisi-night.jpg"></label>
+            <label for="2"><img src="images/animals/deer.jpg"></label>
         </div>
         <input type="radio" name="slider" id="2">
         <div class="imgBox">
-            <label for="1"><img src="images/Tbilisi-view-1.jpg"></label>
+            <label for="1"><img src="images/animals/leopard.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="2">
+        <div class="imgBox">
+            <label for="1"><img src="images/animals/tur.jpg"></label>
+        </div>
+        <input type="radio" name="slider" id="2">
+        <div class="imgBox">
+            <label for="1"><img src="images/animals/gazele"></label>
+        </div>
+        <input type="radio" name="slider" id="2">
+        <div class="imgBox">
+            <label for="1"><img src="images/animals/striped-hyena-face.jpg"></label>
         </div>
     </div>
     <footer class="footer">

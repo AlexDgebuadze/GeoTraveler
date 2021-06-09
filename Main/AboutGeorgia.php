@@ -174,7 +174,7 @@ session_start();
                 </div>
             </article>
             <article>
-                <img src="images/mxatvroba.jpg" alt="">
+                <img src="images/khinkali_1" alt="">
                 <div class="NatureText">
                     <h3>Cuisine</h3>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
@@ -182,7 +182,7 @@ session_start();
                 </div>
             </article>
             <article>
-                <img src="images/dance.jpg" alt="">
+                <img src="images/georgian-wine-1621067275" alt="">
                 <div class="NatureText">
                     <h3>Wine</h3>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
