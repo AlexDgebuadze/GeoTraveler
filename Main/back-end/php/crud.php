@@ -46,6 +46,34 @@ class crud{
       }
 
    }
+   public function getAdminUser($username, $password){
+      try {
+         $sql = "SELECT * FROM geotraveler.adminusers WHERE auser = :username AND apass = :password";
+         $stmt = $this-> db->prepare($sql); 
+         $stmt->bindparam(':username',$username);
+         $stmt->bindparam(':password',$password);
+         $stmt->execute();
+         $result = $stmt->fetch();
+         return $result;
+      } catch (PDOException $e) {
+         echo $e->getMessage();
+         return false;
+      }
+
+   }
+   public function getAdminUserbyUsername($username){
+      try{
+          $sql = "select * from geotraveler.adminusers where auser = :username";
+          $stmt = $this->db->prepare($sql);
+          $stmt->bindparam(':username',$username);
+          $stmt->execute();
+          $result = $stmt->fetch();
+          return $result;
+      }catch (PDOException $e) {
+              echo $e->getMessage();
+              return false;
+      }
+  }
 
 
    public function getHotelsTop(){
@@ -59,6 +87,75 @@ class crud{
       }
   }
 
+  public function addNewHotel($hname, $photo,$minCost, $hotelDescr, $region, $nearAtr,$roomSum,$stars){
+   try {
+      $sql = "INSERT INTO geotraveler.hotel (hotelName,photo,minCost,hotelDescr,region,nearAtractions,roomSum,rate) VALUES (:hotelName,:photo,:minCost, :hotelDescr,:region,:nearAtractions,:roomSum,:rate)";
+      $stmt = $this-> db->prepare($sql); 
+      $stmt->bindparam(':hotelName',$hname);
+      $stmt->bindparam(':photo',$photo);
+      $stmt->bindparam(':minCost',$minCost);
+      $stmt->bindparam(':hotelDescr',$hotelDescr);
+      $stmt->bindparam(':region',$region);
+      $stmt->bindparam(':nearAtractions',$nearAtr);
+      $stmt->bindparam(':roomSum',$roomSum);
+      $stmt->bindparam(':rate',$stars);
+      $stmt->execute();
+      return true;
+   } catch (PDOException $e) {
+      echo $e->getMessage();
+      return false;
+   }
+
+}
+   public function deleteHotel($HID){
+      try{
+         $sql = "DELETE FROM geotraveler.hotel WHERE hotelId = :hotelid "; 
+         $stmt = $this->db->prepare($sql);
+         $stmt->bindparam(':hotelid',$HID);
+         $stmt->execute();
+         return true;
+      }catch(PDOException $e){
+         echo $e->getMessage();
+          return false;
+      }
+   }
+
+   public function addNewRoom($photo, $roomDescr, $hotelid, $cost, $roomCategory, $rooms, $personNum){
+      try {
+         $sql = "INSERT INTO geotraveler.room (roomPhoto,roomDescr,hotelID,cost,roomCategory,rooms,personNum,reserved) VALUES (:roomPhoto,:roomDescr, :hotelID,:cost,:roomCategory,:rooms,:personNum,'0')";
+         $stmt = $this-> db->prepare($sql); 
+         $stmt->bindparam(':roomPhoto',$photo);
+         $stmt->bindparam(':roomDescr',$roomDescr);
+         $stmt->bindparam(':hotelID',$hotelid);
+         $stmt->bindparam(':cost',$cost);
+         $stmt->bindparam(':roomCategory',$roomCategory);
+         $stmt->bindparam(':rooms',$rooms);
+         $stmt->bindparam(':personNum',$personNum);
+         $stmt->execute();
+         return true;
+      } catch (PDOException $e) {
+         echo $e->getMessage();
+         return false;
+      }
+   }
+   public function deleteRoom($roomID){
+      try{
+         $sql = "DELETE FROM geotraveler.room WHERE roomid = :roomID"; 
+         $stmt = $this->db->prepare($sql);
+         $stmt->bindparam(':roomID',$roomID);
+         $stmt->execute();
+         return true;
+      }catch(PDOException $e){
+         echo $e->getMessage();
+          return false;
+      }
+   }
+
+
+
+
+
+
    public function getAllHotels(){
    try{
        $sql = "SELECT * FROM geotraveler.hotel";
@@ -69,6 +166,18 @@ class crud{
        return false;
    }
    }
+   public function getAllRooms(){
+      try{
+          $sql = "SELECT * FROM geotraveler.room";
+          $result = $this->db->query($sql);
+          return $result;
+      }catch(PDOException $e){
+          echo $e->getMessage();
+          return false;
+      }
+      }
+
+
 
    public function countHotels(){
       try{
@@ -201,6 +310,28 @@ class crud{
           return false;
       }
    }
+   public function getAllReservations(){
+      try{
+         $sql = "SELECT * FROM geotraveler.reservation "; 
+          $res = $this->db->query($sql);
+          return $res;
+      }catch(PDOException $e){
+         echo $e->getMessage();
+          return false;
+      }
+   }
+
+   public function getAllUsers(){
+      try{
+         $sql = "SELECT * FROM geotraveler.users"; 
+          $res = $this->db->query($sql);
+          return $res;
+      }catch(PDOException $e){
+         echo $e->getMessage();
+          return false;
+      }
+   }
+
    public function getReservationsByID($ID){
       try{
          $sql = "SELECT * FROM geotraveler.reservation WHERE reservationID = '$ID'"; 
@@ -221,6 +352,7 @@ class crud{
           return false;
       }
    }
+
    
 
 
