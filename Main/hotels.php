@@ -4,6 +4,8 @@ require_once dirname(__FILE__).'/back-end/php/crud.php';
 session_start(); 
 //$res = $crud->getAllHotels();
 
+$reg = $_GET['region'];
+
 if (isset($_GET['page_no']) && $_GET['page_no']!="") {
     $page_no = $_GET['page_no'];
     } else {
@@ -40,7 +42,24 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
     $res = $crud -> getHotelFromSearch($reg,$tag,$Pfrom,$Pto);
 
    
-   }else{
+   }
+   elseif(isset($_GET['region'])&& isset($_GET['tag']) ){
+
+        $reg = trim($_GET['region']); 
+        $tag = trim($_GET['tag']);
+
+        $Pfrom = trim($_POST["fromPriceValue"]); 
+        $Pto = trim($_POST["toPriceValue"]); 
+
+
+    $total_records = $crud -> getHotelFromSearchCount($reg,$tag,"0","600000");
+    $total_no_of_pages = ceil($total_records / $total_records_per_page);
+    $second_last = $total_no_of_pages - 1;
+    
+    $res = $crud -> getHotelFromSearch($reg,$tag,"0","600000");
+
+   }
+    else{
     $total_records = $crud -> countHotels();
     // $total_records = $total_records['total_records'];
     $total_no_of_pages = ceil($total_records / $total_records_per_page);

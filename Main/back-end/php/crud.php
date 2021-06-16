@@ -30,6 +30,18 @@ class crud{
 
    }
 
+   public function returnTags($region){
+      try {
+         $sql = "SELECT DISTINCT (nearAtractions), region FROM geotraveler.hotel WHERE region = '$region'";
+         $stmt = $this-> db->prepare($sql); 
+         //$stmt->bindparam(':region',$region);
+         $stmt = $this->db->query($sql);
+          return $stmt;
+      } catch (PDOException $e) {
+         echo $e->getMessage();
+         return false;
+      }
+   }
 
    public function getUser($username, $password){
       try {

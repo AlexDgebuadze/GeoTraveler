@@ -98,32 +98,6 @@ session_start();
             </div>
         </div>
     </div>
-    <div class="tagcontainer2">
-        <div class="tgbtn">
-            <a href="">Art</a>
-        </div>
-        <div class="tgbtn">
-            <a href="">Architecture</a>
-        </div>
-        <div class="tgbtn">
-            <a href="">Climbing</a>
-        </div>
-        <div class="tgbtn">
-            <a href="">Hiking</a>
-        </div>
-        <div class="tgbtn">
-            <a href="">Swimming</a>
-        </div>
-        <div class="tgbtn">
-            <a href="">Museums</a>
-        </div>
-        <div class="tgbtn">
-            <a href="">Riding</a>
-        </div>
-        <div class="tgbtn">
-            <a href="">Kayaking</a>
-        </div>
-    </div>
     <footer class="footer">
         <div class="footercontainer">
             <div class="footerrow">

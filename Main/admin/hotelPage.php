@@ -19,9 +19,6 @@ if(isset($_GET['HID'])){
 	session_start(); 
 }
 
-
-
-
 ?>
 
 
