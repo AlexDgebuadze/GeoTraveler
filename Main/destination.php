@@ -62,7 +62,9 @@ session_start();
             <p>Explore outdoor and nature activities, cultural experiences,<br> coastal sailings and cruises in Georgia.</p>
         </div>
         <div class="headermap">
+        <a href="AboutGeorgiaRegions.php">
             <img src="./images//BIGGEORGIA.png" alt="">
+            </a>
         </div>
     </section>
     <div class="mainregmap">

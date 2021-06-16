@@ -72,6 +72,16 @@ session_start();
         <video autoplay class="videobackground" muted plays-inline>
             <source src="./videos/bannervideo1.mp4" type="video/mp4">
         </video>
+        <div class="hero">
+            <div class="main">
+                <div class="main-heading">
+                    <h1 class="title2">EXPLORE GEORGIA</h1>
+                </div>
+                <!-- <a href="#" class="btn btn-gradient">Explore now
+                    <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
+                </a> -->
+            </div>
+        </div>
         <div class="title">
             <h1>EXPLORE GEORGIA</h1>
         </div>
