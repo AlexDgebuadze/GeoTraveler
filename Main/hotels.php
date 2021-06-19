@@ -83,9 +83,9 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
     <!--Font awesome CDN-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <link rel="stylesheet" href="css/PlanYourTripFrontCSS.css">
-    <link rel="stylesheet" href="rooms.css">
-    <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="hotels.css">
+    <link rel="stylesheet" href="css/rooms.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/hotels.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     
 </head>
@@ -212,9 +212,6 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
 
 
             <div class="grid rooms-grid">
-
-                
-
                 <?php while($row = $res->fetch(PDO::FETCH_ASSOC)) { ?>
                 <div class="grid-item featured-rooms">
                     <div class="image-wrap">
@@ -232,9 +229,6 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
                 </div>
 
                 <?php }?>
-                
-
-
             </div>
 
 

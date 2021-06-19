@@ -191,6 +191,7 @@ h2{
     flex-direction: row;
     border: 1px solid black;
     margin-bottom: 3px;
+    width: max-content;
 }
 .hotelhist .inputrow{
     padding: 2px;
@@ -211,6 +212,10 @@ label{
 .inputrow{
     display: flex;
     flex-direction: column;
+}
+.cancelrow{
+    margin-left: 30px;
+    align-self: center;
 }
 .inputrow.cancel{
     display: flex;

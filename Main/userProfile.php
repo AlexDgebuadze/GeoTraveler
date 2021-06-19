@@ -143,8 +143,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                         <h2 class="hist">Check-Out Time</h2>
                         <label type="date" class="input-label hist" value="Doe"><?php echo $row['checkOUT']; ?></label>
                     </div>
-                    <div class="cancelrow" style="margin-left:30px;">
-                        <a href= <?php echo "deleteReservation.php?resID=" . $row['reservationID']; ?> id = "updateProfile" class="user-btn x-btn" style="color:crimson; margin-top:5px;">X</a>
+                    <div class="cancelrow">
+                        <a href= <?php echo "deleteReservation.php?resID=" . $row['reservationID']; ?> id = "updateProfile" class="user-btn x-btn" style="color:white; margin-top:5px;">X</a>
                     </div>
                 </div>
                 <?php }?>

@@ -101,7 +101,7 @@ nav{
     display:flex;   
     align-items: center;
     justify-content: space-around;
-    width: 45%;
+    width: max-content;
 }
 .nav-links li.active a{
     background-color: white;
@@ -239,7 +239,7 @@ nav{
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
 }
 .featured-hotels{
     height: 35rem;
@@ -247,6 +247,7 @@ nav{
     padding: 1rem;
     position: relative;
     z-index: 0;
+    justify-content: center;
 }
 .featured-hotels::before{
     content: '';

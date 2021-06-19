@@ -345,8 +345,7 @@ form .signIn-Link label:hover{
     padding-left: 50px;
 }
 .col{
-    flex-basis: 50%;
-    padding-left: 50px;
+    flex-basis: 100%;
 }
 .col h1{
     text-align: center;

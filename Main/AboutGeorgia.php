@@ -1,8 +1,6 @@
 <?php
 session_start(); 
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,9 +34,9 @@ session_start();
             
             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                echo ' <li> <a style=\'color : white\' href="userProfile.php">   My Account  </a>  </li>'; 
-               echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="logout.php">   Logout  </a></label>';
+               echo ' <label id="LoginF" for="show" ><a style=\'color : black; background-color: white;\' href="logout.php">   Logout  </a></label>';
             }else{
-                echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="loginForm.php">   Login  </a>  </label>  ';
+                echo ' <label id="LoginF" for="show" ><a style=\'color : black; background-color: white;\' href="loginForm.php">   Login  </a>  </label>  ';
             }
             ?>
             </li>
@@ -60,17 +58,6 @@ session_start();
                 It is considered that Georgia is the birthplace of Wine.
             </p>
         </div>
-            <div class="col cards">
-                <a href="#Nature"> <!--scrollto რომ გამოვიყენოთ id მივანიჭებთ იმ divs, რომელზეც გვინდა ჩამოსქროლოს და შემდეგ # -ის შემდეგ a tag -ში ჩავწერთ ამ id -ს. ამისთვის css-ში დავამატე scroll-behavior: smooth; ფუნქცია-->
-                <div class="card card1" >
-                    <h5>Nature</h5>  <!---->
-                    <!-- <p>Lorem, ipsum dolor sit amet</p> -->
-                </div> </a>
-                <a href="#Culture"><div class="card card2">
-                    <h5>Culture</h5> 
-                    <!-- <p>Lorem, ipsum dolor sit amet</p> -->
-                </div> </a>
-            </div>
         </div>
     </div>
     <div class="Regions">
@@ -174,7 +161,7 @@ session_start();
                 </div>
             </article>
             <article>
-                <img src="images/khinkali_1" alt="">
+                <img src="images/khinkali_1.jpg" alt="">
                 <div class="NatureText">
                     <h3>Cuisine</h3>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
@@ -182,7 +169,7 @@ session_start();
                 </div>
             </article>
             <article>
-                <img src="images/georgian-wine-1621067275" alt="">
+                <img src="images/georgian-wine-1621067275.jpg" alt="">
                 <div class="NatureText">
                     <h3>Wine</h3>
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>

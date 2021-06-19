@@ -37,9 +37,9 @@ $result = $crud->getHotelsTop();
             
             if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
                echo ' <li> <a style=\'color : white\' href="userProfile.php">   My Account  </a>  </li>'; 
-               echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="logout.php">   Logout  </a></label>';
+               echo ' <label id="LoginF" for="show"><a style=\'color : black; background-color: white;\' href="logout.php">   Logout  </a></label>';
             }else{
-                echo ' <label id="LoginF" for="show" class="show-btn"><a style=\'color : black; background-color: white;\' href="loginForm.php">   Login  </a>  </label>  ';
+                echo ' <label id="LoginF" for="show"><a style=\'color : black; background-color: white;\' href="loginForm.php">   Login  </a>  </label>  ';
             }
             ?>
             </li>

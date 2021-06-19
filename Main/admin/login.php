@@ -81,7 +81,7 @@
 			$_SESSION["AdminUsername"] = $username;
 	
 			session_start();
-			 header("location: index.php");
+			 header("location: index.php?page=booked");
 		}
 	}
 }
