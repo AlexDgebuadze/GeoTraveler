@@ -572,9 +572,9 @@ col a{
         flex-direction: row;
         padding-bottom: 50px;
     }
-    .Regions{
+    /* .Regions{
         margin-top: 450px;
-    }
+    } */
     
 } 
 @media screen and (max-width:1600px){
@@ -668,9 +668,9 @@ col a{
         margin-bottom: 0px;
         font-size: 32px;
     }
-    .Regions{
+    /* .Regions{
         margin-top: 750px;
-    }
+    } */
     .Regions .map{
         background-image: url(../images/mapsmall.png);
     }
