@@ -1,0 +1,16 @@
+.table-bordered th{
+    font-size: 16px;
+    text-align: center;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+.table-bordered td{
+    text-align: center;
+}
+.table-striped .text-center{
+    text-transform: capitalize;
+}
+.form-group .form-control :placeholder-shown{
+    text-transform: capitalize;
+}

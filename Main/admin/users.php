@@ -24,7 +24,7 @@ if($_SESSION["Adminloggedin"] === true){
 					<th class="text-center">mobile</th>
 					<th class="text-center">email</th>
 					<th class="text-center">username</th>
-					<th class="text-center">registrated at</th>
+					<th class="text-center">Registered at</th>
 				</tr>
 			</thead>
 			<tbody>

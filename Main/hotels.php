@@ -3,8 +3,8 @@
 require_once dirname(__FILE__).'/back-end/php/crud.php';
 session_start(); 
 //$res = $crud->getAllHotels();
-
-$reg = $_GET['region'];
+// $reg;
+// $reg = $_GET['region'];
 
 if (isset($_GET['page_no']) && $_GET['page_no']!="") {
     $page_no = $_GET['page_no'];
@@ -48,8 +48,8 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
         $reg = trim($_GET['region']); 
         $tag = trim($_GET['tag']);
 
-        $Pfrom = trim($_POST["fromPriceValue"]); 
-        $Pto = trim($_POST["toPriceValue"]); 
+        // $Pfrom = trim($_POST["fromPriceValue"]); 
+        // $Pto = trim($_POST["toPriceValue"]); 
 
 
     $total_records = $crud -> getHotelFromSearchCount($reg,$tag,"0","600000");

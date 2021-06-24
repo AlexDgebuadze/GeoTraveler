@@ -96,7 +96,7 @@ $crud->addNewHotel($hname,$imgData,$cost,$descr,$region,$tags,$rsum,$stars);
 </script>
 <body>
 
-<nav class="navbar navbar-dark bg-dark fixed-top " style="padding:0;">
+<nav class="navbar navbar-dark bg-dark fixed-top " style="padding:0; height:57px;">
   <div class="container-fluid mt-2 mb-2">
   	<div class="col-lg-12">
   		<div class="col-md-1 float-left" style="display: flex;">
@@ -124,29 +124,29 @@ $crud->addNewHotel($hname,$imgData,$cost,$descr,$region,$tags,$rsum,$stars);
 
 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
 <div class="form-group">
-<input class="form-control" placeholder="hotelName" name="hotelName" id="name" type="text" autofocus>
+<input class="form-control" placeholder="Hotel Name" name="hotelName" id="name" type="text" autofocus>
 </div>
 <div class="form-group">
   <input type="file" id="img" name="img" accept="image/jpg">
   </div>
   <div class="form-group">
-  <input class="form-control" placeholder="min Cost" name="minCost" id="minCost" type="text" >
+  <input class="form-control" placeholder="Min Cost" name="minCost" id="minCost" type="text" >
   </div>
   <div class="form-group">
-  <input class="form-control" placeholder="hotel Description" name="hotelDescr" id="hotelDescr" type="text" >
+  <input class="form-control" placeholder="Hotel Description" name="hotelDescr" id="hotelDescr" type="text" >
   </div>
   <div class="form-group">
-  <input class="form-control" placeholder="region" name="region" id="region" type="text" >
+  <input class="form-control" placeholder="Region" name="region" id="region" type="text" >
   </div>
   <div class="form-group">
-  <input class="form-control" placeholder="tags" name="tags" id="tags" type="text">
+  <input class="form-control" placeholder="Tags" name="tags" id="tags" type="text">
   </div>
   <div class="form-group">
-  <input class="form-control" placeholder="room number" name="roomSum" id="roomSum" type="text">
+  <input class="form-control" placeholder="Room number" name="roomSum" id="roomSum" type="text">
   </div>
-  <input class="form-control" placeholder="stars" name="stars" id="stars" type="text">
+  <input class="form-control" placeholder="Stars" name="stars" id="stars" type="text">
 
-  <input type="submit" name="submit" value="Submit">  
+  <input type="submit" name="submit" value="Submit" style="margin-top:20px;">  
 </form>
 
 

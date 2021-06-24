@@ -34,7 +34,6 @@ $crud->addNewRoom($imgData,$descr,$hotelid,$cost,$roomCategory,$rnum,$pnum);
 	  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="assets/font-awesome/css/all.min.css">
 
-
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
@@ -96,7 +95,7 @@ $crud->addNewRoom($imgData,$descr,$hotelid,$cost,$roomCategory,$rnum,$pnum);
 </script>
 <body>
 
-<nav class="navbar navbar-dark bg-dark fixed-top " style="padding:0;">
+<nav class="navbar navbar-dark bg-dark fixed-top " style="padding:0; height:57px;">
   <div class="container-fluid mt-2 mb-2">
   	<div class="col-lg-12">
   		<div class="col-md-1 float-left" style="display: flex;">

@@ -152,7 +152,6 @@
   						<div class="form-group">
   							<label for="username" class="control-label">Username</label>
   							<input type="text" id="username" name="adminUsername" class="form-control">
-							  <?php echo $login_err.$username_err.$password; ?>
   						</div>
   						<div class="form-group">
   							<label for="password" class="control-label">Password</label>

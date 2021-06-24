@@ -1,6 +1,6 @@
 <?php 
  require_once '../back-end/php/crud.php';
-session_start();
+// session_start();
 
 if($_SESSION["Adminloggedin"] === true){
 
@@ -47,11 +47,11 @@ if(isset($_GET['HID'])){
 								<tr>
 									<th class="text-center">id</th>
 									<th class="text-center">name</th>
-									<th class="text-center">min cost</th>
-									<th class="text-center">hotel Description</th>
+									<th class="text-center" style="width:105px;">min cost</th>
+									<th class="text-center" style="width:900px;">hotel Description</th>
 									<th class="text-center">region</th>
 									<th class="text-center">tags</th>
-									<th class="text-center">number of rooms</th>
+									<th class="text-center" style="width:150px;">No of Rooms</th>
 									<th class="text-center">stars</th>
 									<th class="text-center">action</th>
 								</tr>
@@ -65,7 +65,7 @@ if(isset($_GET['HID'])){
 								<td class="text-center" ><?php echo $row['minCost']; ?></td>
 								<td ><?php echo $row['hotelDescr']; ?></td>
 								<td class="text-center" ><?php echo $row['region']; ?></td>
-								<td class="text-center" ><?php echo $row['nearAtractions']; ?></td>
+								<td class="text-center" style="padding:5px;"><?php echo $row['nearAtractions']; ?></td>
 								<td class="text-center" ><?php echo $row['roomSum']; ?></td>
 								<td class="text-center" ><?php echo $row['rate']; ?></td>
 								<td><a href= <?php echo "hotelPage.php?HID=" . $row['hotelId']; ?> id = "updateProfile" class="user-btn x-btn" style="color:crimson; margin-top:5px;">Remove</a></td>

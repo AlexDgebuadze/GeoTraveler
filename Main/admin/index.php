@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="assets/font-awesome/css/all.min.css">
 
-
+  <link href="admincss.css" rel="stylesheet">
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
@@ -22,7 +22,7 @@
   <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
   <link href="assets/DataTables/datatables.min.css" rel="stylesheet">
-
+  
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
@@ -46,10 +46,10 @@
 <?php
 	session_start();
   require_once '../back-end/php/crud.php';
-  if($_SESSION["Adminloggedin"] === true){
+  if(isset($_SESSION["Adminloggedin"]) && isset($_SESSION["AdminUserID"])){
     $result = $crud->getAdminUserbyUsername($_SESSION["AdminUsername"]);
-
-    $uid = $_SESSION["userID"];
+    
+    $uid = $_SESSION["AdminUserID"];
   }else{
       echo "<script> window.alert('ERROR please login!!!'); window.location.replace('login.php'); </script>";
   }

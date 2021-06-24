@@ -15,12 +15,12 @@ if($_SESSION["Adminloggedin"] === true){
 					<div class="card-body">
 						<table class="table table-bordered">
 							<thead>
-								<th>reservationID</th>
-								<th>hotelID</th>
-								<th>roomID</th>
-								<th>userID</th>
-								<th>checkIN</th>
-								<th>checkOUT</th>
+								<th>ReservationID</th>
+								<th>HotelID</th>
+								<th>RoomID</th>
+								<th>UserID</th>
+								<th>Check-IN</th>
+								<th>Check-OUT</th>
 								<th>Action</th>
 							</thead>
 							<tbody>

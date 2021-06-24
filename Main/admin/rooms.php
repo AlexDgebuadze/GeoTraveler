@@ -1,5 +1,5 @@
 <?php
-	session_start(); 
+	// session_start(); 
 	require_once '../back-end/php/crud.php';
 if($_SESSION["Adminloggedin"] === true){
 
@@ -30,11 +30,11 @@ if(isset($_GET['RID'])){
 				<tr>
 					<th class="text-center">id</th>
 					<th class="text-center">room description</th>
-					<th class="text-center">hotel id</th>
+					<th class="text-center" style="width:120px; padding:2px;">hotel id</th>
 					<th class="text-center">cost</th>
-					<th class="text-center">room category</th>
+					<th class="text-center" style="width:153px;">room category</th>
 					<th class="text-center">rooms</th>
-					<th class="text-center">person number</th>
+					<th class="text-center">people</th>
 					<th class="text-center">reserved</th>
 					<th class="text-center">action</th>
 				</tr>
