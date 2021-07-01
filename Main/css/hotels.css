@@ -38,3 +38,20 @@ img{
     background:crimson;
     color:white;
     } */
+.pagination{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 18px;
+}
+.pagination a{
+  text-decoration: none;
+  color: #000;
+  padding: 5px;
+}
+.pagination a:hover{
+  background-color: #fa9e2c;
+  cursor: pointer;
+  color: #fff;
+}

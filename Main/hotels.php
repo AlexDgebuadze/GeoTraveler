@@ -236,7 +236,7 @@ if (isset($_GET['page_no']) && $_GET['page_no']!="") {
                 <div style='padding: 10px 20px 0px; border-top: dotted 1px #CCC;'>
             <strong>Page <?php echo $page_no." of ".$total_no_of_pages; ?></strong>
             </div>
-
+<!--     list-style: none; -->
             <ul class="pagination">
                 <?php if($page_no > 1){
                 echo "<li><a href='?page_no=1'>First Page</a></li>";
