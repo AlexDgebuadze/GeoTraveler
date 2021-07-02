@@ -12,6 +12,25 @@ class crud{
    }
 
 
+   public function editUser($id, $fname, $lname, $mobile, $email){
+      try{ 
+           $sql = "UPDATE geotraveler.users SET name=:fname,surname=:lname,mobile=:mobile, email=:mail WHERE id = :id ";
+           $stmt = $this->db->prepare($sql);
+           $stmt->bindparam(':id',$id);
+           $stmt->bindparam(':fname',$fname);
+           $stmt->bindparam(':lname',$lname);
+           $stmt->bindparam(':mobile',$mobile);
+           $stmt->bindparam(':mail',$email);
+              
+           $stmt->execute();
+           return true;
+      }catch (PDOException $e) {
+       echo $e->getMessage();
+       return false;
+      }
+       
+   }
+
 
 
    public function SendFeedback($cname, $cmail,$cmessage){
@@ -119,11 +138,26 @@ class crud{
    }
 
 }
+
+
+
    public function deleteHotel($HID){
       try{
          $sql = "DELETE FROM geotraveler.hotel WHERE hotelId = :hotelid "; 
          $stmt = $this->db->prepare($sql);
          $stmt->bindparam(':hotelid',$HID);
+         $stmt->execute();
+         return true;
+      }catch(PDOException $e){
+         echo $e->getMessage();
+          return false;
+      }
+   }
+   public function deleteUser($UID){
+      try{
+         $sql = "DELETE FROM geotraveler.users WHERE id = :userid "; 
+         $stmt = $this->db->prepare($sql);
+         $stmt->bindparam(':userid',$UID);
          $stmt->execute();
          return true;
       }catch(PDOException $e){
