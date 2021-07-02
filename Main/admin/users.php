@@ -27,7 +27,7 @@ if(isset($_GET['UID'])){
 	<div class="row">
 		<div class="card col-lg-12">
 		<div class="col-lg-12">
-			<a href = "usersChange.php" class="btn btn-primary float-right btn-sm myclass" style = "margin-top:15px;"><i class="fa fa-plus"></i> Add Room</a>
+			<a href = "usersChange.php" class="btn btn-primary float-right btn-sm myclass" style = "margin-top:15px;"><i class="fa fa-plus"></i> Add User</a>
 			</div>
 			<div class="card-body">
 				<table class="table-striped table-bordered col-md-12">
