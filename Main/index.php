@@ -69,8 +69,8 @@ session_start();
         </div>
     </div> -->
     <section class="videoheader">
-        <video autoplay class="videobackground" muted plays-inline>
-            <source src="./videos/bannervideo1.mp4" type="video/mp4">
+        <video autoplay  class="videobackground" loop muted plays-inline>
+            <source src="./videos/bannervideo1_Trim.mp4" type="video/mp4">
         </video>
         <div class="hero">
             <div class="main">

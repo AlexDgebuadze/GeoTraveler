@@ -1,5 +1,5 @@
 <?php 
- $uid =  $_GET["editUID"];
+ $uid = $nm = $sr = $mb = $eml = $usrn = $pass = $result = NULL;
  session_start();
  require_once '../back-end/php/user.php';
 
@@ -7,7 +7,8 @@
 
   //$res = $user->editUser1($uid,$_POST["name"],$_POST["surname"],$_POST["mobile"],$_POST["email"], $_POST["usr"]);
 // echo "<script> window.alert('asdasdasd!!!'); </script>";
-if($_SERVER["REQUEST_METHOD"] == "POST" && isset($uid)){
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET["editUID"])){
+$uid =  $_GET["editUID"];
 $nm = trim($_POST["name"]);
 $sr = trim($_POST["surname"]);
 $mb = trim($_POST["mobile"]);
@@ -51,12 +52,12 @@ $usrn = trim($_POST["usr"]);
     $res = $user->insertUser($nm,$sr,$mb,$eml,$usrnm,$pass);
  } 
 
- if(isset($uid)){
-
+ if(isset($_GET["editUID"])){
+  $uid =  $_GET["editUID"];
   $result = $user->getUserbyID($uid);
 }
 
-echo $res;
+// echo $res;
 //echo $_POST["name"].$_POST["surname"].$_POST["mobile"].$_POST["email"].$_POST["username"];
 
 ?>
@@ -116,7 +117,7 @@ echo $res;
   }
 </style>
 
-<?php echo $_GET["editUID"]; ?>
+
 <body>
 <nav id="sidebar" class='mx-lt-5' >
 		

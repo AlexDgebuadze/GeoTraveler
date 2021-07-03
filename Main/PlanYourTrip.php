@@ -117,9 +117,9 @@ $result = $crud->getHotelsTop();
                         <i class="fas fa-star-half rating"></i>
                     </div>
                     <p class="paragraph">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Tempora magnam quibusdam nemo voluptatum pariatur dicta autem, 
-                        ex qui, quasi soluta est nulla dignissimos dolor atque. 
+                    All our guestrooms are elegantly furnished with handmade furniture include
+ luxury en-suite facilities with complimentary amenities pack, flat screen LCD TV, 
+tea/coffee making facilities, fan, hairdryer and the finest pure white linen and towels.
                     </p>
                     <a href="#" class="btn btn-gradient">Redeem Offer
                         <span class="dots"><i class="fas fa-ellipsis-h"></i></span>
@@ -136,39 +136,43 @@ $result = $crud->getHotelsTop();
                 <div class="grid rooms-grid">
                     <div class="grid-item featured-rooms">
                         <div class="image-wrap">
-                            <img class = "room-image" src="../Main/images/room_1.jpg" alt="">
+                            <img class = "room-image" src="images/room_1.jpg" alt="">
                             <h5 class="room-name">Astro Hotel</h5>
                         </div>
                         <div class="room-info-wrap">
                             <span class="room-price">$200 <span class="per-night">Per night</span></span>
                             <p class="paragraph">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
+                            Our Deluxe king size room has a seating area, ample storage, digital safe, minibar and luxurious duck down bedding. This room can also be configured with an extra roll-away bed for families of 3.
+
                             </p>
                         </div>
                     </div>
 
                     <div class="grid-item featured-rooms">
                         <div class="image-wrap">
-                            <img class = "room-image" src="../Main/images/room_3.jpg" alt="">
+                            <img class = "room-image" src="/images/room_3.jpg" alt="">
                             <h5 class="room-name">Astro Hotel</h5>
                         </div>
                         <div class="room-info-wrap">
                             <span class="room-price">$200 <span class="per-night">Per night</span></span>
                             <p class="paragraph">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
+                                
+ Conveniently situated away from congestion and crowds, we provide you with a refreshing opportunity to experience choices 
+and flexibility like never before. Complimentary high-speed Internet is available throughout our hotel, and keep up your physical routine in our 24-hour fitness center. 
+
                             </p>
                         </div>
                     </div>
 
                     <div class="grid-item featured-rooms">
                         <div class="image-wrap">
-                            <img class = "room-image" src="../Main/images/room_4.jpg" alt="">
+                            <img class = "room-image" src="images/room_4.jpg" alt="">
                             <h5 class="room-name">Astro Hotel</h5>
                         </div>
                         <div class="room-info-wrap">
                             <span class="room-price">$200 <span class="per-night">Per night</span></span>
                             <p class="paragraph">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint iure ratione nisi
+                            As our smallest budget rooms, the Compact bedrooms are suited for single occupancy or short-stay double occupancy as they have limited space and storage.
                             </p>
                         </div>
                     </div>
