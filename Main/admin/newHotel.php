@@ -2,9 +2,13 @@
  require_once '../back-end/php/crud.php';
 session_start();
 
+$res = $hname = $cost = $descr = $region = $tags = $rsum = $stars = $imgData = NULL;
 
+if(isset($_GET['HID'])){
+$res = $crud->getHotelWithID($_GET['HID']);
+}
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){								
+if($_SERVER["REQUEST_METHOD"] == "POST" && !isset($_GET['HID'])){								
 $hname = trim($_POST["hotelName"]);
 $cost = trim($_POST["minCost"]);
 $descr = trim($_POST["hotelDescr"]);
@@ -18,6 +22,21 @@ $imgData = file_get_contents($_FILES['img']['tmp_name']);
 $crud->addNewHotel($hname,$imgData,$cost,$descr,$region,$tags,$rsum,$stars);
 
 }
+
+if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_GET['HID'])){								
+  $hname = trim($_POST["hotelName"]);
+  $cost = trim($_POST["minCost"]);
+  $descr = trim($_POST["hotelDescr"]);
+  $region = trim($_POST["region"]);
+  $tags = trim($_POST["tags"]);
+  $rsum = trim($_POST["roomSum"]);
+  $stars = trim($_POST["stars"]);
+  
+  $imgData = file_get_contents($_FILES['img']['tmp_name']);
+  
+  $crud->updateHotel($_GET['HID'],$hname,$imgData,$cost,$descr,$region,$tags,$rsum,$stars);
+  
+  }
 
 
 
@@ -122,29 +141,29 @@ $crud->addNewHotel($hname,$imgData,$cost,$descr,$region,$tags,$rsum,$stars);
 
 <main id="view-panel" >
 
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" enctype="multipart/form-data">
+<form action="#"<?php //echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post" enctype="multipart/form-data">
 <div class="form-group">
-<input class="form-control" placeholder="Hotel Name" name="hotelName" id="name" type="text" autofocus>
+<input class="form-control" placeholder="Hotel Name" value = "<?php echo $res['hotelName']; ?>" name="hotelName" id="name" type="text" autofocus>
 </div>
 <div class="form-group">
-  <input type="file" id="img" name="img" accept="image/jpg">
+  <input type="file" id="img" name="img" accept="image/jpg" value = "<?php //echo $res['photo']; ?>">
   </div>
   <div class="form-group">
-  <input class="form-control" placeholder="Min Cost" name="minCost" id="minCost" type="text" >
+  <input class="form-control" placeholder="Min Cost" value = "<?php echo $res['minCost']; ?>" name="minCost" id="minCost" type="text" >
   </div>
   <div class="form-group">
-  <input class="form-control" placeholder="Hotel Description" name="hotelDescr" id="hotelDescr" type="text" >
+  <textarea class="form-control" style = "padding-bottom: 50px;" placeholder="Hotel Description" value = "" name="hotelDescr" id="hotelDescr" type="text"><?php echo $res['hotelDescr']; ?> </textarea>
   </div>
   <div class="form-group">
-  <input class="form-control" placeholder="Region" name="region" id="region" type="text" >
+  <input class="form-control" placeholder="Region" name="region" value = "<?php echo $res['region']; ?>" id="region" type="text" >
   </div>
   <div class="form-group">
-  <input class="form-control" placeholder="Tags" name="tags" id="tags" type="text">
+  <input class="form-control" placeholder="Tags" name="tags" value = "<?php echo $res['nearAtractions']; ?>" id="tags" type="text">
   </div>
   <div class="form-group">
-  <input class="form-control" placeholder="Room number" name="roomSum" id="roomSum" type="text">
+  <input class="form-control" placeholder="Room number" name="roomSum" value = "<?php echo $res['roomSum']; ?>" id="roomSum" type="text">
   </div>
-  <input class="form-control" placeholder="Stars" name="stars" id="stars" type="text">
+  <input class="form-control" placeholder="Stars" name="stars" id="stars" value = "<?php echo $res['rate']; ?>" type="text">
 
   <input type="submit" name="submit" value="Submit" style="margin-top:20px;">  
 </form>

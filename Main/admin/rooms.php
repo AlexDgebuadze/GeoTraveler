@@ -51,7 +51,10 @@ if(isset($_GET['RID'])){
 			<td class="text-center"><?php echo $row['rooms']; ?></td>
 			<td class="text-center"><?php echo $row['personNum']; ?></td>
 			<td class="text-center"><?php echo $row['reserved']; ?></td>
-			<td><a href= <?php echo "rooms.php?RID=" . $row['roomid']; ?> id = "updateProfile" class="user-btn x-btn" style="color:crimson; margin-top:5px;">Remove</a></td>
+			<td>
+			<a href= <?php echo "newRoom.php?HID=" . $row['hotelID'] . "&RID=" . $row['roomid']; ?>  class="user-btn x-btn" style="color:green; margin-top:5px; margin-right:8px;">Edit</a>
+			<a href= <?php echo "rooms.php?RID=" . $row['roomid']; ?> id = "updateProfile" class="user-btn x-btn" style="color:crimson; margin-top:5px;">Remove</a>
+			</td>
 			</tr>
 			<?php }?>
 

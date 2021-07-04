@@ -1,41 +1,37 @@
 <?php 
- require_once '../back-end/php/crud.php';
+	require_once '../back-end/php/crud.php';
 session_start();
 
-$descr = $cost = $hotelid = $roomCategory = $rnum = $pnum = $imgData = NULL;
+$UID = $HID = $RID = $checkIn = $checkOut = NULL;
 
-if(isset($_GET['HID']) && isset($_GET['RID']) ){
-$res = $crud->getRoomHR($_GET['HID'],$_GET['RID']);
+if(($_SERVER["REQUEST_METHOD"] == "POST") && !isset($_GET["resID"])){								
+$UID = trim($_POST["userID"]);
+$HID = trim($_POST["hotelID"]);
+$RID = trim($_POST["roomID"]);
+$checkIn = trim($_POST["checkIN"]);    
+$checkOut = trim($_POST["checkOUT"]);    
+
+$crud->createReservation($HID,$RID,$UID,$checkIn,$checkOut);
+$crud->markRoomReserved($HID,$RID);
 }
 
-if(($_SERVER["REQUEST_METHOD"] == "POST") && !isset($_GET['HID'])){								
+if(($_SERVER["REQUEST_METHOD"] == "POST") && isset($_GET["resID"]) ){
 
-$descr = trim($_POST["roomDescr"]);
-$cost = trim($_POST["cost"]);
-$hotelid = trim($_POST["hotelid"]);
-$roomCategory = trim($_POST["roomCategory"]);
-$rnum = trim($_POST["roomNum"]);
-$pnum = trim($_POST["personNum"]);
 
-$imgData = file_get_contents($_FILES['img']['tmp_name']);
 
-$crud->addNewRoom($imgData,$descr,$hotelid,$cost,$roomCategory,$rnum,$pnum);
+$UID = trim($_POST["userID"]);
+$HID = trim($_POST["hotelID"]);
+$RID = trim($_POST["roomID"]);
+$checkIn = trim($_POST["checkIN"]);    
+$checkOut = trim($_POST["checkOUT"]);
 
-}
+$crud->updateReservation($_GET["resID"],$HID,$RID,$UID,$checkIn,$checkOut);
+$crud->markRoomUnreserved($_GET["hotelID"],$_GET["roomID"]);
+$crud->markRoomReserved($HID,$RID);
 
-if(($_SERVER["REQUEST_METHOD"] == "POST") && isset($_GET['HID'])){
-$descr = trim($_POST["roomDescr"]);
-$cost = trim($_POST["cost"]);
-$hotelid = trim($_POST["hotelid"]);
-$roomCategory = trim($_POST["roomCategory"]);
-$rnum = trim($_POST["roomNum"]);
-$pnum = trim($_POST["personNum"]);
-
-$imgData = file_get_contents($_FILES['img']['tmp_name']);
-
-  $res = $crud->updateRoom($_GET['RID'],$imgData, $descr, $hotelid, $cost, $roomCategory, $rnum, $pnum);
 
 }
+
 
 
 ?>
@@ -50,6 +46,7 @@ $imgData = file_get_contents($_FILES['img']['tmp_name']);
 	  <!-- Google Fonts -->
 	  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link rel="stylesheet" href="assets/font-awesome/css/all.min.css">
+
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -140,28 +137,23 @@ $imgData = file_get_contents($_FILES['img']['tmp_name']);
 
 <form action="#"<?php //echo htmlspecialchars($_SERVER["PHP_SELF"]);?> method="post" enctype="multipart/form-data">
 
-<div class="form-group">
-  <input type="file" id="img" name="img" accept="image/jpg">
+  <div class="form-group">
+  <input class="form-control" placeholder="HotelID" name="hotelID" value="<?php echo $_GET['hotelID']; ?>" >
   </div>
   <div class="form-group">
-  <textarea class="form-control" placeholder="room description" value = "" name="roomDescr" id="roomDescr" type="text" > <?php echo $res['roomDescr']; ?> </textarea>
+  <input class="form-control" placeholder="RoomID" name="roomID"  value="<?php echo $_GET['roomID']; ?>" >
   </div>
   <div class="form-group">
-  <input class="form-control" placeholder="hotel id" name="hotelid" value = "<?php echo $res['hotelID']; ?>" id="hotelid" type="text" >
+  <input class="form-control" placeholder="UserID" name="userID" value="<?php echo $_GET['userID']; ?>" >
   </div>
   <div class="form-group">
-  <input class="form-control" placeholder="cost" name="cost" value = "<?php echo $res['cost']; ?>" id="cost" type="text">
+  <input class="form-control" placeholder="checkIN" name="checkIN" type="date" value="<?php echo $_GET['checkIN']; ?>">
   </div>
   <div class="form-group">
-  <input class="form-control" placeholder="room category" value = "<?php echo $res['roomCategory']; ?>" name="roomCategory" id="roomCategory" type="text">
+  <input class="form-control" placeholder="checkOUT" name="checkOUT" type="date" value="<?php echo $_GET['checkOUT']; ?>" >
   </div>
-  <div class="form-group">
-  <input class="form-control" placeholder="room number" name="roomNum" value = "<?php echo $res['rooms']; ?>" id="roomNum" type="text">
-  </div>
-  <div class="form-group">
-  <input class="form-control" placeholder="person number" name="personNum" value = "<?php echo $res['personNum']; ?>" id="personNum" type="text">
-  </div>
-  <input type="submit" name="submit" value="Submit">  
+
+  <input type="submit" name="submit" value="Submit" style="margin-top:20px;">  
 </form>
 
 

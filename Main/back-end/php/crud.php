@@ -1,7 +1,5 @@
 <?php
-
 require_once 'config.php';
-
 
 class crud{
 
@@ -10,8 +8,6 @@ class crud{
    function __construct($conn){
           $this->db = $conn;
    }
-
-
    public function editUser($id, $fname, $lname, $mobile, $email){
       try{ 
            $sql = "UPDATE geotraveler.users SET name=:fname,surname=:lname,mobile=:mobile, email=:mail WHERE id = :id ";
@@ -31,8 +27,7 @@ class crud{
        
    }
 
-
-
+   
    public function SendFeedback($cname, $cmail,$cmessage){
       try {
          $sql = "INSERT INTO geotraveler.feedback (fullname,mail,message) VALUES (:fullname,:mail,:message)";
@@ -139,6 +134,28 @@ class crud{
 
 }
 
+public function updateHotel($id,$hname, $photo,$minCost, $hotelDescr, $region, $nearAtr,$roomSum,$stars){
+   try {
+      $sql = "UPDATE geotraveler.hotel SET hotelName=:hotelName,photo=:photo,minCost=:minCost, hotelDescr=:hotelDescr , region=:region , nearAtractions=:nearAtractions, roomSum=:roomSum, rate=:rate  WHERE hotelId = :id ";
+      $stmt = $this-> db->prepare($sql); 
+      $stmt->bindparam(':id',$id);
+      $stmt->bindparam(':hotelName',$hname);
+      $stmt->bindparam(':photo',$photo);
+      $stmt->bindparam(':minCost',$minCost);
+      $stmt->bindparam(':hotelDescr',$hotelDescr);
+      $stmt->bindparam(':region',$region);
+      $stmt->bindparam(':nearAtractions',$nearAtr);
+      $stmt->bindparam(':roomSum',$roomSum);
+      $stmt->bindparam(':rate',$stars);
+      $stmt->execute();
+      return true;
+   } catch (PDOException $e) {
+      echo $e->getMessage();
+      return false;
+   }
+
+}
+
 
 
    public function deleteHotel($HID){
@@ -184,6 +201,28 @@ class crud{
          return false;
       }
    }
+
+   public function updateRoom($id,$photo, $roomDescr, $hotelid, $cost, $roomCategory, $rooms, $personNum){
+      try {
+         $sql = "UPDATE geotraveler.room SET roomPhoto=:roomPhoto,roomDescr=:roomDescr,hotelID=:hotelID, cost=:cost ,roomCategory=:roomCategory ,rooms=:rooms ,personNum=:personNum, reserved = '0'  WHERE roomid = :id ";
+         $stmt = $this-> db->prepare($sql); 
+         $stmt->bindparam(':id',$id);
+         $stmt->bindparam(':roomPhoto',$photo);
+         $stmt->bindparam(':roomDescr',$roomDescr);
+         $stmt->bindparam(':hotelID',$hotelid);
+         $stmt->bindparam(':cost',$cost);
+         $stmt->bindparam(':roomCategory',$roomCategory);
+         $stmt->bindparam(':rooms',$rooms);
+         $stmt->bindparam(':personNum',$personNum);
+         $stmt->execute();
+         return true;
+      } catch (PDOException $e) {
+         echo $e->getMessage();
+         return false;
+      }
+   }
+
+
    public function deleteRoom($roomID){
       try{
          $sql = "DELETE FROM geotraveler.room WHERE roomid = :roomID"; 
@@ -247,6 +286,36 @@ class crud{
           return false;
       }
    }
+
+   public function getHotelWithID($id){
+      try{
+          $sql = "SELECT * FROM geotraveler.hotel WHERE hotelId = :id "; 
+          $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(':id',$id);
+                $stmt->execute();
+                $result = $stmt->fetch();
+                return $result;
+      }catch(PDOException $e){
+          echo $e->getMessage();
+          return false;
+      }
+   }
+   public function getRoomHR($HID,$RID){
+      try{
+          $sql = "SELECT * FROM geotraveler.room WHERE hotelID = :hid AND roomid = :rid "; 
+          $stmt = $this->db->prepare($sql);
+                $stmt->bindparam(':hid',$HID);
+                $stmt->bindparam(':rid',$RID);
+                $stmt->execute();
+                $result = $stmt->fetch();
+                return $result;
+      }catch(PDOException $e){
+          echo $e->getMessage();
+          return false;
+      }
+   }
+
+
 
    public function getHotelFromSearch($region,$tag,$pFrom,$pTo){
       if(strval($region) == 'any'){
@@ -315,7 +384,7 @@ class crud{
    }
    public function getRoomPics($hotelID,$roomID){
       try{
-         $sql = "SELECT * FROM geotraveler.roomPictures WHERE hotelID = '$hotelID' AND roomID = '$roomID' "; 
+         $sql = "SELECT * FROM geotraveler.roompictures WHERE hotelID = '$hotelID' AND roomID = '$roomID' "; 
           $res = $this->db->query($sql);
           return $res;
       }catch(PDOException $e){
@@ -407,6 +476,25 @@ class crud{
       try {
          $sql = "INSERT INTO geotraveler.reservation (hotelID,roomID,userID,checkIN,checkOUT) VALUES (:hotelID,:roomID,:userID,:checkIN,:checkOUT)";
          $stmt = $this-> db->prepare($sql); 
+         $stmt->bindparam(':hotelID',$hotelid);
+         $stmt->bindparam(':roomID',$roomid);
+         $stmt->bindparam(':userID',$uid);
+         $stmt->bindparam(':checkIN',$checkIn);
+         $stmt->bindparam(':checkOUT',$checkOut);
+         $stmt->execute();
+         return true;
+      } catch (PDOException $e) {
+         echo $e->getMessage();
+         return false;
+      }
+
+   }
+
+   public function updateReservation($resID,$hotelid,$roomid,$uid,$checkIn,$checkOut){
+      try {
+         $sql = "UPDATE geotraveler.reservation SET hotelID=:hotelID,roomID=:roomID,userID=:userID, checkIN=:checkIN , checkOUT=:checkOUT WHERE reservationID = :resID ";
+         $stmt = $this-> db->prepare($sql); 
+         $stmt->bindparam(':resID',$resID);
          $stmt->bindparam(':hotelID',$hotelid);
          $stmt->bindparam(':roomID',$roomid);
          $stmt->bindparam(':userID',$uid);

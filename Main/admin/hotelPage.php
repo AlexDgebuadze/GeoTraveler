@@ -68,7 +68,10 @@ if(isset($_GET['HID'])){
 								<td class="text-center" style="padding:5px;"><?php echo $row['nearAtractions']; ?></td>
 								<td class="text-center" ><?php echo $row['roomSum']; ?></td>
 								<td class="text-center" ><?php echo $row['rate']; ?></td>
-								<td><a href= <?php echo "hotelPage.php?HID=" . $row['hotelId']; ?> id = "updateProfile" class="user-btn x-btn" style="color:crimson; margin-top:5px;">Remove</a></td>
+								<td>
+								<a href= <?php echo "newHotel.php?HID=" . $row['hotelId']; ?>  class="user-btn x-btn" style="color:green; margin-top:5px; margin-right:8px;">Edit</a>
+								<a href= <?php echo "hotelPage.php?HID=" . $row['hotelId']; ?> id = "updateProfile" class="user-btn x-btn" style="color:crimson; margin-top:5px;">Remove</a>
+								</td>
 								</tr>
 							<?php }?>
 							</tbody>
